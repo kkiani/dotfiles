@@ -1,5 +1,3 @@
-
-export PATH="${HOME}/.dotfiles/scripts:${PATH}"
 # loading antigen
 source ~/antigen.zsh
 source ~/.dotfiles/.antigen
