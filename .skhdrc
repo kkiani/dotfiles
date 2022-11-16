@@ -1,0 +1,17 @@
+# yabai keybindings: https://github.com/koekeishiya/yabai/wiki/Commands
+# # move focused window to next space
+alt - k : ~/.dotfiles/scripts/yabai-window-next-space
+alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
+
+# # move focused window to next display
+alt - l : yabai -m window --display next
+alt - h : yabai -m window --display prev
+
+# # mirror tree y-axis
+alt - y : yabai -m space --mirror y-axis
+
+# # mirror tree x-axis
+alt - x : yabai -m space --mirror x-axis
+
+# # making window native full-screen.
+alt - f : yabai -m window --toggle native-fullscreen

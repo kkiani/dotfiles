@@ -1,0 +1,4 @@
+#!/bin/zsh
+window=$(yabai -m query --windows --window | jq .id)
+yabai -m window --space prev
+yabai -m window --focus $window

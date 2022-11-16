@@ -1,0 +1,22 @@
+[user]
+    name = kiarash kiani
+    email = kiarash@kiani.info
+
+[includeIf "gitdir:~/projects/datachef/"]
+    path = ~/.gitconfig.datachef
+
+[core]
+	editor = vim
+	hooksPath = /Users/kiarash/.config/git/hooks
+
+[color "branch"]
+  current = green
+  remote = yellow
+
+[alias]
+	uncommit = reset --soft HEAD^
+	unstage = reset HEAD
+	amend = commit --amend
+	pushall = !git remote | xargs -L1 git push --all
+
+
