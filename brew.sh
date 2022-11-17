@@ -43,3 +43,4 @@ mas install 747648890     # Telegram
 mas install 803453959     # Slack
 mas install 1532419400    # MeetingBar
 mas install 1452453066    # Hidden Bar
+mas install 714196447     # MenuBar Stats
