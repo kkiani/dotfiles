@@ -15,3 +15,10 @@ alt - x : yabai -m space --mirror x-axis
 
 # # making window native full-screen.
 alt - f : yabai -m window --toggle native-fullscreen
+
+# # cycle through windows
+alt - w : yabai -m window --focus next || yabai -m window --focus first
+
+# system keybindings
+# # screen capture and copy to clipboard.
+cmd + shift - 3 : screencapture -ic

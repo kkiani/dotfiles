@@ -1,0 +1,86 @@
+#!/bin/zsh
+
+# replacing ls with exa
+function ls() {
+    exa --icons --group-directories-first "$@"
+}
+
+# print in formatted bold and colorful
+function heading() { 
+    echo -e "\e[1m\e[34m==>\e[39m $1\e[0m" 
+}
+
+# Igonre if the command throws an error
+function ierr() {
+    $@ 2> /dev/null
+}
+
+# Test whether a given command exists
+# Adapted from https://github.com/joshdick/dotfiles/blob/main/zsh.symlink/functions.zsh
+function command_exists() {
+  hash "$1" &> /dev/null
+}
+
+# Packs $2-$n into $1 depending on $1's extension
+# Found at <http://pastebin.com/CTra4QTF>
+function compress() {
+  if [[ $# -lt 2 ]]; then
+    echo -e "\n$0() usage:"
+    echo -e "\t$0 archive_file_name file1 file2 ... fileN"
+    echo -e "\tcreates archive of files 1-N\n"
+  else
+    DEST=$1
+    shift
+    case $DEST in
+      *.tar.bz2) tar -cvjf $DEST "$@" ;;
+      *.tar.gz)  tar -cvzf $DEST "$@" ;;
+      *.zip)     zip -r $DEST "$@" ;;
+      *)         echo "Unknown file type - $DEST" ;;
+    esac
+  fi
+}
+
+# Extracts archives
+# Found at <http://pastebin.com/CTra4QTF>
+function extract() {
+  case $@ in
+    *.tar.bz2) tar -xvjf "$@"  ;;
+    *.tar.gz)  tar -xvzf "$@"  ;;
+    *.bz2)     bunzip2 "$@"  ;;
+    *.rar)     unrar x "$@"  ;;
+    *.gz)      gunzip "$@" ;;
+    *.tar)     tar xf "$@" ;;
+    *.tbz2)    tar -xvjf "$@"  ;;
+    *.tgz)     tar -xvzf "$@"  ;;
+    *.zip)     unzip "$@"    ;;
+    *.xpi)     unzip "$@"    ;;
+    *.Z)       uncompress "$@" ;;
+    *.7z)      7z x "$@" ;;
+    *.ace)     unace e "$@"  ;;
+    *.arj)     arj -y e "$@" ;;
+    *)         echo "'$@' cannot be extracted via $0()" ;;
+  esac
+}
+
+# Update the system and its packages.
+function update() {
+    heading "[homebrew] Updating system packages..."
+    brew update && brew upgrade --greedy && brew cleanup
+
+    if [ "$1" = "--hard" ]
+    then
+        heading "[system] updating macOS..."
+        softwareupdate -iR -a
+    fi
+}
+
+# For uninstalling apps from outside of AppStore and Homebrew.
+function unload_app() {
+    mdfind -name $1 | vipe | xargs -L 1 -I {} rm -rf {}
+}
+   
+# clearing dns
+function flushdns() {
+    sudo dscacheutil -flushcache
+    sudo killall -HUP mDNSResponder
+}

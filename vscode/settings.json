@@ -163,4 +163,5 @@
     "security.workspace.trust.enabled": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "git.enableSmartCommit": true,
 }

@@ -1,17 +1,15 @@
+#!/bin/zsh -i
 alias vi='nvim'
 alias v="nvim"
-alias reload='. ~/.zshrc'
+alias reload='exec zsh'
 alias bat="bat --pager='less -r'"
 alias pg="ping -c 5 google.com | less"
 alias mkd='mkdir -pv'
-alias ls='exa --icons --group-directories-first'
-alias la='ls -a'
 alias vimconfig='$EDITOR ~/.vimrc'
 alias zshconfig='$EDITOR ~/.zshrc'
 alias t='touch'
 alias b='bat'
 alias cpwd='pwd | pbcopy'
-alias untar='tar -xvf'
 alias date="date '+%Y-%m-%d %H:%M'"
 alias c='pbcopy'
 alias p='pbpaste'

@@ -19,4 +19,20 @@
 	amend = commit --amend
 	pushall = !git remote | xargs -L1 git push --all
 
+[merge]
+    tool = vscode
 
+[mergetool "vscode"]
+    cmd = code --new-window --wait $MERGED
+
+[diff]
+    tool = vscode
+
+[difftool "vscode"]
+    cmd = code --new-window --wait --diff $LOCAL $REMOTE
+
+[push]
+    autoSetupRemote = true
+
+[init]
+    defaultBranch = main

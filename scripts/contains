@@ -1,0 +1,2 @@
+#!/bin/zsh
+[[ $1 =~ (^|[[:space:]])$2($|[[:space:]]) ]] && echo 'yes' || echo 'no'
