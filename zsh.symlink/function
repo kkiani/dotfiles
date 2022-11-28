@@ -85,7 +85,12 @@ function flushdns() {
     sudo killall -HUP mDNSResponder
 }
 
-# opening git's origin remote in the browser
+# opening git remote's url in the browser
 function openrepo() {
-    git remote get-url origin | xargs open
+    if [ -z "$1" ]
+    then
+        git remote get-url origin | xargs open
+    else
+        git remote get-url "$1" | xargs open
+    fi
 }
