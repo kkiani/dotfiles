@@ -84,3 +84,8 @@ function flushdns() {
     sudo dscacheutil -flushcache
     sudo killall -HUP mDNSResponder
 }
+
+# opening git's origin remote in the browser
+function openrepo() {
+    git remote get-url origin | xargs open
+}
