@@ -22,6 +22,7 @@ brew "neovim"
 brew "poetry"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
+brew "lunchy"
 
 # 'brew install --cask'
 cask "1password"
