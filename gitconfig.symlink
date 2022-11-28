@@ -16,6 +16,7 @@
 [alias]
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
+    discard = !git reset --hard HEAD && git clean -fd
 	amend = commit --amend
 	pushall = !git remote | xargs -L1 git push --all
 
