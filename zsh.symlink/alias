@@ -14,3 +14,4 @@ alias date="date '+%Y-%m-%d %H:%M'"
 alias c='pbcopy'
 alias p='pbpaste'
 alias top='btop'
+alias awsv='aws-vault'
