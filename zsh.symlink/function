@@ -94,3 +94,13 @@ function openrepo() {
         git remote get-url "$1" | xargs open
     fi
 }
+
+function awslogin() {
+    local profile=$(aws configure list-profiles | fzf)
+    aws-vault exec "$profile" --prompt=osascript --server
+}
+
+function awslogout() {
+    killall -9 aws-vault
+    aws-vault clear
+}
