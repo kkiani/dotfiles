@@ -70,7 +70,7 @@ function update() {
         brew update && brew upgrade --greedy && brew cleanup
 
         heading "[system] updating macOS..."
-        softwareupdate -iR -a
+        sudo softwareupdate -iR -a
     elif [ -z "$1" ]
     then
         heading "[homebrew] Updating system packages..."
