@@ -318,8 +318,18 @@
         "when": "panelFocus"
     },
     {
+        "key": "cmd+shift+f",
+        "command": "editor.actions.findWithArgs"
+    },
+    {
         "key": "cmd+f",
-        "command": "workbench.view.search"
+        "command": "workbench.view.search",
+        "when": "!terminalFocus|!sideBarFocus"
+    },
+    {
+        "key": "cmd+shift+f",
+        "command": "term",
+        "when": "terminalFocus"
     },
     {
         "key": "cmd+i",
@@ -334,6 +344,11 @@
     {
         "command": "editor.toggleFold",
         "key": "Space",
+        "when": "editorTextFocus && neovim.mode == normal"
+    },
+    {
+        "command": "editor.action.rename",
+        "key": "cmd+k r",
         "when": "editorTextFocus && neovim.mode == normal"
     },
     {
