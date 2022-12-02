@@ -22,3 +22,6 @@ alt - w : yabai -m window --focus next || yabai -m window --focus first
 # system keybindings
 # # screen capture and copy to clipboard.
 cmd + shift - 3 : screencapture -ic
+
+# # togle system mic mute.
+cmd + shift - m : ~/.dotfiles/scripts/system-mic-mute.scpt
