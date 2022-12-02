@@ -1,7 +1,12 @@
 #!/bin/zsh
 
-# Install script for Josh Dick's dotfiles
-# <https://github.com/joshdick/dotfiles>
+function heading() { 
+    echo -e "\e[1m\e[34m==>\e[39m $@\e[0m" 
+}
+
+function warning() {
+    echo -e "\e[1m\e[33mWarning:\e[39m $@\e[0m" 
+}
 
 # Uncomment the following line to delete all symlinks at the root of $HOME - useful for reinstalls
 # find "$HOME" -maxdepth 1 -type l -exec rm -f {} \;
@@ -9,16 +14,31 @@
 SELF_PATH="$( cd "$( dirname "$0" )" && pwd )" # Path to the directory containing this script
 
 # Create symlinks
+heading "[symlinks] insstalling symbol links..."
 for file in `find $SELF_PATH -maxdepth 1 -name \*.symlink`; do
-	src_file=`basename "$file"`
-	dest_file=`echo "$HOME/.$src_file" | sed "s/\.symlink$//g"`
-	if [ -e $dest_file ]; then
-		echo "$dest_file already exists; skipping it..."
-	else
-		ln -sv $SELF_PATH/$src_file $dest_file
-	fi
+    src_file=`basename "$file"`
+    dest_file=`echo "$HOME/.$src_file" | sed "s/\.symlink$//g"`
+    if [ -e $dest_file ]; then
+        warning "$dest_file already exists; skipping it..."
+    else
+        ln -sv $SELF_PATH/$src_file $dest_file
+    fi
 done
 
+# Install launchd services
+heading "[launchd] installing launcd services..."
+for file in `find $SELF_PATH/services -maxdepth 1 -name \*.plist`; do
+    file_name=$(basename $file)
+    dest_file="$HOME/Library/LaunchAgents/$file_name"
+    if [ -e $dest_file ]
+    then
+        warning "$dest_file already exists; skipping it..."
+    else
+        ln -s "$SELF_PATH/services/$file_name" "$dest_file"
+        user_id=$(id -u)
+        sudo launchctl bootstrap gui/"$user_id" $dest_file
+    fi
+done
 
 # vim -c ':call coc#util#install()'
 
