@@ -340,6 +340,14 @@
         "key": "cmd+k o",
         "command": "workbench.action.navigateBack"
     },
+    {
+        "key": "cmd+k e",
+        "command": "workbench.files.action.focusFilesExplorer"
+    },
+    {
+        "key": "cmd+k s",
+        "command": "workbench.scm.focus"
+    },
     // vim specific shortcuts
     {
         "command": "editor.toggleFold",
