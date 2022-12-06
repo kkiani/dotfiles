@@ -361,6 +361,16 @@
     },
     {
         "command": "vscode-neovim.send",
+        "key": "N",
+        "args": "Nzz"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "n",
+        "args": "nzz"
+    },
+    {
+        "command": "vscode-neovim.send",
         "key": "cmd+1",
         "args": ":! "
     }
