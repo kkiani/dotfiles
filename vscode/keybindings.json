@@ -345,6 +345,10 @@
         "command": "workbench.files.action.focusFilesExplorer"
     },
     {
+        "key": "cmd+2",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
         "key": "cmd+k s",
         "command": "workbench.scm.focus"
     },
