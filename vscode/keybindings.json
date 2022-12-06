@@ -366,11 +366,13 @@
     {
         "command": "vscode-neovim.send",
         "key": "N",
+        "when": "editorTextFocus && neovim.mode == normal",
         "args": "Nzz"
     },
     {
         "command": "vscode-neovim.send",
         "key": "n",
+        "when": "editorTextFocus && neovim.mode == normal",
         "args": "nzz"
     },
     {
