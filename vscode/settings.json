@@ -154,6 +154,9 @@
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
     "debug.terminal.clearBeforeReusing": true,
+    "editor.rulers": [
+        80,
+    ],
     // Typescript specific configurations.
     "jest.autoRun": {},
     // Python specific configurations
