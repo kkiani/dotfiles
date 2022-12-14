@@ -221,7 +221,7 @@
         "command": "-workbench.action.togglePanel"
     },
     {
-        "key": "cmd+k backspace",
+        "key": "cmd+k cmd+k",
         "command": "workbench.action.terminal.clear",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
