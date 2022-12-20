@@ -22,6 +22,13 @@ alt - w : yabai -m window --focus next || yabai -m window --focus first
 # # toggle floating window
 alt - d : yabai -m window --toggle float
 
+# # foucs next monitor
+alt - m : yabai -m display --focus next || yabai -m display --focus prev
+
+# # move window to left/right side of the space
+alt + ctrl - k : yabai -m window --warp east
+alt + ctrl - j : yabai -m window --warp west
+
 # system keybindings
 # # screen capture and copy to clipboard.
 cmd + shift - 3 : screencapture -ic
