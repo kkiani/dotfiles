@@ -23,6 +23,8 @@ brew "poetry"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "lunchy"
+brew "tectonic"
+brew "pandoc"
 
 # 'brew install --cask'
 cask "1password"
