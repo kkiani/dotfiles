@@ -1,37 +1,37 @@
-# yabai keybindings: https://github.com/koekeishiya/yabai/wiki/Commands
-# # move focused window to next space
+### yabai keybindings: https://github.com/koekeishiya/yabai/wiki/Commands ###########
+# move focused window to next space
 alt - k : ~/.dotfiles/scripts/yabai-window-next-space
 alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
 
-# # move focused window to next display
+# move focused window to next display
 alt - l : yabai -m window --display next
 alt - h : yabai -m window --display prev
 
-# # mirror tree y-axis
+# mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis
 
-# # mirror tree x-axis
+# mirror tree x-axis
 alt - x : yabai -m space --mirror x-axis
 
-# # making window native full-screen.
+# making window native full-screen.
 alt - f : yabai -m window --toggle native-fullscreen
 
-# # cycle through windows
+# cycle through windows
 alt - w : yabai -m window --focus next || yabai -m window --focus first
 
-# # toggle floating window
+# toggle floating window
 alt - d : yabai -m window --toggle float
 
-# # foucs next monitor
+# foucs next monitor
 alt - m : yabai -m display --focus next || yabai -m display --focus prev
 
-# # move window to left/right side of the space
+# move window to left/right side of the space
 alt + ctrl - k : yabai -m window --warp east
 alt + ctrl - j : yabai -m window --warp west
 
-# system keybindings
-# # screen capture and copy to clipboard.
+#### system keybindings ##########################
+# screen capture and copy to clipboard.
 cmd + shift - 3 : screencapture -ic
 
-# # togle system mic mute.
+# togle system mic mute.
 cmd + shift - m : ~/.dotfiles/scripts/system-mic-mute.scpt
