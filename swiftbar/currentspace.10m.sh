@@ -1,2 +1,3 @@
 current_space=$(yabai -m query --spaces --space | jq ".index")
-echo "$current_space / 4"
+number_of_spaces=$(yabai -m query --spaces | jq length)
+echo "$current_space / $number_of_spaces"
