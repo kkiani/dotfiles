@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts" 
 tap "koekeishiya/formulae"
 
 # 'brew install'
@@ -44,3 +45,4 @@ cask "microsoft-edge"
 cask "whatsapp"
 cask "sf-symbols"
 cask "hiddenbar"
+cask "font-lexend"
