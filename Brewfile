@@ -26,6 +26,7 @@ brew "koekeishiya/formulae/yabai"
 brew "lunchy"
 brew "tectonic"
 brew "pandoc"
+brew "terraform"
 
 # 'brew install --cask'
 cask "1password"
