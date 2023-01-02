@@ -121,3 +121,21 @@ function awslogout() {
     killall -9 aws-vault
     aws-vault clear
 }
+
+# cd bookmarks
+function cdb() {
+    local BOOKMARK_STACK=~/.cdb_bookmarks
+
+    if [ "$1" = "-p" -o "$1" = "--push" ]
+    then
+        echo -e "$(pwd)" >> $BOOKMARK_STACK
+    elif [ "$1" = "-e" -o "$1" = "--edit" ]
+    then
+        $EDITOR $BOOKMARK_STACK
+    elif [ -z "$1" ]
+    then
+        cd $(cat "$BOOKMARK_STACK" | fzf)
+    else
+        echo "Error: option $1 does not exist"
+    fi
+}
