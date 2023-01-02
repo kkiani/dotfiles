@@ -139,3 +139,18 @@ function cdb() {
         echo "Error: option $1 does not exist"
     fi
 }
+
+function bundle() {
+    if [ "$1" = "-e" -o "$1" = "--edit" ]; then
+        $EDITOR ~/.dotfiles/Brewfile
+    elif [ "$1" = "-i" -o "$1" = "--only-install" ]; then
+        brew bundle --file ~/.dotfiles/Brewfile
+    elif [ "$1" = "-u" -o "$1" = "--only-uninstall" ]; then
+        brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
+    elif [ -z "$1" ]; then
+        brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
+        brew bundle --file ~/.dotfiles/Brewfile
+    else
+        echo "Error: option $1 does not exist"
+    fi
+}
