@@ -9,6 +9,7 @@ tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
 
 # 'brew install'
+brew "git"
 brew "asdf"
 brew "awscli"
 brew "bat"
