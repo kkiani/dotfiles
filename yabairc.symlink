@@ -58,4 +58,8 @@ yabai -m rule --add app="Stats" sticky=on layer=above manage=off
 yabai -m rule --add app="System Settings" sticky=on layer=above manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 
+
+# updating the space status
+open 'swiftbar://refreshplugin?name=currentspace' -g
+
 echo "yabai configuration loaded.."
