@@ -32,6 +32,7 @@ brew "terraform"
 
 # 'brew install --cask'
 cask "1password"
+cask "1password-cli"
 cask "alt-tab"
 cask "aws-vault"
 cask "docker"
