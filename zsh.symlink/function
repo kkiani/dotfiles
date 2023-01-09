@@ -134,7 +134,7 @@ function cdb() {
         $EDITOR $BOOKMARK_STACK
     elif [ -z "$1" ]
     then
-        cd $(cat "$BOOKMARK_STACK" | fzf)
+        cd "$(cat "$BOOKMARK_STACK" | fzf)"
     else
         echo "Error: option $1 does not exist"
     fi
