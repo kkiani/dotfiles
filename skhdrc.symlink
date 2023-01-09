@@ -29,6 +29,18 @@ alt - m : yabai -m display --focus next || yabai -m display --focus prev
 alt + ctrl - k : yabai -m window --warp east
 alt + ctrl - j : yabai -m window --warp west
 
+# defining motion mode 
+:: default : echo "default" > /tmp/keystat.txt && open 'swiftbar://refreshplugin?name=keymode' -g
+:: motion : echo "motion" > /tmp/keystat.txt && open 'swiftbar://refreshplugin?name=keymode' -g
+
+cmd + shift - e ; motion
+motion < cmd + shift - e ; default
+
+motion < j : skhd -k "down"
+motion < k : skhd -k "up"
+motion < h : skhd -k "left"
+motion < l : skhd -k "right"
+
 #### system keybindings ##########################
 # screen capture and copy to clipboard.
 cmd + shift - 3 : screencapture -ic
