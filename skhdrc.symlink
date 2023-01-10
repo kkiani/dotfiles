@@ -47,3 +47,6 @@ cmd + shift - 3 : screencapture -ic
 
 # togle system mic mute.
 cmd + shift - m : ~/.dotfiles/scripts/system-mic-mute.scpt
+
+# paste and match styling
+cmd + shift - v : skhd -k "cmd + shift + alt - v"
