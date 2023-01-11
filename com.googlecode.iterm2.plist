@@ -669,6 +669,8 @@
 				<key>Red Component</key>
 				<real>0.90980392694473267</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
