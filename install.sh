@@ -45,6 +45,8 @@ heading "[symlinks] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/espanso" "$HOME/Library/Application Support/espanso"
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
 
+# installing SpaceVim
+curl -sLf https://spacevim.org/install.sh | bash
 
 # vim -c ':call coc#util#install()'
 
