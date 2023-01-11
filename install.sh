@@ -10,7 +10,13 @@ function warning() {
 
 SELF_PATH="$( cd "$( dirname "$0" )" && pwd )" # Path to the directory containing this script
 
-# Create symlinks
+# instaling brew
+brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# intsalling packages from brew
+brew bundle --file ~/.dotfiles/Brewfile
+
+# create symlinks
 heading "[symlinks] insstalling symbol links..."
 for file in `find $SELF_PATH -maxdepth 1 -name \*.symlink`; do
     src_file=`basename "$file"`
@@ -22,7 +28,7 @@ for file in `find $SELF_PATH -maxdepth 1 -name \*.symlink`; do
     fi
 done
 
-# Install launchd services
+# install launchd services
 heading "[launchd] installing launcd services..."
 for file in `find $SELF_PATH/services -maxdepth 1 -name \*.plist`; do
     file_name=$(basename $file)
