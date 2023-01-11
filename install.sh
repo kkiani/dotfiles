@@ -40,6 +40,12 @@ for file in `find $SELF_PATH/services -maxdepth 1 -name \*.plist`; do
     fi
 done
 
+# installing espanso configs from icloud drive
+heading "[symlinks] installing icloud drive symlinks..."
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/espanso" "$HOME/Library/Application Support/espanso"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
+
+
 # vim -c ':call coc#util#install()'
 
 # echo "Updating termcap database..."
