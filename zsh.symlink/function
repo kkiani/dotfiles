@@ -126,14 +126,13 @@ function awslogout() {
 function cdb() {
     local BOOKMARK_STACK=~/.cdb_bookmarks
 
-    if [ "$1" = "-p" -o "$1" = "--push" ]
-    then
-        echo -e "$(pwd)" >> $BOOKMARK_STACK
-    elif [ "$1" = "-e" -o "$1" = "--edit" ]
-    then
+    if [ "$1" = "-p" -o "$1" = "--push" ]; then
+        grep -q "^$(pwd)$" "$BOOKMARK_STACK" || echo "$(pwd)" >> $BOOKMARK_STACK
+    elif [ "$1" = "-e" -o "$1" = "--edit" ]; then
         $EDITOR $BOOKMARK_STACK
-    elif [ -z "$1" ]
-    then
+    elif [ "$1" = "-d" -o "$1" = "--delete" ]; then
+        grep -v "^$(cat "$BOOKMARK_STACK" | fzf)$" "$BOOKMARK_STACK" > "$BOOKMARK_STACK.tmp" && mv "$BOOKMARK_STACK.tmp" "$BOOKMARK_STACK"
+    elif [ -z "$1" ]; then
         cd "$(cat "$BOOKMARK_STACK" | fzf)"
     else
         echo "Error: option $1 does not exist"
