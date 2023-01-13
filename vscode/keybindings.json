@@ -379,5 +379,9 @@
         "command": "vscode-neovim.send",
         "key": "cmd+1",
         "args": ":! "
+    },
+    {
+        "key": "cmd+9",
+        "command": "workbench.action.togglePanel"
     }
 ]
