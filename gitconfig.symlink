@@ -6,7 +6,7 @@
     path = ~/.gitconfig.datachef
 
 [core]
-	editor = vim
+	editor = "code --wait"
 	hooksPath = /Users/kiarash/.config/git/hooks
 
 [color "branch"]
