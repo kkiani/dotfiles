@@ -277,10 +277,6 @@
         "when": "viewContainer.workbench.view.explorer.enabled"
     },
     {
-        "key": "cmd+0",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
         "key": "cmd+b",
         "command": "-workbench.action.tasks.build"
     },
@@ -301,21 +297,6 @@
         "key": "shift+cmd+b",
         "command": "-workbench.action.tasks.build",
         "when": "taskCommandsRegistered"
-    },
-    {
-        "key": "cmd+j",
-        "command": "workbench.action.focusSideBar",
-        "when": "!terminalFocus|!sideBarFocus"
-    },
-    {
-        "key": "cmd+j",
-        "command": "workbench.action.focusPanel",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "cmd+j",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "panelFocus"
     },
     {
         "key": "cmd+shift+f",
@@ -380,8 +361,46 @@
         "key": "cmd+1",
         "args": ":! "
     },
+    // move focus
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.focusPanel",
+        "when": "panelVisible && editorFocus"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "panelVisible && !editorFocus"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.focusSideBar",
+        "when": "sideBarVisible && editorFocus"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarVisible && !editorFocus"
+    },
+    // toggle panels visibility
+    {
+        "key": "cmd+0",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "workbench.action.closePanel",
+                "workbench.action.toggleSidebarVisibility",
+            ]
+        }
+    },
     {
         "key": "cmd+9",
-        "command": "workbench.action.togglePanel"
-    }
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "workbench.action.closeSidebar",
+                "workbench.action.togglePanel",
+            ]
+        }
+    },
 ]
