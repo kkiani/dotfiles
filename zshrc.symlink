@@ -10,5 +10,9 @@ done
 # setting up asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
 
+# setting vim mode
+bindkey -v
+bindkey -v '^?' backward-delete-char
+
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
