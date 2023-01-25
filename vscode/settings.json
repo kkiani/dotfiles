@@ -141,15 +141,16 @@
     "security.workspace.trust.untrustedFiles": "newWindow",
     "editor.lineNumbers": "relative",
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
         "**/__pycache__": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
         "**/.mypy_cache": true,
-        "**/node_modules": true
+        "**/.svn": true,
+        "**/.venv": true,
+        "**/CVS": true,
+        "**/node_modules": true,
+        "**/Thumbs.db": true
     },
     "editor.formatOnSave": true,
     "files.insertFinalNewline": true,
