@@ -153,3 +153,12 @@ function bundle() {
         echo "Error: option $1 does not exist"
     fi
 }
+
+# adding default arg for source command
+function activate() {
+    if [ -z "$1"]; then
+        source .venv/bin/activate
+    else
+        source "$@"
+    fi
+}
