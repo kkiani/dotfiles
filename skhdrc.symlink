@@ -58,6 +58,7 @@ cmd - p [
 cmd - o [
     "Slack": skhd -k "cmd - k"
     "Safari": skhd -k "cmd - l"
+    "Finder": skhd -k "cmd + shift - g"
 ]
 
 cmd + shift - a [
