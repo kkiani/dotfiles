@@ -50,4 +50,8 @@ ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/
 
 # installing SpaceVim
 heading "[vim] installing SpaceVim..."
-curl -sLf https://spacevim.org/install.sh | bash
+if [ -d "~/.SpaceVim/" ]; then
+    warning "SpaceVim already isntalled; skipping it..."
+else
+    curl -sLf https://spacevim.org/install.sh | bash
+fi
