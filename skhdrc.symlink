@@ -3,6 +3,10 @@
 alt - k : ~/.dotfiles/scripts/yabai-window-next-space
 alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
 
+# moving between spaces
+alt + shift - k : yabai -m space --focus next || yabai -m space --focus first
+alt + shift - j : yabai -m space --focus prev || yabai -m space --focus last
+
 # move focused window to next display
 alt - l : yabai -m window --display next
 alt - h : yabai -m window --display prev
