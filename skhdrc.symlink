@@ -1,21 +1,35 @@
-### yabai keybindings: https://github.com/koekeishiya/yabai/wiki/Commands ###########
-# move focused window to next space
-alt - k : ~/.dotfiles/scripts/yabai-window-next-space
-alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
+################################################################################
+### yabai keybindings   :   https://github.com/koekeishiya/yabai/wiki/Commands 
+### skhd modifiers      :   https://github.com/koekeishiya/skhd/issues/1        
+### skhd docs           :   https://github.com/koekeishiya/skhd
+################################################################################
 
+#### space management ###########################
 # moving between spaces
 alt + shift - k : yabai -m space --focus next || yabai -m space --focus first
 alt + shift - j : yabai -m space --focus prev || yabai -m space --focus last
-
-# move focused window to next display
-alt - l : yabai -m window --display next
-alt - h : yabai -m window --display prev
 
 # mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis
 
 # mirror tree x-axis
 alt - x : yabai -m space --mirror x-axis
+
+alt - return : yabai -m space --toggle mission-control
+alt + shift - return : yabai -m space --toggle show-desktop
+
+#### display managment ###########################
+# move focus between displays
+alt - d : yabai -m display --focus next || yabai -m display --focus prev
+
+#### window managment ###########################
+# move focused window to next space
+alt - k : ~/.dotfiles/scripts/yabai-window-next-space
+alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
+
+# move focused window to next display
+alt - l : yabai -m window --display next
+alt - h : yabai -m window --display prev
 
 # making window native full-screen.
 alt - f : yabai -m window --toggle native-fullscreen
@@ -24,7 +38,7 @@ alt - f : yabai -m window --toggle native-fullscreen
 alt - w : yabai -m window --focus next || yabai -m window --focus first
 
 # toggle floating window
-alt - d : yabai -m window --toggle float
+alt + shift - d : yabai -m window --toggle float
 
 # foucs next monitor
 alt - m : yabai -m display --focus next || yabai -m display --focus prev
@@ -33,6 +47,7 @@ alt - m : yabai -m display --focus next || yabai -m display --focus prev
 alt + ctrl - k : yabai -m window --warp east
 alt + ctrl - j : yabai -m window --warp west
 
+alt - w : yabai -m window --toggle expose
 
 #### system keybindings ##########################
 # screen capture and copy to clipboard.
@@ -43,6 +58,9 @@ cmd + shift - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 
 # paste and match styling
 cmd + shift - v : skhd -k "cmd + shift + alt - v"
+
+# editing dotfiles
+cmd + shift - e : code ~/.dotfiles
 
 
 #### Remapping System Motion ####################
