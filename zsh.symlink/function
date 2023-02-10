@@ -64,20 +64,37 @@ function extract() {
 
 # Update the system and its packages.
 function update() {
-    if [ "$1" = "--hard" ]
-    then
-        heading "[homebrew] Updating system packages..."
-        brew update && brew upgrade --greedy && brew cleanup
-
-        heading "[system] updating macOS..."
-        sudo softwareupdate -iR -a
-    elif [ -z "$1" ]
-    then
-        heading "[homebrew] Updating system packages..."
-        brew update && brew upgrade --greedy && brew cleanup
-    else
-        echo "Error: option $1 does not exist"
-    fi
+    case "$1" in 
+        -s | --system)
+            heading "[system] updating macOS..."
+            sudo softwareupdate -iR -a
+            ;;
+        -b | --brew)
+            heading "[homebrew] Updating system packages..."
+            brew update && brew upgrade --greedy && brew cleanup
+            ;;
+        -a | --all)
+            heading "[homebrew] Updating system packages..."
+            brew update && brew upgrade --greedy && brew cleanup
+        
+            heading "[system] updating macOS..."
+            sudo softwareupdate -iR -a
+            ;;
+        -h | --help)
+            echo "Usage: $0 [option...]" >&2
+            echo
+            echo "   -s, --system           update macOS"
+            echo "   -b, --brew             update homebrew and intalled packages"
+            echo "   -a, --all              update homebrew, installed packages, and macOS"
+            echo
+            ;;
+        -*)
+            echo "Error: option $1 does not exist"
+            ;;
+        *)
+            break
+            ;;
+    esac
 }
 
 # For uninstalling apps from outside of AppStore and Homebrew.
@@ -140,18 +157,32 @@ function cdb() {
 }
 
 function bundle() {
-    if [ "$1" = "-e" -o "$1" = "--edit" ]; then
-        $EDITOR ~/.dotfiles/Brewfile
-    elif [ "$1" = "-i" -o "$1" = "--only-install" ]; then
-        brew bundle --file ~/.dotfiles/Brewfile
-    elif [ "$1" = "-u" -o "$1" = "--only-uninstall" ]; then
-        brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
-    elif [ -z "$1" ]; then
-        brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
-        brew bundle --file ~/.dotfiles/Brewfile
-    else
-        echo "Error: option $1 does not exist"
-    fi
+    case "$1" in 
+        -e | --edit)
+            $EDITOR ~/.dotfiles/Brewfile
+            ;;
+        -i | --install-only)
+            brew bundle --file ~/.dotfiles/Brewfile
+            ;;
+        -u | --uninstall-only)
+            brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
+            ;;
+        -h | --help)
+            echo "Usage: $0 [option...]" >&2
+            echo
+            echo "   -e, --edit                 edit the Brewfile"
+            echo "   -i, --install-only         only install new packages"
+            echo "   -a, --uninstall--only      only uninstall removed packages"
+            echo
+            ;;
+        -*)
+            echo "Error: option $1 does not exist"
+            ;;
+        *)
+            brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
+            brew bundle --file ~/.dotfiles/Brewfile
+            ;;
+    esac
 }
 
 # adding default arg for source command
