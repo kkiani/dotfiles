@@ -30,6 +30,7 @@ brew "koekeishiya/formulae/yabai"
 brew "tectonic"
 brew "pandoc"
 brew "terraform"
+brew "git-filter-repo"
 brew "diceware"
 
 # 'brew install --cask'
