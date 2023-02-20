@@ -82,7 +82,7 @@ function update() {
             ;;
         -h | --help)
             echo "Usage: $0 [option...]" >&2
-            echo
+            echo "Options:"
             echo "   -s, --system           update macOS"
             echo "   -b, --brew             update homebrew and intalled packages"
             echo "   -a, --all              update homebrew, installed packages, and macOS"
@@ -122,15 +122,24 @@ function openrepo() {
 function awslogin() {
     local profile=$(aws configure list-profiles | fzf)
 
-    if [ "$1" = "-w" -o "$1" = "--web" ]
-    then
-        aws-vault login "$profile" 
-    elif [ -z "$1" ]
-    then
-        aws-vault exec "$profile" --prompt=osascript --server
-    else
-        echo "Error: option $1 does not exist"
-    fi
+    case "$1" in 
+        -w | --web)
+            aws-vault login "$profile" 
+            ;;
+        -s | --server | *)
+            aws-vault exec "$profile" --prompt=osascript --server
+            ;;
+        -h | --help)
+            echo "Usage: $0 [option...]" >&2
+            echo "Options:"
+            echo "   -w, --web          login into web console"
+            echo "   -s, --server       login using server mode"
+            echo
+            ;;
+        -*)
+            echo "Error: option $1 does not exist"
+            ;;
+    esac
 }
 
 # kill the session created by aws-vault
@@ -169,7 +178,7 @@ function bundle() {
             ;;
         -h | --help)
             echo "Usage: $0 [option...]" >&2
-            echo
+            echo "Options:"
             echo "   -e, --edit                 edit the Brewfile"
             echo "   -i, --install-only         only install new packages"
             echo "   -a, --uninstall--only      only uninstall removed packages"
