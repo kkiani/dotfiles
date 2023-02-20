@@ -30,6 +30,7 @@ brew "koekeishiya/formulae/yabai"
 brew "tectonic"
 brew "pandoc"
 brew "terraform"
+brew "diceware"
 
 # 'brew install --cask'
 cask "1password"

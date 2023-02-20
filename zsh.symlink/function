@@ -202,3 +202,8 @@ function activate() {
         source "$@"
     fi
 }
+
+# generating memorable random passwords
+function mempass() {
+    echo "$(diceware -n 2)$((1 + $RANDOM % 9999))"
+}
