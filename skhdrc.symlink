@@ -53,9 +53,6 @@ alt - w : yabai -m window --toggle expose
 # screen capture and copy to clipboard.
 cmd + shift - 3 : screencapture -ic
 
-# togle system mic mute.
-cmd + shift - m : ~/.dotfiles/scripts/system-mic-mute.scpt
-
 # paste and match styling
 cmd + shift - v : skhd -k "cmd + shift + alt - v"
 
@@ -90,8 +87,17 @@ cmd - o [
     "Safari": skhd -k "cmd - l"
     "Finder": skhd -k "cmd + shift - g"
     "Telegram": skhd -k "cmd - k"
+    "Miro": skhd -k "cmd - f"
 ]
 
 cmd + shift - a [
     "Mail": skhd -k "cmd + ctrl - a"
+]
+
+# view/hide panels
+cmd - 8 [
+    "Safari": skhd -k "shift + cmd - l"
+    "Mail": skhd -k "ctrl + cmd - s"
+    "Slack": skhd -k "cmd + shift - d"
+    "Notes": skhd -k "cmd + alt - s"
 ]
