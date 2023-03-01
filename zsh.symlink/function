@@ -181,7 +181,7 @@ function bundle() {
             echo "Options:"
             echo "   -e, --edit                 edit the Brewfile"
             echo "   -i, --install-only         only install new packages"
-            echo "   -a, --uninstall--only      only uninstall removed packages"
+            echo "   -u, --uninstall--only      only uninstall removed packages"
             echo
             ;;
         -*)
