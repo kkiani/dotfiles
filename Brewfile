@@ -32,6 +32,8 @@ brew "pandoc"
 brew "terraform"
 brew "git-filter-repo"
 brew "diceware"
+brew "gpg"
+brew "pinentry-mac"
 
 # 'brew install --cask'
 cask "1password"
