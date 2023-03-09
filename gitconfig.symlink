@@ -1,9 +1,7 @@
 [user]
-    name = kiarash kiani
-    email = kiarash@kiani.info
-
-[includeIf "gitdir:~/projects/datachef/"]
-    path = ~/.gitconfig.datachef
+    name = Kiarash Kiani
+    email = kiarash.kiani@icloud.com
+	signingkey = 0065586C63F558F1CB44D56ACF39D8A8E13569F0
 
 [core]
 	editor = "code --wait"
@@ -17,7 +15,7 @@
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
     discard = !git reset --hard HEAD && git clean -fd
-	amend = commit --amend
+	amend = commit --amend --no-edit
 	pushall = !git remote | xargs -L1 git push --all
 
 [merge]
@@ -37,3 +35,6 @@
 
 [init]
     defaultBranch = main
+    
+[commit]
+	gpgsign = true
