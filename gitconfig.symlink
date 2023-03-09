@@ -1,22 +1,22 @@
 [user]
     name = Kiarash Kiani
     email = kiarash.kiani@icloud.com
-	signingkey = 0065586C63F558F1CB44D56ACF39D8A8E13569F0
+    signingkey = 0065586C63F558F1CB44D56ACF39D8A8E13569F0
 
 [core]
-	editor = "code --wait"
-	hooksPath = /Users/kiarash/.config/git/hooks
+    editor = "code --wait"
+    hooksPath = /Users/kiarash/.config/git/hooks
 
 [color "branch"]
-  current = green
-  remote = yellow
+    current = green
+    remote = yellow
 
 [alias]
-	uncommit = reset --soft HEAD^
-	unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+    unstage = reset HEAD
     discard = !git reset --hard HEAD && git clean -fd
-	amend = commit --amend --no-edit
-	pushall = !git remote | xargs -L1 git push --all
+    amend = commit --amend --no-edit
+    pushall = !git remote | xargs -L1 git push --all
 
 [merge]
     tool = vscode
@@ -37,4 +37,4 @@
     defaultBranch = main
     
 [commit]
-	gpgsign = true
+    gpgsign = true
