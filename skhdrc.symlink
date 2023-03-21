@@ -80,6 +80,7 @@ cmd - p [
     "Slack": skhd -k "cmd - g"
     "Safari": skhd -k "cmd + shift - 0x2A"
     "Notes": skhd -k "cmd + alt - f"
+    "Arc": skhd -k "cmd - t"
 ]
 
 cmd - o [
@@ -88,6 +89,7 @@ cmd - o [
     "Finder": skhd -k "cmd + shift - g"
     "Telegram": skhd -k "cmd - k"
     "Miro": skhd -k "cmd - f"
+    "Arc": skhd -k "cmd - l"
 ]
 
 cmd + shift - a [
@@ -100,4 +102,6 @@ cmd - 8 [
     "Mail": skhd -k "ctrl + cmd - s"
     "Slack": skhd -k "cmd + shift - d"
     "Notes": skhd -k "cmd + alt - s"
+    "Arc": skhd -k "cmd - s"
+    "Reminders": skhd -k "cmd + alt - s"
 ]
