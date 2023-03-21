@@ -207,3 +207,19 @@ function activate() {
 function mempass() {
     echo "$(diceware -n 2)$((1 + $RANDOM % 9999))"
 }
+
+# sending notifications
+function notif() {
+    osascript -e "display notification \"$2\" with title \"$1\""
+}
+
+# reading .env files from current directory
+function envload() {
+    if [ ! -f .env ]; then
+        echo "Warning: no .env file exist"
+
+        return 1
+    fi
+
+    export $(grep -v '^#' .env | xargs)
+}
