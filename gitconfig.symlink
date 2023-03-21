@@ -6,6 +6,7 @@
 [core]
     editor = "code --wait"
     hooksPath = /Users/kiarash/.config/git/hooks
+	excludesFile = ~/.dotfiles/gitignore
 
 [color "branch"]
     current = green
