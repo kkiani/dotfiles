@@ -68,6 +68,9 @@ ctrl - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
 # open iterm2
 ctrl - t : open /Applications/iTerm.app
 
+# open new vscode
+ctrl - v : code -n
+
 #### Remapping System Motion ####################
 ctrl - h: skhd -k "left"
 ctrl - j: skhd -k "down"
