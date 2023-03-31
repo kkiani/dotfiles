@@ -71,6 +71,9 @@ ctrl - t : open /Applications/iTerm.app
 # open new vscode
 ctrl - v : code -n
 
+# highlight selected text to obsidian current page
+alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
+
 #### Remapping System Motion ####################
 ctrl - h: skhd -k "left"
 ctrl - j: skhd -k "down"
