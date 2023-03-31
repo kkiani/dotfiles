@@ -34,6 +34,7 @@ brew "git-filter-repo"
 brew "diceware"
 brew "gpg"
 brew "pinentry-mac"
+brew "pre-commit"
 
 # 'brew install --cask'
 cask "1password"
