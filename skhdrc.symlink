@@ -57,19 +57,19 @@ cmd + shift - 3 : screencapture -ic
 cmd + shift - v : skhd -k "cmd + shift + alt - v"
 
 # togle system mic mute.
-ctrl - m : ~/.dotfiles/scripts/system-mic-mute.scpt
+alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 
 # editing dotfiles
-ctrl - e : code ~/.dotfiles
+alt - e : code ~/.dotfiles
 
 # open obsidian quick notes
-ctrl - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
+alt - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
 
 # open iterm2
-ctrl - t : open /Applications/iTerm.app
+alt - t : open /Applications/iTerm.app
 
 # open new vscode
-ctrl - v : code -n
+alt - v : code -n
 
 # highlight selected text to obsidian current page
 alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
