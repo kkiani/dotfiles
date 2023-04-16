@@ -1,2 +1,3 @@
 Brewfile.lock.json
+packages.macos.lock.json
 **/.DS_Store

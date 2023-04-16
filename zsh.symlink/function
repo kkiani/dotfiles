@@ -168,18 +168,18 @@ function cdb() {
 function bundle() {
     case "$1" in 
         -e | --edit)
-            $EDITOR ~/.dotfiles/Brewfile
+            $EDITOR ~/.dotfiles/packages.macos
             ;;
         -i | --install-only)
-            brew bundle --file ~/.dotfiles/Brewfile
+            brew bundle --file ~/.dotfiles/packages.macos
             ;;
         -u | --uninstall-only)
-            brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
+            brew bundle --force cleanup --file ~/.dotfiles/packages.macos 
             ;;
         -h | --help)
             echo "Usage: $0 [option...]" >&2
             echo "Options:"
-            echo "   -e, --edit                 edit the Brewfile"
+            echo "   -e, --edit                 edit the packages.macos"
             echo "   -i, --install-only         only install new packages"
             echo "   -u, --uninstall--only      only uninstall removed packages"
             echo
@@ -188,8 +188,8 @@ function bundle() {
             echo "Error: option $1 does not exist"
             ;;
         *)
-            brew bundle --force cleanup --file ~/.dotfiles/Brewfile 
-            brew bundle --file ~/.dotfiles/Brewfile
+            brew bundle --force cleanup --file ~/.dotfiles/packages.macos 
+            brew bundle --file ~/.dotfiles/packages.macos
             ;;
     esac
 }
