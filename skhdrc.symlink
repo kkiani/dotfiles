@@ -60,7 +60,7 @@ cmd + shift - v : skhd -k "cmd + shift + alt - v"
 alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 
 # editing dotfiles
-alt - e : code ~/.dotfiles
+alt - e : code-insiders ~/.dotfiles
 
 # open obsidian quick notes
 alt - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
@@ -68,8 +68,8 @@ alt - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
 # open iterm2
 alt - t : open /Applications/iTerm.app
 
-# open new vscode
-alt - v : code -n
+# open new vscode-insiders
+alt - v : code-insiders -n
 
 # highlight selected text to obsidian current page
 alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
@@ -98,9 +98,14 @@ cmd - o [
     "Arc": skhd -k "cmd - l"
 ]
 
-cmd + shift - a [
+ctrl - a [
     "Mail": skhd -k "cmd + ctrl - a"
 ]
+
+ctrl - x [
+    "Mail": skhd -k "cmd - delete"
+]
+
 
 # view/hide panels
 cmd - 8 [
