@@ -47,7 +47,8 @@ alt - m : yabai -m display --focus next || yabai -m display --focus prev
 alt + ctrl - k : yabai -m window --warp east
 alt + ctrl - j : yabai -m window --warp west
 
-alt - w : yabai -m window --toggle expose
+# change layout
+alt - b : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m config --space $(yabai -m query --spaces --space | jq .index) layout bsp) else yabai -m config --space $(yabai -m query --spaces --space | jq .index) layout stack; fi
 
 #### system keybindings ##########################
 # screen capture and copy to clipboard.
