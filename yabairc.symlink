@@ -53,6 +53,7 @@ yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='Settings$' manage=off
 
 yabai -m rule --add app='^Calculator$' manage=off sticky=on layer=above
+yabai -m rule --add label="Raycast" app="^Raycast$" manage=off 
 
 yabai -m rule --add app="Stats" sticky=on layer=above manage=off
 yabai -m rule --add app="System Settings" sticky=on layer=above manage=off
