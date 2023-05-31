@@ -3,6 +3,12 @@
     email = kiarash.kiani@icloud.com
     signingkey = 0065586C63F558F1CB44D56ACF39D8A8E13569F0
 
+[includeIf "gitdir:~/projects/datachef/"]
+    path = ~/.gitconfig.datachef
+
+[includeIf "gitdir:~/projects/brenntag/"]
+    path = ~/.gitconfig.datachef
+
 [core]
     editor = "code --wait"
     hooksPath = /Users/kiarash/.config/git/hooks
