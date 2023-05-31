@@ -31,8 +31,9 @@ alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
 alt - l : yabai -m window --display next
 alt - h : yabai -m window --display prev
 
-# making window native full-screen.
-alt - f : yabai -m window --toggle native-fullscreen
+# making window full-screen.
+alt + shift - f : yabai -m window --toggle native-fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
 
 # cycle through windows
 alt - w : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.next || yabai -m window --focus stack.first); else yabai -m window --focus next || yabai -m window --focus first; fi
