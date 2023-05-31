@@ -35,7 +35,7 @@ alt - h : yabai -m window --display prev
 alt - f : yabai -m window --toggle native-fullscreen
 
 # cycle through windows
-alt - w : yabai -m window --focus next || yabai -m window --focus first
+alt - w : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.next || yabai -m window --focus stack.first); else yabai -m window --focus next || yabai -m window --focus first; fi
 
 # toggle floating window
 alt + shift - d : yabai -m window --toggle float
