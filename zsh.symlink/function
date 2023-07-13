@@ -223,3 +223,17 @@ function envload() {
 
     export $(grep -v '^#' .env | xargs)
 }
+
+# creating and opening new project in vscode
+function newpr() {
+    mkd $@
+    code -r $@
+}
+
+function code() {
+    if [ -z "$1" ]; then
+        command code -r $(find ~/projects -maxdepth 2 -type d | fzf)
+    else
+        command code $@
+    fi
+}

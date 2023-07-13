@@ -39,6 +39,7 @@ brew "pre-commit"
 brew "pinentry-touchid"
 brew "pdm"
 brew "aws-sam-cli"
+brew "fish"
 
 # 'brew install --cask'
 cask "1password"

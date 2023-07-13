@@ -16,6 +16,7 @@ alias p='pbpaste'
 alias top='btop'
 alias awsv='aws-vault'
 alias cl='clear'
+
 alias e='$EDITOR'
 
 alias gs='git status'
