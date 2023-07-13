@@ -8,6 +8,7 @@ tap "homebrew/services"
 tap "homebrew/cask-fonts" 
 tap "koekeishiya/formulae"
 tap "homebrew/cask-versions"
+tap "jorgelbg/tap"
 
 # 'brew install'
 brew "git"
@@ -35,6 +36,7 @@ brew "diceware"
 brew "gpg"
 brew "pinentry-mac"
 brew "pre-commit"
+brew "pinentry-touchid"
 brew "pdm"
 brew "aws-sam-cli"
 
