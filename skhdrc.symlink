@@ -84,6 +84,13 @@ ctrl - l: skhd -k "right"
 
 
 #### Application Specific Bindings ###########################
+# mute mirophone
+cmd + shift - m [
+    "Slack": skhd -k "cmd + shift - space"
+    # teams using this keybinding by default
+]
+
+# open command palette
 cmd - p [
     "Slack": skhd -k "cmd - g"
     "Safari": skhd -k "cmd + shift - 0x2A"
