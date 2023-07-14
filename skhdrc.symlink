@@ -36,7 +36,7 @@ alt + shift - f : yabai -m window --toggle native-fullscreen
 alt - f : yabai -m window --toggle zoom-fullscreen
 
 # cycle through windows
-alt - w : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.next || yabai -m window --focus stack.first); else yabai -m window --focus next || yabai -m window --focus first; fi
+alt - w : fish ~/.dotfiles/scripts/cycle_window.fish
 
 # toggle floating window
 alt + shift - d : yabai -m window --toggle float
@@ -49,7 +49,7 @@ alt + ctrl - k : yabai -m window --warp east
 alt + ctrl - j : yabai -m window --warp west
 
 # change layout
-alt - b : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m config --space $(yabai -m query --spaces --space | jq .index) layout bsp) else yabai -m config --space $(yabai -m query --spaces --space | jq .index) layout stack; fi
+alt - b : fish ~/.dotfiles/scripts/change_layout.fish
 
 #### system keybindings ##########################
 # screen capture and copy to clipboard.
