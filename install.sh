@@ -1,4 +1,6 @@
 #!/bin/zsh
+#
+# the reason for this script to be bash and not fish is that bash or zsh is available by default on macos
 
 function heading() { 
     echo -e "\e[1m\e[34m==>\e[39m $@\e[0m" 
