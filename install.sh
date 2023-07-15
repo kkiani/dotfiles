@@ -47,11 +47,3 @@ done
 heading "[symlinks] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/espanso" "$HOME/Library/Application Support/espanso"
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
-
-# installing SpaceVim
-heading "[vim] installing SpaceVim..."
-if [ -d "~/.SpaceVim/" ]; then
-    warning "SpaceVim already isntalled; skipping it..."
-else
-    curl -sLf https://spacevim.org/install.sh | bash
-fi
