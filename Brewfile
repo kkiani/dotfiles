@@ -41,6 +41,7 @@ brew "pdm"
 brew "aws-sam-cli"
 brew "fish"
 brew "starship"
+brew "zoxide"
 
 # 'brew install --cask'
 cask "1password"

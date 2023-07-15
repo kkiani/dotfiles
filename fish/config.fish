@@ -6,3 +6,4 @@ end
 source ~/.config/fish/alias.fish
 source ~/.config/fish/abbr.fish
 source /usr/local/opt/asdf/libexec/asdf.fish
+zoxide init fish | source
