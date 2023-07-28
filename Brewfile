@@ -42,6 +42,7 @@ brew "aws-sam-cli"
 brew "fish"
 brew "starship"
 brew "zoxide"
+brew "plantuml"
 
 # 'brew install --cask'
 cask "1password"
