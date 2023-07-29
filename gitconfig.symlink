@@ -10,7 +10,7 @@
     path = ~/.gitconfig.datachef
 
 [core]
-    editor = "code --wait"
+    editor = "nvim"
 	excludesFile = ~/.dotfiles/gitignore
 
 [color "branch"]
@@ -25,16 +25,10 @@
     pushall = !git remote | xargs -L1 git push --all
 
 [merge]
-    tool = vscode
-
-[mergetool "vscode"]
-    cmd = code --new-window --wait $MERGED
+    tool = nvim
 
 [diff]
-    tool = vscode
-
-[difftool "vscode"]
-    cmd = code --new-window --wait --diff $LOCAL $REMOTE
+    tool = nvim
 
 [push]
     autoSetupRemote = true
