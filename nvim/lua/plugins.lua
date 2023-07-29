@@ -22,6 +22,6 @@ return require('packer').startup(function(use)
     }
     use { 'tpope/vim-fugitive' }
     use { 'mhinz/vim-signify' }
-    use { 'zivyangll/git-blame.vim' }
+    use { 'f-person/git-blame.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
 end)

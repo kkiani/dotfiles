@@ -79,10 +79,10 @@ _G.packer_plugins = {
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  ["git-blame.vim"] = {
+  ["git-blame.nvim"] = {
     loaded = true,
-    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/git-blame.vim",
-    url = "https://github.com/zivyangll/git-blame.vim"
+    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
   },
   gruvbox = {
     loaded = true,
