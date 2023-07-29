@@ -1,5 +1,5 @@
-alias vi='vim'
-alias v="vim"
+alias vi='nvim'
+alias v="nvim"
 alias reload='. ~/.config/fish/config.fish'
 alias bat="bat --pager='less -r'"
 alias pg="ping -c 5 google.com | less"
