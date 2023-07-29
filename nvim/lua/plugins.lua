@@ -8,7 +8,11 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use { 'morhetz/gruvbox' }
-    use { 'vim-airline/vim-airline' }
+    -- use { 'vim-airline/vim-airline' }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
     use {
@@ -19,4 +23,5 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-fugitive' }
     use { 'mhinz/vim-signify' }
     use { 'zivyangll/git-blame.vim' }
+    use { 'nvim-tree/nvim-web-devicons' }
 end)
