@@ -42,6 +42,8 @@ brew "aws-sam-cli"
 brew "fish"
 brew "starship"
 brew "zoxide"
+brew "ripgrep"
+brew "terraform-lsp"
 brew "plantuml"
 
 # 'brew install --cask'
