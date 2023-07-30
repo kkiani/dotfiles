@@ -28,6 +28,7 @@ vim.api.nvim_create_user_command("GitCheckout", function()
         Utils.exec({ ":!git", "checkout", selection[1] })
     end)
 end, {})
+vim.api.nvim_create_user_command("GitGraph", "tab Git log --graph --abbrev-commit", {})
 
 
 -- CDK
