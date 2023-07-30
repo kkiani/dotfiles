@@ -62,7 +62,7 @@ cmd + shift - v : skhd -k "cmd + shift + alt - v"
 alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 
 # editing dotfiles
-alt - e : code ~/.dotfiles
+alt - e : nvim ~/.dotfiles
 
 # open obsidian quick notes
 alt - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
