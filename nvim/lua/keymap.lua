@@ -1,5 +1,4 @@
 local builtin = require('telescope.builtin')
-local utils = require('telescope.utils')
 
 -- setting the leader key
 vim.g.mapleader = " "
@@ -35,4 +34,5 @@ vim.keymap.set("n", "gi", "<Plug>(coc-implementation)")
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
-vim.api.nvim_command('inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"')
+vim.api.nvim_command(
+    'inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>"')
