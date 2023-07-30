@@ -29,5 +29,8 @@ vim.keymap.set("n", "gp", "\"+p")
 -- GoTo code navigation
 -- check the lsp-zero plugin files
 
+-- switching windows
+vim.keymap.set("n", "<tab>", "<c-W>w")
+
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
