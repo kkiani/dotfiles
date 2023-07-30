@@ -7,8 +7,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Other packages
     use { 'morhetz/gruvbox' }
-    -- use { 'vim-airline/vim-airline' }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -24,4 +24,5 @@ return require('packer').startup(function(use)
     use { 'mhinz/vim-signify' }
     use { 'f-person/git-blame.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
+    use { "lukas-reineke/indent-blankline.nvim" }
 end)
