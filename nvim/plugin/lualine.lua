@@ -1,3 +1,5 @@
+-- https://github.com/lukas-reineke/indent-blankline.nvim
+
 local git_blame = require('gitblame')
 
 require('lualine').setup {
