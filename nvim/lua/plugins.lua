@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
+    --use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
@@ -25,4 +25,19 @@ return require('packer').startup(function(use)
     use { 'f-person/git-blame.nvim' }
     use { 'nvim-tree/nvim-web-devicons' }
     use { "lukas-reineke/indent-blankline.nvim" }
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {'williamboman/mason.nvim'},           -- Optional
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
+          }
+        }
 end)

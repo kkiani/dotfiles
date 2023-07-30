@@ -45,6 +45,7 @@ brew "zoxide"
 brew "ripgrep"
 brew "terraform-lsp"
 brew "plantuml"
+brew "pyright"
 
 # 'brew install --cask'
 cask "1password"

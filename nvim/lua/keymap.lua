@@ -27,12 +27,9 @@ vim.keymap.set("n", "gy", "\"+y")
 vim.keymap.set("n", "gp", "\"+p")
 
 -- GoTo code navigation
-vim.keymap.set("n", "gd", "<Plug>(coc-definition)")
-vim.keymap.set("n", "gr", "<Plug>(coc-references)")
-vim.keymap.set("n", "gi", "<Plug>(coc-implementation)")
+--vim.keymap.set("n", "gd", "<Plug>(coc-definition)")
+--vim.keymap.set("n", "gr", "<Plug>(coc-references)")
+--vim.keymap.set("n", "gi", "<Plug>(coc-implementation)")
 
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
-
-vim.api.nvim_command(
-    'inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>"')
