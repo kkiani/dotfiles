@@ -1,6 +1,6 @@
-require('keymap')
-require('plugins')
-require('commands')
+require("keymap")
+require("plugins")
+require("commands")
 
 -- general settings
 vim.opt.number = true
@@ -18,7 +18,7 @@ vim.opt.scrolloff = 8
 vim.opt.cursorline = true
 vim.opt.so = 999
 
-vim.api.nvim_command('set nowrap')
+vim.api.nvim_command("set nowrap")
 vim.opt.textwidth = 0
 vim.opt.wrapmargin = 0
 
@@ -29,11 +29,19 @@ vim.g.gitblame_display_virtual_text = 0
 -- setting up theme
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
-vim.cmd.highlight('clear SignColumn')
-
+vim.cmd.highlight("clear SignColumn")
 
 if vim.fn.exists("g:vscode") ~= 0 then
-    vim.keymap.set('n', 'gr', VSCodeNotify('editor.action.rename'))
+	vim.keymap.set("n", "gr", VSCodeNotify("editor.action.rename"))
 else
-    -- ordinary Neovim
+	-- ordinary Neovim
 end
+
+-- open explore if no file passed
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		if vim.fn.argc() == 0 then
+			vim.cmd(":silent! Explore")
+		end
+	end,
+})
