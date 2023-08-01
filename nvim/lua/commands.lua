@@ -35,6 +35,7 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 	end)
 end, {})
 vim.api.nvim_create_user_command("GitGraph", "tab Git log --graph --abbrev-commit", {})
+vim.api.nvim_create_user_command("GitDiff", "Gvdiffsplit", {})
 
 -- CDK
 vim.api.nvim_create_user_command("CDKSynth", ":!cdk synth", {})
