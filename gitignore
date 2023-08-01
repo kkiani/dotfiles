@@ -2,3 +2,4 @@
 **/.pdm.toml
 **/.vim
 **/.DS_Store
+**/.mypy.ini
