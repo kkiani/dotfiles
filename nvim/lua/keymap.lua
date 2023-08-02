@@ -34,3 +34,6 @@ vim.keymap.set("n", "<tab>", "<c-W>w")
 
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
+
+-- quick exit
+vim.keymap.set("n", "qq", ":q<CR>")
