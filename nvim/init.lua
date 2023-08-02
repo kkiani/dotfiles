@@ -1,6 +1,7 @@
 require("keymap")
 require("plugins")
 require("commands")
+require("tasks")
 
 -- general settings
 vim.opt.number = true
