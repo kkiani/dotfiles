@@ -39,5 +39,5 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>")
 vim.keymap.set("n", "qq", ":q<CR>")
 
 -- go back and forward with buffers
-vim.keymap.set("n", "{", "<c-6>")
-vim.keymap.set("n", "}", "<c-^>")
+vim.keymap.set("n", "<leader>[", "<c-6>")
+vim.keymap.set("n", "<leader>]", "<c-^>")
