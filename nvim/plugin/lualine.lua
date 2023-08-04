@@ -3,7 +3,7 @@
 local git_blame = require("gitblame")
 
 local function curret_buffer_path()
-	return vim.fn.expand("%")
+	return vim.fn.expand("%:.")
 end
 
 local function current_buffer_close()
