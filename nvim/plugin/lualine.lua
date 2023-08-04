@@ -1,6 +1,14 @@
--- https://github.com/lukas-reineke/indent-blankline.nvim
+-- https://github.com/nvim-lualine/lualine.nvim
 
 local git_blame = require("gitblame")
+
+local function curret_buffer_path()
+	return vim.fn.expand("%")
+end
+
+local function current_buffer_close()
+	vim.cmd(":q")
+end
 
 require("lualine").setup({
 	options = {
@@ -26,7 +34,7 @@ require("lualine").setup({
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = {},
 		lualine_x = { { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available } },
-		lualine_y = { "progress" },
+		lualine_y = { "encoding", "fileformat", "filetype" },
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
@@ -55,9 +63,17 @@ require("lualine").setup({
 		},
 		lualine_b = {},
 		lualine_c = {},
-		lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_y = {},
-		lualine_z = {},
+		lualine_x = {},
+		lualine_y = { curret_buffer_path },
+		lualine_z = {
+			{
+				"close",
+				fmt = function()
+					return "󰅖"
+				end,
+				on_click = current_buffer_close,
+			},
+		},
 	},
 	winbar = {},
 	inactive_winbar = {},
