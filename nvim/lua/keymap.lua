@@ -4,6 +4,7 @@ local builtin = require("telescope.builtin")
 vim.g.mapleader = " "
 
 -- show command palette
+vim.keymap.set("n", "<leader>t", ":TasksRun<CR>")
 vim.keymap.set("n", "<leader>p", function()
 	builtin.commands()
 end)
@@ -38,6 +39,7 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
 -- quick exit
 vim.keymap.set("n", "qq", ":q<CR>")
+vim.keymap.set("n", "<leader><Esc>", ":only<CR>")
 
 -- go back and forward with buffers
 vim.keymap.set("n", "<leader>[", "<c-6>")
