@@ -12,6 +12,7 @@ require("telescope").setup({
 			"node_modules",
 			".venv",
 			".vscode",
+			"^./.git/",
 		},
 	},
 })
