@@ -25,7 +25,10 @@ vim.opt.wrapmargin = 0
 
 vim.opt.updatetime = 100
 
+-- gitblame configs
 vim.g.gitblame_display_virtual_text = 0
+vim.g.gitblame_date_format = "%r"
+vim.g.gitblame_message_template = "<author> | <date>"
 
 -- setting up theme
 vim.o.background = "dark" -- or "light" for light mode
