@@ -11,7 +11,7 @@ end)
 
 -- opening explorer
 vim.keymap.set("n", "<leader>e", ":Explore<CR>")
-vim.keymap.set("n", "<leader>o", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>o", ":Telescope find_files hidden=true<CR>")
 
 -- find and replace
 vim.keymap.set("n", "<leader>F", ":%s/")
