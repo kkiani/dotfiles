@@ -29,7 +29,8 @@ vim.g.gitblame_display_virtual_text = 0
 
 -- setting up theme
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.g.gruvbox_material_sign_column_background = nil
+vim.cmd([[colorscheme gruvbox-material]])
 vim.cmd.highlight("clear SignColumn")
 
 if vim.fn.exists("g:vscode") ~= 0 then

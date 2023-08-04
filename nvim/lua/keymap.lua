@@ -16,7 +16,8 @@ vim.keymap.set("n", "<leader>f", function()
 end)
 
 -- git commands
-vim.keymap.set("n", "<leader>g", function()
+vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
+vim.keymap.set("n", "<leader>gg", function()
 	builtin.git_status()
 end)
 
