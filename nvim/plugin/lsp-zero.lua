@@ -11,6 +11,28 @@ require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
 
+-- auto completion
+require("lsp-zero").extend_cmp()
+
+local cmp = require("cmp")
+
+cmp.setup({
+	sources = {
+		{ name = "nvim_lsp" },
+	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
+	mapping = {
+		-- `Enter` key to confirm completion
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+
+		-- Ctrl+Space to trigger completion menu
+		["<C-Space>"] = cmp.mapping.complete(),
+	},
+})
+
 -- set formatter
 lsp.on_attach(function(client, bufnr)
 	lsp.default_keymaps({ buffer = bufnr })
