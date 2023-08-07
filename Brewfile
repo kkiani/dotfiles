@@ -49,6 +49,7 @@ brew "pyright"
 brew "direnv"
 brew "rust"
 brew "rust-analyzer"
+brew "kitty"
 
 # 'brew install --cask'
 cask "1password"
