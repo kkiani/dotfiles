@@ -9,6 +9,9 @@ vim.keymap.set("n", "<leader>p", function()
 	builtin.commands()
 end)
 
+-- help panel
+vim.keymap.set("n", "?", ":Telescope help_tags<CR>")
+
 -- opening explorer
 vim.keymap.set("n", "<leader>e", ":Explore<CR>")
 vim.keymap.set("n", "<leader>o", ":Telescope find_files hidden=true<CR>")
@@ -41,9 +44,10 @@ vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", {})
 vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", {})
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", {})
 vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", {})
-vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", {})
+vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", {})
 vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", {})
 vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", {})
+vim.keymap.set("n", "<leader>j", "<cmd>Telescope lsp_document_symbols<cr>", {})
 
 vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", {})
 vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", {})
