@@ -20,6 +20,10 @@ require("lsp-zero").extend_cmp()
 local cmp = require("cmp")
 
 cmp.setup({
+	preselect = "item",
+	completion = {
+		completeopt = "menu,menuone,noinsert",
+	},
 	sources = {
 		{ name = "nvim_lsp" },
 	},
@@ -31,8 +35,8 @@ cmp.setup({
 		-- `Enter` key to confirm completion
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-		-- Ctrl+Space to trigger completion menu
-		["<C-Space>"] = cmp.mapping.complete(),
+		-- Ctrl+i to trigger completion menu
+		["<C-i>"] = cmp.mapping.complete(),
 	},
 })
 
