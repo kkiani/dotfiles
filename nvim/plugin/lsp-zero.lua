@@ -35,8 +35,8 @@ cmp.setup({
 		-- `Enter` key to confirm completion
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-		-- Ctrl+i to trigger completion menu
-		["<C-i>"] = cmp.mapping.complete(),
+		-- Ctrl+space to trigger completion menu
+		["<C-space>"] = cmp.mapping.complete(),
 	},
 })
 
