@@ -1,3 +1,5 @@
+local Utils = require("utils")
+
 require("legendary").setup({
 	keymaps = {},
 	commands = {
@@ -11,6 +13,34 @@ require("legendary").setup({
 			":GitBlame",
 			":Git blame",
 			description = "Open git blame panel",
+		},
+		{
+			":GitCommit",
+			":tab Git commit",
+			description = "Commit staged changes",
+		},
+		{
+			":GitAddAll",
+			":Git add .",
+			description = "Add all changes to stage",
+		},
+		{
+			":GitDiscard",
+			":Git discard",
+			description = "Discard all staged and unstaged changes",
+		},
+		{
+			":GitDiff",
+			":Gvdiffsplit",
+			description = "Open diff in split view",
+		},
+		{
+			":GitAddCurrentBuffer",
+			function()
+				local current_file = vim.api.nvim_buf_get_name(0)
+				return Utils.exec({ "Git", "add", current_file })
+			end,
+			description = "Add current buffer to staged changes",
 		},
 		{
 			":PackerSaveAndSync",
