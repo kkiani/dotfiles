@@ -95,6 +95,22 @@ require("legendary").setup({
 			end,
 			description = "Show code error and issues",
 		},
+		-- CDK
+		{
+			"CDKSynth",
+			":!cdk synth",
+			description = "Synthesize CloudFormation templates from CDK",
+		},
+		{
+			"CDKDeployAll",
+			":!cdk deploy --all",
+			description = "Deploy all stacks",
+		},
+		{
+			"CDKDestroyAll",
+			":!cdk destroy --all",
+			description = "Destroy all stacks",
+		},
 	},
 	funcs = {},
 	autocmds = {},
