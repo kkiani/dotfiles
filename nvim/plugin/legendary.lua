@@ -89,11 +89,14 @@ require("legendary").setup({
 			description = "Save the current buffer and Sync via packer",
 		},
 		{
-			"Diagnostics",
-			function()
-				telescope.diagnostics(telescope_themes.get_dropdown({ width = 0.9 }))
-			end,
-			description = "Show code error and issues",
+			"DiagnosticsCurrent",
+			":Trouble document_diagnostics",
+			description = "Diagnostics for current buffer/document/file",
+		},
+		{
+			"DiagnosticsAll",
+			":Trouble workspace_diagnostics",
+			description = "Diagnostics for all files",
 		},
 		-- CDK
 		{

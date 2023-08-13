@@ -15,9 +15,4 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 		Utils.exec({ ":!git", "checkout", selection[1] })
 	end)
 end, {})
-vim.api.nvim_create_user_command("GitDiff", "Gvdiffsplit", {})
 
--- CDK
-vim.api.nvim_create_user_command("CDKSynth", ":!cdk synth", {})
-vim.api.nvim_create_user_command("CDKDeployAll", ":!cdk deploy --all", {})
-vim.api.nvim_create_user_command("CDKDestroyAll", ":!cdk destroy --all", {})
