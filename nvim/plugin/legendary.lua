@@ -35,6 +35,11 @@ require("legendary").setup({
 			description = "Open diff in split view",
 		},
 		{
+			":GitStatus",
+			":Git status",
+			description = "Status of changes",
+		},
+		{
 			":GitAddCurrentBuffer",
 			function()
 				local current_file = vim.api.nvim_buf_get_name(0)
