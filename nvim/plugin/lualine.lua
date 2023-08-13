@@ -2,18 +2,18 @@
 
 local git_blame = require("gitblame")
 
-local function curret_buffer_path()
+local function get_curret_buffer_path()
 	return vim.fn.expand("%:.")
 end
 
-local function current_buffer_close()
+local function close_current_buffer()
 	vim.cmd(":q")
 end
 
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "gruvbox-baby",
+		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
@@ -64,14 +64,14 @@ require("lualine").setup({
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = { curret_buffer_path },
+		lualine_y = { get_curret_buffer_path },
 		lualine_z = {
 			{
 				"close",
 				fmt = function()
 					return "󰅖"
 				end,
-				on_click = current_buffer_close,
+				on_click = close_current_buffer,
 			},
 		},
 	},
