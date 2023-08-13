@@ -1,46 +1,63 @@
 local Utils = require("utils")
+local telescope = require("telescope.builtin")
+local telescope_themes = require("telescope.themes")
 
 require("legendary").setup({
 	keymaps = {},
 	commands = {
 		-- easily create user commands
 		{
-			":GitGraph",
+			"GitGraph",
 			"tab Git log --graph --abbrev-commit",
 			description = "Git graph using log",
 		},
 		{
-			":GitBlame",
+			"GitBlame",
 			":Git blame",
 			description = "Open git blame panel",
 		},
 		{
-			":GitCommit",
+			"GitCommit",
 			":tab Git commit",
 			description = "Commit staged changes",
 		},
 		{
-			":GitAddAll",
+			"GitAmend",
+			":Git amend",
+			description = "Append chenges to last commit",
+		},
+		{
+			"GitUncommit",
+			":Git uncommit",
+			description = "Undo commit last commit",
+		},
+		{
+			"GitUnstage",
+			":Git unstage",
+			description = "Unstage all the staged chenges",
+		},
+		{
+			"GitAddAll",
 			":Git add .",
 			description = "Add all changes to stage",
 		},
 		{
-			":GitDiscard",
+			"GitDiscard",
 			":Git discard",
 			description = "Discard all staged and unstaged changes",
 		},
 		{
-			":GitDiff",
+			"GitDiff",
 			":Gvdiffsplit",
 			description = "Open diff in split view",
 		},
 		{
-			":GitStatus",
+			"GitStatus",
 			":Git status",
-			description = "Status of changes",
+			description = "Status of changes in current working directory",
 		},
 		{
-			":GitAddCurrentBuffer",
+			"GitAddCurrentBuffer",
 			function()
 				local current_file = vim.api.nvim_buf_get_name(0)
 				return Utils.exec({ "Git", "add", current_file })
@@ -48,13 +65,35 @@ require("legendary").setup({
 			description = "Add current buffer to staged changes",
 		},
 		{
-			":PackerSaveAndSync",
+			"GitPush",
+			":Git push",
+			description = "Push changes to origin remote",
+		},
+		{
+			"GitPushForce",
+			":Git push --force",
+			description = "Force Push changes to origin remote",
+		},
+		{
+			"GitPull",
+			":Git pull",
+			description = "Push changes from origin remote",
+		},
+		{
+			"PackerSaveAndSync",
 			function()
 				vim.cmd(":w")
 				vim.cmd(":so")
 				vim.cmd(":PackerSync")
 			end,
 			description = "Save the current buffer and Sync via packer",
+		},
+		{
+			"Diagnostics",
+			function()
+				telescope.diagnostics(telescope_themes.get_dropdown({ width = 0.9 }))
+			end,
+			description = "Show code error and issues",
 		},
 	},
 	funcs = {},

@@ -31,7 +31,9 @@ vim.g.gitblame_date_format = "%r"
 vim.g.gitblame_message_template = "<author> | <date>"
 
 -- setting up theme
+vim.opt.termguicolors = true
 vim.o.background = "dark" -- or "light" for light mode
+vim.g.gruvbox_material_float_style = "dim"
 vim.cmd([[colorscheme gruvbox-material]])
 vim.cmd.highlight("clear SignColumn")
 
