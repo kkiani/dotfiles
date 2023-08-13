@@ -5,9 +5,7 @@ vim.g.mapleader = " "
 
 -- show command palette
 vim.keymap.set("n", "<leader>t", ":TasksRun<CR>")
-vim.keymap.set("n", "<leader>p", function()
-	builtin.commands()
-end)
+vim.keymap.set("n", "<leader>p", ":Legendary commands<CR>")
 
 -- help panel
 vim.keymap.set("n", "?", ":Telescope help_tags<CR>")

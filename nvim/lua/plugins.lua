@@ -14,7 +14,6 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	--use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.2",
@@ -47,4 +46,6 @@ return require("packer").startup(function(use)
 	use({ "m4xshen/autoclose.nvim" })
 	use({ "simrat39/rust-tools.nvim" })
 	use({ "numToStr/Comment.nvim" })
+	use({ "mrjones2014/legendary.nvim" })
+	use({ "stevearc/dressing.nvim" })
 end)
