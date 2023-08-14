@@ -53,4 +53,5 @@ return require("packer").startup(function(use)
 		"goolord/alpha-nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
+	use({ "github/copilot.vim", branch = "release" })
 end)
