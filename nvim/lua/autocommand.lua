@@ -41,3 +41,17 @@ autocmd("BufNewFile", {
 	pattern = "**/README.md",
 	command = "0r ~/.config/nvim/skeletons/readme.md",
 })
+
+-- automate mode with terminal
+autocmd("TermOpen", {
+	desc = "Auto enter insert mode when opening a terminal",
+	pattern = "*",
+	callback = function()
+		-- Wait briefly just in case we immediately switch out of the buffer
+		vim.defer_fn(function()
+			if vim.api.nvim_buf_get_option(0, "buftype") == "terminal" then
+				vim.cmd([[startinsert]])
+			end
+		end, 100)
+	end,
+})

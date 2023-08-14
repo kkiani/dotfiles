@@ -44,17 +44,3 @@ if vim.fn.exists("g:vscode") ~= 0 then
 else
 	-- ordinary Neovim
 end
-
--- automate mode with terminal
-vim.api.nvim_create_autocmd("TermOpen", {
-	desc = "Auto enter insert mode when opening a terminal",
-	pattern = "*",
-	callback = function()
-		-- Wait briefly just in case we immediately switch out of the buffer
-		vim.defer_fn(function()
-			if vim.api.nvim_buf_get_option(0, "buftype") == "terminal" then
-				vim.cmd([[startinsert]])
-			end
-		end, 100)
-	end,
-})
