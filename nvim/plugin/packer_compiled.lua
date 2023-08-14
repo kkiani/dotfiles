@@ -219,6 +219,11 @@ _G.packer_plugins = {
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["vim-flog"] = {
+    loaded = true,
+    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/vim-flog",
+    url = "https://github.com/rbong/vim-flog"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/vim-fugitive",

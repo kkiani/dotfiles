@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
 	use({ "tpope/vim-fugitive" })
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "f-person/git-blame.nvim" })
+	use({ "rbong/vim-flog" })
 	use({ "nvim-tree/nvim-web-devicons" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({

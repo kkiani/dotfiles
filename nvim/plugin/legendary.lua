@@ -8,7 +8,7 @@ require("legendary").setup({
 		-- easily create user commands
 		{
 			"GitGraph",
-			"tab Git log --graph --abbrev-commit",
+			":Flog",
 			description = "Git graph using log",
 		},
 		{
