@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/playground" })
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.2",
