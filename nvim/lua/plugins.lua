@@ -48,4 +48,8 @@ return require("packer").startup(function(use)
 	use({ "numToStr/Comment.nvim" })
 	use({ "mrjones2014/legendary.nvim" })
 	use({ "stevearc/dressing.nvim" })
+	use({
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
 end)

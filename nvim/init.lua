@@ -44,15 +44,6 @@ else
 	-- ordinary Neovim
 end
 
--- open explore if no file passed
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		if vim.fn.argc() == 0 then
-			vim.cmd(":silent! Telescope find_files")
-		end
-	end,
-})
-
 -- automate mode with terminal
 vim.api.nvim_create_autocmd("TermOpen", {
 	desc = "Auto enter insert mode when opening a terminal",
