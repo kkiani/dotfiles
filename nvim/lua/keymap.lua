@@ -64,3 +64,6 @@ vim.keymap.set("n", "<leader><Esc>", ":only<CR>")
 -- go back and forward with buffers
 vim.keymap.set("n", "<leader>[", "<c-6>")
 vim.keymap.set("n", "<leader>]", "<c-^>")
+
+-- rerun last command
+vim.keymap.set({ "n", "v" }, "<CR>", ":<up>", { noremap = true, silent = false })
