@@ -26,6 +26,9 @@ vim.opt.wrapmargin = 0
 
 vim.opt.updatetime = 100
 
+-- exclude some files from netrw
+vim.g.netrw_list_hide = [[.*\.pyc$,\.\~$,__pycache__/$,\.git/,\~$,.DS_Store,\.vscode/,.mypy_cache/,.pytest_cache/]]
+
 -- gitblame configs
 vim.g.gitblame_display_virtual_text = 0
 vim.g.gitblame_date_format = "%r"
