@@ -53,6 +53,7 @@ vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", {})
 
 -- switching windows
 vim.keymap.set("n", "<tab>", "<c-W>w")
+vim.keymap.set("n", "<S-Tab>", ":tabNext<CR>", { silent = true })
 
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
@@ -67,3 +68,7 @@ vim.keymap.set("n", "<leader>]", "<c-^>")
 
 -- rerun last command
 vim.keymap.set({ "n", "v" }, "<CR>", ":<up>", { noremap = true, silent = false })
+
+-- recordings
+vim.keymap.set("n", "<leader>q", "qq", { noremap = true, silent = false })
+vim.keymap.set("n", ",", "@q", { noremap = true, silent = false })
