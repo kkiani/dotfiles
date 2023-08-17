@@ -55,3 +55,18 @@ autocmd("TermOpen", {
 		end, 100)
 	end,
 })
+
+-- netrw specific keybindings
+autocmd("filetype", {
+	desc = "netrw specific keybindings",
+	pattern = "netrw",
+	callback = function()
+		vim.keymap.set("n", "<esc>", ":bd<CR>", { silent = true, buffer = true, remap = true })
+		vim.keymap.set("n", "h", "-", { silent = true, buffer = true, remap = true })
+		vim.keymap.set("n", "l", "<CR>", { silent = true, buffer = true, remap = true })
+		vim.keymap.set("n", ".", "gh", { silent = true, buffer = true, remap = true })
+		vim.keymap.set("n", "<tab>", "mf", { silent = true, buffer = true, remap = true })
+		vim.keymap.set("n", "<S-Tab>", "mF", { silent = true, buffer = true, remap = true })
+		vim.keymap.set("n", "<leader><tab>", "mu", { silent = true, buffer = true, remap = true })
+	end,
+})

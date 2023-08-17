@@ -72,3 +72,6 @@ vim.keymap.set({ "n", "v" }, ";", ":<up>", { noremap = true, silent = false })
 -- recordings
 vim.keymap.set("n", "<leader>q", "qq", { noremap = true, silent = false })
 vim.keymap.set("n", ",", "@q", { noremap = true, silent = false })
+
+-- netrw remaps
+-- defined in autocommands.lua

@@ -26,8 +26,11 @@ vim.opt.wrapmargin = 0
 
 vim.opt.updatetime = 100
 
--- exclude some files from netrw
+-- netrw configs
 vim.g.netrw_list_hide = [[.*\.pyc$,\.\~$,__pycache__/$,\.git/,\~$,.DS_Store,\.vscode/,.mypy_cache/,.pytest_cache/]]
+vim.g.netrw_banner = 0
+vim.g.netrw_localcopydircmd = "cp -r"
+vim.g.netrw_cursor = 1
 
 -- gitblame configs
 vim.g.gitblame_display_virtual_text = 0
