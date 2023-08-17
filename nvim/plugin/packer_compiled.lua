@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
-  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/formatter.nvim",
@@ -133,11 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["legendary.nvim"] = {
-    loaded = true,
-    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/legendary.nvim",
-    url = "https://github.com/mrjones2014/legendary.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,

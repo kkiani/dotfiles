@@ -48,8 +48,6 @@ return require("packer").startup(function(use)
 	use({ "m4xshen/autoclose.nvim" })
 	use({ "simrat39/rust-tools.nvim" })
 	use({ "numToStr/Comment.nvim" })
-	use({ "mrjones2014/legendary.nvim" })
-	use({ "stevearc/dressing.nvim" })
 	use({
 		"goolord/alpha-nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
