@@ -75,3 +75,6 @@ vim.keymap.set("n", ",", "@q", { noremap = true, silent = false })
 
 -- netrw remaps
 -- defined in autocommands.lua
+
+-- command register remaps
+vim.keymap.set("n", "<leader><leader>", ":CommandRegisterRun<CR>")
