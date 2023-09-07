@@ -4,6 +4,14 @@ local telescope = require("telescope.builtin")
 -- Code Explore
 vim.api.nvim_create_user_command("Diagnostics", "Trouble", {})
 
+-- Keymaps
+vim.api.nvim_create_user_command("Keymaps", "Telescope keymaps", {})
+
+-- DAP
+vim.api.nvim_create_user_command("DapStart", ":lua require('dap').continue()", {})
+vim.api.nvim_create_user_command("DapOpenUI", ":lua require('dapui').open()", {})
+vim.api.nvim_create_user_command("DapCloseUI", ":lua require('dapui').close()", {})
+
 -- Git Commands
 vim.api.nvim_create_user_command("GitStatus", ":Git status", {})
 vim.api.nvim_create_user_command("GitAddAll", ":Git add .", {})

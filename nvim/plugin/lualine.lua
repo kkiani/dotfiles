@@ -48,19 +48,40 @@ require("lualine").setup({
 	tabline = {
 		lualine_a = {
 			{
-				"filename",
-				path = 1,
-				icon = { "󰈙", align = "left" },
-				separator = {},
-				symbols = {
-					readonly = "",
-				},
+				"tabs",
+				mode = 1,
+				fmt = function(name, context)
+					-- local title = context.tabnr .. " | " .. name
+					local buflist = vim.fn.tabpagebuflist(context.tabnr)
+					local winnr = vim.fn.tabpagewinnr(context.tabnr)
+					local bufnr = buflist[winnr]
+
+					local title = name
+
+					if vim.bo[bufnr].modified then
+						title = title .. " "
+					elseif vim.bo[bufnr].filetype == "terminal" then
+						title = title .. " "
+					elseif vim.bo[bufnr].filetype == "help" then
+						title = title .. " "
+					elseif vim.bo[bufnr].readonly or vim.bo[bufnr].modifiable == false then
+						title = title .. " "
+					end
+
+					return title
+				end,
 			},
 		},
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = {},
+		lualine_y = {
+			{
+				"filename",
+				file_status = false,
+				path = 1,
+			},
+		},
 		lualine_z = {
 			{
 				"close",

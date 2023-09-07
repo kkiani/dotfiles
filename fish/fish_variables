@@ -31,4 +31,5 @@ SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
 
 # my custom variables
-SETUVAR EDITOR:code
+SETUVAR EDITOR:nvim
+SETUVAR ICLOUD:/Users/kiarash/Library/Mobile Documents/com~apple~CloudDocs
