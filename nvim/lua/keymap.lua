@@ -1,4 +1,5 @@
 local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 -- setting the leader key
 vim.g.mapleader = " "
@@ -25,7 +26,14 @@ end, { desc = "Find string in project" })
 vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
 vim.keymap.set("n", "<leader>gc", ":tab Git commit<CR>")
 vim.keymap.set("n", "<leader>gg", function()
-	builtin.git_status()
+	builtin.git_status({
+		layout_strategy = "vertical",
+		selection_strategy = "follow",
+		layout_config = {
+			width = 0.9,
+			preview_height = 0.8,
+		},
+	})
 end)
 
 -- clipboard keymaps
@@ -57,7 +65,7 @@ vim.keymap.set("n", "<tab>", "<c-W>w", { desc = "Switch to next window" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>tabNext<CR>", { silent = true, desc = "Switch to next tab" })
 
 -- cancel out highlights on tapping Esc key
-vim.keymap.set("n", "<Esc>", "<cmd>noh<CR><cmd>only<CR>", { desc = "Cancel out highlights and go back to normal mode" })
+vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Cancel out highlights and go back to normal mode" })
 
 -- quick exit
 vim.keymap.set("n", "qq", ":q<CR>", { desc = "Quick exit" })
