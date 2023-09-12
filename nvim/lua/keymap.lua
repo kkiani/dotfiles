@@ -6,7 +6,13 @@ vim.g.mapleader = " "
 
 -- show command palette
 vim.keymap.set("n", "<leader>r", ":TasksRun<CR>", { desc = "Show available task for current project" })
-vim.keymap.set("n", "<leader>p", ":Telescope commands<CR>", { desc = "Show commands palette" })
+vim.keymap.set("n", "<leader>p", function()
+	builtin.commands(themes.get_ivy({
+		layout_config = {
+			height = 0.2,
+		},
+	}))
+end, { desc = "Show commands palette" })
 
 -- help panel
 vim.keymap.set("n", "?", ":Telescope help_tags<CR>", { desc = "Show help panel" })
