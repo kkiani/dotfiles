@@ -1,5 +1,6 @@
 local Utils = require("utils")
 local telescope = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 -- Code Explore
 vim.api.nvim_create_user_command("Diagnostics", "Trouble", {})
@@ -13,7 +14,15 @@ vim.api.nvim_create_user_command("DapOpenUI", ":lua require('dapui').open()", {}
 vim.api.nvim_create_user_command("DapCloseUI", ":lua require('dapui').close()", {})
 
 -- Git Commands
-vim.api.nvim_create_user_command("GitStatus", ":Git status", {})
+vim.api.nvim_create_user_command("GitStatus", function()
+	telescope.git_status(themes.get_ivy({
+		previewer = false,
+		initial_mode = "normal",
+		layout_config = {
+			height = 0.2,
+		},
+	}))
+end, {})
 vim.api.nvim_create_user_command("GitAddAll", ":Git add .", {})
 vim.api.nvim_create_user_command("GitAddBuffer", function()
 	local current_file = vim.api.nvim_buf_get_name(0)
@@ -27,8 +36,22 @@ vim.api.nvim_create_user_command("GitAmend", ":Git amend", {})
 vim.api.nvim_create_user_command("GitDiscard", ":Git discard", {})
 vim.api.nvim_create_user_command("GitUncommit", ":Git uncommit", {})
 vim.api.nvim_create_user_command("GitUnstage", ":Git unstage", {})
+vim.api.nvim_create_user_command("GitStash", function()
+	telescope.git_stash(themes.get_ivy({
+		previewer = false,
+		initial_mode = "normal",
+		layout_config = {
+			height = 0.2,
+		},
+	}))
+end, {})
 vim.api.nvim_create_user_command("GitCheckout", function()
-	telescope.git_branches({ previewer = false })
+	telescope.git_branches(themes.get_ivy({
+		previewer = false,
+		layout_config = {
+			height = 0.2,
+		},
+	}))
 end, {})
 vim.api.nvim_create_user_command(
 	"GitGraph",

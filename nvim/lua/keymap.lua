@@ -19,7 +19,7 @@ vim.keymap.set("n", "?", ":Telescope help_tags<CR>", { desc = "Show help panel" 
 vim.keymap.set("n", "<leader>?", ":Telescope keymaps<CR>", { desc = "Show keymaps panel" })
 
 -- opening explorer
-vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Open explorer" })
+vim.keymap.set("n", "<leader>e", ":Explor<CR>", { desc = "Open explorer" })
 vim.keymap.set("n", "<leader>o", ":Telescope find_files hidden=true<CR>", { desc = "Open file" })
 
 -- find and replace
@@ -31,16 +31,7 @@ end, { desc = "Find string in project" })
 -- git commands
 vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
 vim.keymap.set("n", "<leader>gc", ":tab Git commit<CR>")
-vim.keymap.set("n", "<leader>gg", function()
-	builtin.git_status({
-		layout_strategy = "vertical",
-		selection_strategy = "follow",
-		layout_config = {
-			width = 0.9,
-			preview_height = 0.8,
-		},
-	})
-end)
+vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
 
 -- clipboard keymaps
 vim.keymap.set("v", "gy", '"+y')
