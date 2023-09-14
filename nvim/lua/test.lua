@@ -1,7 +1,8 @@
-local st = vim.api.nvim_exec("!git diff --cached", true)
-if st == "\n" then
-	print("fap")
+local result = os.execute("git diff --cached --quiet")
+if result == 0 then
+	print("No changes to commit")
+	return true
 else
-	print("shit")
-	print(st)
+	print("Changes to commit")
+	return false
 end

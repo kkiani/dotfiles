@@ -31,7 +31,15 @@ end, {})
 vim.api.nvim_create_user_command("GitPush", ":Git push", {})
 vim.api.nvim_create_user_command("GitPushForce", ":Git push --force", {})
 vim.api.nvim_create_user_command("GitPull", ":Git pull", {})
-vim.api.nvim_create_user_command("GitCommit", ":tab Git commit", {})
+vim.api.nvim_create_user_command("GitCommit", function()
+	local result = os.execute("git diff --cached --quiet")
+	if result == 0 then
+		-- No changes to commit
+		vim.api.nvim_command("Git add .")
+	end
+
+	vim.api.nvim_command("Git commit")
+end, {})
 vim.api.nvim_create_user_command("GitAmend", ":Git amend", {})
 vim.api.nvim_create_user_command("GitDiscard", ":Git discard", {})
 vim.api.nvim_create_user_command("GitUncommit", ":Git uncommit", {})
