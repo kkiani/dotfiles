@@ -20,7 +20,15 @@ vim.keymap.set("n", "<leader>?", ":Telescope keymaps<CR>", { desc = "Show keymap
 
 -- opening explorer
 vim.keymap.set("n", "<leader>e", ":Explor<CR>", { desc = "Open explorer" })
-vim.keymap.set("n", "<leader>o", ":Telescope find_files hidden=true<CR>", { desc = "Open file" })
+vim.keymap.set("n", "<leader>o", function()
+	builtin.find_files(themes.get_ivy({
+		prompt_title = "< Open File >",
+		previewer = false,
+		layout_config = {
+			height = 0.2,
+		},
+	}))
+end, { desc = "Open file" })
 
 -- find and replace
 vim.keymap.set("n", "<leader>F", ":%s/", { desc = "Find and replace" })
@@ -81,9 +89,6 @@ vim.keymap.set("n", ",", "@q", { noremap = true, silent = false })
 
 -- netrw remaps
 -- defined in autocommands.lua
-
--- command register remaps
-vim.keymap.set("n", "<leader><leader>", "<cmd>CommandRegisterRun<CR>", { desc = "Run command from command register" })
 
 -- dap remaps
 vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "Start Debugger" })
