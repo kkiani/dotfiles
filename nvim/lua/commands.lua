@@ -44,7 +44,11 @@ vim.api.nvim_create_user_command("GitAmend", ":Git amend", {})
 vim.api.nvim_create_user_command("GitDiscard", ":Git discard", {})
 vim.api.nvim_create_user_command("GitUncommit", ":Git uncommit", {})
 vim.api.nvim_create_user_command("GitUnstage", ":Git unstage", {})
-vim.api.nvim_create_user_command("GitStash", function()
+vim.api.nvim_create_user_command("GitStashPush", function()
+	vim.api.nvim_command("Git add .")
+	vim.api.nvim_command("Git stash push")
+end, {})
+vim.api.nvim_create_user_command("GitStashPop", function()
 	telescope.git_stash(themes.get_ivy({
 		previewer = false,
 		initial_mode = "normal",

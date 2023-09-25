@@ -7,5 +7,4 @@ abbr --add gp "git push origin"
 abbr --add gc --set-cursor=! "git commit -m \"!\""
 
 abbr --add mkd "mkdir -pv"
-
-
+abbr --add dsh "devenv shell"

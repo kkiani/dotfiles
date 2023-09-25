@@ -55,4 +55,8 @@ return require("packer").startup(function(use)
 	use({ "github/copilot.vim", branch = "release" })
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+	})
 end)
