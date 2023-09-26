@@ -70,6 +70,7 @@ vim.api.nvim_create_user_command(
 	"tab Git log --graph --abbrev-commit --decorate --date=relative --all | file GitGraph",
 	{}
 )
+vim.api.nvim_create_user_command("GitDiff", ":Gvdiffsplit", {})
 
 -- Window and split management
 vim.api.nvim_create_user_command("DynamicSplit", function()
