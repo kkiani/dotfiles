@@ -68,6 +68,12 @@ vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "G
 -- switching windows
 vim.keymap.set("n", "<tab>", "<c-W>w", { desc = "Switch to next window" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>tabNext<CR>", { silent = true, desc = "Switch to next tab" })
+vim.keymap.set(
+	"n",
+	"<c-S>",
+	"<cmd>DynamicSplit<CR>",
+	{ desc = "Dynamically split window based on aspect ratio of current window" }
+)
 
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Cancel out highlights and go back to normal mode" })

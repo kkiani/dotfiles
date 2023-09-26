@@ -71,6 +71,23 @@ vim.api.nvim_create_user_command(
 	{}
 )
 
+-- Window and split management
+vim.api.nvim_create_user_command("DynamicSplit", function()
+	local win_width = vim.fn.winwidth(0)
+	local win_height = vim.fn.winheight(0) * 3
+	local win_ratio = win_width / win_height
+	print(win_ratio)
+	if win_ratio > 1 then
+		vim.api.nvim_command("vsplit")
+	else
+		vim.api.nvim_command("split")
+	end
+end, {})
+
+-- LSP
+vim.api.nvim_create_user_command("RenameSymbol", ":lua vim.lsp.buf.rename()", {})
+vim.api.nvim_create_user_command("DocumentSymbol", ":Telescope lsp_document_symbols", {})
+
 -- CDK
 vim.api.nvim_create_user_command("CDKSynth", ":!cdk synth", {})
 vim.api.nvim_create_user_command("CDKDeployAll", ":!cdk deploy --all", {})
