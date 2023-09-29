@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>r", ":TasksRun<CR>", { desc = "Show available task 
 vim.keymap.set("n", "<leader>p", function()
 	builtin.commands(themes.get_ivy({
 		layout_config = {
-			height = 0.2,
+			height = 10,
 		},
 	}))
 end, { desc = "Show commands palette" })
@@ -25,8 +25,9 @@ vim.keymap.set("n", "<leader>o", function()
 		prompt_title = "< Open File >",
 		previewer = false,
 		layout_config = {
-			height = 0.2,
+			height = 10,
 		},
+		hidden = true,
 	}))
 end, { desc = "Open file" })
 
@@ -54,9 +55,9 @@ vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go 
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Go to declaration" })
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { desc = "Show implementation" })
 vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Go to type definition" })
-vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Show references" })
+vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Show references" })
 vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", {})
-vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol" })
+vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol" })
 vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", { desc = "Format code" })
 vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Show code actions" })
 vim.keymap.set("n", "<leader>j", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Show document symbols" })
@@ -65,7 +66,7 @@ vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "
 vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Go to previous diagnostic" })
 vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Go to next diagnostic" })
 
--- switching windows
+-- window management
 vim.keymap.set("n", "<tab>", "<c-W>w", { desc = "Switch to next window" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>tabNext<CR>", { silent = true, desc = "Switch to next tab" })
 vim.keymap.set(
