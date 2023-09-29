@@ -3,7 +3,6 @@ require("plugins")
 require("commands")
 require("tasks")
 require("autocommand")
-require("command_register")
 
 -- general settings
 vim.opt.number = true
