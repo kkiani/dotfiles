@@ -57,7 +57,7 @@ vim.api.nvim_create_user_command("GitStashPop", function()
 		},
 	}))
 end, {})
-vim.api.nvim_create_user_command("GitCheckout", function()
+vim.api.nvim_create_user_command("GitBranches", function()
 	telescope.git_branches(themes.get_ivy({
 		previewer = false,
 		layout_config = {
@@ -65,6 +65,7 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 		},
 	}))
 end, {})
+vim.api.nvim_create_user_command("GitCheckout", "GitBranches", {})
 vim.api.nvim_create_user_command(
 	"GitGraph",
 	"tab Git log --graph --abbrev-commit --decorate --date=relative --all | file GitGraph",
