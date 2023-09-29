@@ -19,7 +19,7 @@ vim.api.nvim_create_user_command("GitStatus", function()
 		previewer = false,
 		initial_mode = "normal",
 		layout_config = {
-			height = 0.2,
+			height = 10,
 		},
 	}))
 end, {})
@@ -53,7 +53,7 @@ vim.api.nvim_create_user_command("GitStashPop", function()
 		previewer = false,
 		initial_mode = "normal",
 		layout_config = {
-			height = 0.2,
+			height = 10,
 		},
 	}))
 end, {})
@@ -61,7 +61,7 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 	telescope.git_branches(themes.get_ivy({
 		previewer = false,
 		layout_config = {
-			height = 0.2,
+			height = 10,
 		},
 	}))
 end, {})
