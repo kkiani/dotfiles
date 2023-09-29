@@ -93,3 +93,7 @@ vim.api.nvim_create_user_command("DocumentSymbol", ":Telescope lsp_document_symb
 vim.api.nvim_create_user_command("CDKSynth", ":!cdk synth", {})
 vim.api.nvim_create_user_command("CDKDeployAll", ":!cdk deploy --all", {})
 vim.api.nvim_create_user_command("CDKDestroyAll", ":!cdk destroy --all", {})
+
+-- Tests
+vim.api.nvim_create_user_command("TestPytestAll", ":!pytest", {})
+vim.api.nvim_create_user_command("TestPytestBuffer", ":!pytest %", {})
