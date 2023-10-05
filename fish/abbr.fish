@@ -8,3 +8,6 @@ abbr --add gc --set-cursor=! "git commit -m \"!\""
 
 abbr --add mkd "mkdir -pv"
 abbr --add dsh "devenv shell"
+
+abbr --add pr "project"
+abbr --add tmp "cd /tmp"
