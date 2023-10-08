@@ -87,7 +87,7 @@ end, {})
 vim.api.nvim_create_user_command("GitCheckout", "GitBranches", {})
 vim.api.nvim_create_user_command(
 	"GitGraph",
-	"tab Git log --graph --abbrev-commit --decorate --date=relative --all | file GitGraph",
+	"tabe | Git  ++curwin log --graph --abbrev-commit --decorate --date=relative --all",
 	{}
 )
 vim.api.nvim_create_user_command("GitDiff", ":Gvdiffsplit", {})
