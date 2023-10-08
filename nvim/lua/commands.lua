@@ -97,7 +97,7 @@ vim.api.nvim_create_user_command("DynamicSplit", function()
 	local win_width = vim.fn.winwidth(0)
 	local win_height = vim.fn.winheight(0) * 3
 	local win_ratio = win_width / win_height
-	print(win_ratio)
+
 	if win_ratio > 1 then
 		vim.api.nvim_command("vsplit")
 	else
