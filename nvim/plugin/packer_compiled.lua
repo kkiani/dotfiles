@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["alpha-nvim"] = {
-    loaded = true,
-    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
-  },
   ["autoclose.nvim"] = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
@@ -149,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -173,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-surround"] = {
-    loaded = true,
-    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/nvim-surround",
-    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-treesitter"] = {
     loaded = true,
