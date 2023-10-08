@@ -6,6 +6,11 @@ require("telescope").setup({
 				height = 0.9,
 				preview_width = 0.6,
 			},
+			vertical = {
+				width = 0.9,
+				height = 0.9,
+				preview_height = 0.7,
+			},
 			-- other layout configuration here
 		},
 		file_ignore_patterns = {
