@@ -87,7 +87,7 @@ require("lualine").setup({
 				"close",
 				separator = {},
 				fmt = function()
-					return ""
+					return "󰅖"
 				end,
 				on_click = close_current_buffer,
 			},
