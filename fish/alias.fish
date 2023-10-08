@@ -1,10 +1,8 @@
-#!/bin/zsh -i
-alias vi='vim'
-alias v="vim"
-alias reload='exec zsh'
+alias vi='nvim'
+alias v="nvim"
+alias reload='. ~/.config/fish/config.fish'
 alias bat="bat --pager='less -r'"
 alias pg="ping -c 5 google.com | less"
-alias mkd='mkdir -pv'
 alias vimconfig='$EDITOR ~/.vimrc'
 alias zshconfig='$EDITOR ~/.zshrc'
 alias t='touch'
@@ -16,10 +14,5 @@ alias p='pbpaste'
 alias top='btop'
 alias awsv='aws-vault'
 alias cl='clear'
-
 alias e='$EDITOR'
-
-alias gs='git status'
-alias gaa='git add .'
-alias gp='git push origin'
-alias gpf='git push origin --force'
+alias ls='exa -s type --icons'

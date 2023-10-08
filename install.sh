@@ -1,4 +1,6 @@
 #!/bin/zsh
+#
+# the reason for this script to be bash and not fish is that bash or zsh is available by default on macos
 
 function heading() { 
     echo -e "\e[1m\e[34m==>\e[39m $@\e[0m" 
@@ -47,11 +49,3 @@ done
 heading "[symlinks] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/espanso" "$HOME/Library/Application Support/espanso"
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
-
-# installing SpaceVim
-heading "[vim] installing SpaceVim..."
-if [ -d "~/.SpaceVim/" ]; then
-    warning "SpaceVim already isntalled; skipping it..."
-else
-    curl -sLf https://spacevim.org/install.sh | bash
-fi
