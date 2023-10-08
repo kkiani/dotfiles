@@ -4,6 +4,9 @@ local themes = require("telescope.themes")
 -- setting the leader key
 vim.g.mapleader = " "
 
+-- terminal
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 -- show command palette
 vim.keymap.set("n", "<leader>r", ":TasksRun<CR>", { desc = "Show available task for current project" })
 vim.keymap.set("n", "<leader>p", function()

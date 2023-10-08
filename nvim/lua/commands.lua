@@ -2,6 +2,21 @@ local Utils = require("utils")
 local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
 
+-- Terminal
+vim.api.nvim_create_user_command("Terminal", function()
+	local buffers = vim.api.nvim_list_bufs()
+	for _, buf in ipairs(buffers) do
+		local buf_name = vim.api.nvim_buf_get_name(buf)
+		if buf_name:match("term") then
+			vim.api.nvim_set_current_buf(buf)
+			return
+		end
+	end
+
+	vim.cmd(":term")
+	vim.cmd("setlocal nonumber norelativenumber")
+end, {})
+
 -- Code Explore
 vim.api.nvim_create_user_command("Diagnostics", "Trouble", {})
 
