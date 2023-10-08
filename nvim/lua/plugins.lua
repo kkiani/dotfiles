@@ -48,15 +48,8 @@ return require("packer").startup(function(use)
 	use({ "m4xshen/autoclose.nvim" })
 	use({ "simrat39/rust-tools.nvim" })
 	use({ "numToStr/Comment.nvim" })
-	use({
-		"goolord/alpha-nvim",
-		requires = { "nvim-tree/nvim-web-devicons", opt = true },
-	})
 	use({ "github/copilot.vim", branch = "release" })
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
-	use({
-		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-	})
+	use({ "echasnovski/mini.nvim", branch = "stable" })
 end)
