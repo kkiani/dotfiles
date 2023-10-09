@@ -49,6 +49,7 @@ brew "direnv"
 brew "rust"
 brew "rust-analyzer"
 brew "apache-spark"
+brew "lazygit"
 
 # 'brew install --cask'
 cask "1password"
