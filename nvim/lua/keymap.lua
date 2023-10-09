@@ -90,8 +90,8 @@ vim.keymap.set("n", "qq", ":q<CR>", { desc = "Quick exit" })
 vim.keymap.set("n", "<leader><Esc>", ":only<CR>", { desc = "Keep current window only" })
 
 -- go back and forward with buffers
-vim.keymap.set("n", "[<leader>", "<c-o>", { desc = "Go back to previous buffer" })
-vim.keymap.set("n", "]<leader>", "<c-i>", { desc = "Go forward to next buffer" })
+vim.keymap.set("n", "[[", "<c-o>", { desc = "Go back to previous buffer" })
+vim.keymap.set("n", "]]", "<c-i>", { desc = "Go forward to next buffer" })
 
 -- re-run last command
 vim.keymap.set({ "n", "v" }, ";", ":<up>", { noremap = true, silent = false, desc = "Re-select last command" })
