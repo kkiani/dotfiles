@@ -15,6 +15,7 @@ vim.api.nvim_create_user_command("Terminal", function()
 
 	vim.cmd(":term")
 	vim.cmd("setlocal nonumber norelativenumber")
+	vim.cmd("setlocal signcolumn=no")
 end, {})
 
 -- Code Explore
