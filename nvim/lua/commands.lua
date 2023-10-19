@@ -92,6 +92,7 @@ vim.api.nvim_create_user_command(
 	{}
 )
 vim.api.nvim_create_user_command("GitDiff", ":Gvdiffsplit", {})
+vim.api.nvim_create_user_command("GitDiscardHunk", ":Gitsigns reset_hunk", {})
 
 -- Window and split management
 vim.api.nvim_create_user_command("DynamicSplit", function()
