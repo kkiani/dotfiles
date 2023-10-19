@@ -47,7 +47,6 @@ vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
 vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
 vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
 vim.keymap.set("n", "ga", ":Gitsigns stage_hunk<CR>")
-vim.keymap.set("n", "gd", ":Gitsigns reset_hunk<CR>")
 
 -- clipboard keymaps
 vim.keymap.set("v", "gy", '"+y')
