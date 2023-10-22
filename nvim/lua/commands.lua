@@ -5,6 +5,8 @@ local themes = require("telescope.themes")
 -- Terminal
 vim.api.nvim_create_user_command("Terminal", function()
 	local buffers = vim.api.nvim_list_bufs()
+	vim.g.before_term_buff = vim.api.nvim_get_current_buf()
+
 	for _, buf in ipairs(buffers) do
 		local buf_name = vim.api.nvim_buf_get_name(buf)
 		if buf_name:match("term") then
@@ -16,6 +18,9 @@ vim.api.nvim_create_user_command("Terminal", function()
 	vim.cmd(":term")
 	vim.cmd("setlocal nonumber norelativenumber")
 	vim.cmd("setlocal signcolumn=no")
+	vim.keymap.set("n", "<Esc>", function()
+		vim.api.nvim_set_current_buf(vim.g.before_term_buff)
+	end, { silent = true, buffer = vim.api.nvim_get_current_buf() })
 end, {})
 
 -- Code Explore
