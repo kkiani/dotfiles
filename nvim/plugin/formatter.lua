@@ -27,6 +27,7 @@ require("formatter").setup({
 		javascript = { prettier },
 		json = { prettier },
 		yaml = { prettier },
+		terraform = { require("formatter.filetypes.terraform").terraformfmt },
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
