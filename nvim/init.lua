@@ -14,6 +14,9 @@ vim.opt.ignorecase = true
 vim.opt.signcolumn = "yes"
 vim.opt.showtabline = 2
 
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
