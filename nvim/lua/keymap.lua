@@ -4,6 +4,9 @@ local themes = require("telescope.themes")
 -- setting the leader key
 vim.g.mapleader = " "
 
+-- paste without yank
+vim.keymap.set("x", "p", '"_dP', { noremap = true, desc = "Paste without yank" })
+
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
