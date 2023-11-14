@@ -37,11 +37,8 @@ vim.keymap.set("n", "<leader>o", function()
 	}))
 end, { desc = "Open file" })
 
--- find and replace
-vim.keymap.set("n", "<leader>F", ":%s/", { desc = "Find and replace" })
-vim.keymap.set("n", "<leader>f", function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end, { desc = "Find string in project" })
+-- Find and Replace
+vim.keymap.set("n", "<leader>f", ":Find<CR>", { desc = "Find string in project" })
 
 -- git commands
 vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
@@ -95,8 +92,8 @@ vim.keymap.set("n", "<leader><Esc>", ":only<CR>", { desc = "Keep current window 
 -- go back and forward with buffers
 vim.keymap.set("n", "[<leader>", "<c-o>", { desc = "Go back to previous buffer" })
 vim.keymap.set("n", "]<leader>", "<c-i>", { desc = "Go forward to next buffer" })
-vim.keymap.set("n", "[[", "<c-o>", { desc = "Go back to previous buffer" })
-vim.keymap.set("n", "]]", "<c-i>", { desc = "Go forward to next buffer" })
+vim.keymap.set("n", "[[", "<c-o>", { noremap = true, desc = "Go back to previous buffer" })
+vim.keymap.set("n", "]]", "<c-i>", { noremap = true, desc = "Go forward to next buffer" })
 
 -- re-run last command
 vim.keymap.set({ "n", "v" }, ";", ":<up>", { noremap = true, silent = false, desc = "Re-select last command" })

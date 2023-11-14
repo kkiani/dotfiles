@@ -2,6 +2,43 @@ local Utils = require("utils")
 local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
 
+-- Find and Replace
+vim.api.nvim_create_user_command("Find", function()
+	vim.g.keyword = vim.fn.input("Grep > ")
+	if vim.g.keyword == "" then
+		vim.cmd(":redraw")
+		vim.api.nvim_echo({ { "Error: No keyword provided", "ErrorMsg" } }, false, {})
+		return
+	end
+
+	local pattern = vim.fn.input("Pattern (default = **/*)> ")
+	if pattern == "" then
+		pattern = "**/*"
+	end
+
+	vim.cmd("silent vimgrep /" .. vim.g.keyword .. "/gje " .. pattern)
+	vim.cmd("copen")
+end, {})
+
+vim.api.nvim_create_user_command("Replace", function()
+	if vim.g.keyword == nil then
+		vim.cmd(":redraw")
+		vim.api.nvim_echo({ { "Error: No keyword provided. Try to Find first.", "ErrorMsg" } }, false, {})
+		return
+	end
+
+	local replace = vim.fn.input("Replace with > ")
+	if replace == "" then
+		vim.cmd(":redraw")
+		vim.api.nvim_echo({ { "Error: No replacement provided", "ErrorMsg" } }, false, {})
+		return
+	end
+
+	vim.cmd("cfdo %s/" .. vim.g.keyword .. "/" .. replace .. "/ge | update")
+	vim.cmd("cclose")
+	vim.g.keyword = nil
+end, {})
+
 -- Terminal
 vim.api.nvim_create_user_command("Terminal", function()
 	local buffers = vim.api.nvim_list_bufs()
