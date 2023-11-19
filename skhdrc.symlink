@@ -1,13 +1,13 @@
 ################################################################################
-### yabai keybindings   :   https://github.com/koekeishiya/yabai/wiki/Commands 
-### skhd modifiers      :   https://github.com/koekeishiya/skhd/issues/1        
+### yabai keybindings   :   https://github.com/koekeishiya/yabai/wiki/Commands
+### skhd modifiers      :   https://github.com/koekeishiya/skhd/issues/1
 ### skhd docs           :   https://github.com/koekeishiya/skhd
 ################################################################################
 
 #### space management ###########################
 # moving between spaces
-alt + shift - k : yabai -m space --focus next || yabai -m space --focus first
-alt + shift - j : yabai -m space --focus prev || yabai -m space --focus last
+alt + shift - k : skhd -k "ctrl - right"
+alt + shift - j : skhd -k "ctrl - left"
 
 # mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis
