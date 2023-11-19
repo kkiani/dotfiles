@@ -25,7 +25,7 @@ vim.keymap.set("n", "?", ":Telescope help_tags<CR>", { desc = "Show help panel" 
 vim.keymap.set("n", "<leader>?", ":Telescope keymaps<CR>", { desc = "Show keymaps panel" })
 
 -- opening explorer
-vim.keymap.set("n", "<leader>e", ":Oil<CR>", { desc = "Open explorer" })
+vim.keymap.set("n", "<leader>e", ":Oil<CR>", { silent = true, desc = "Open explorer" })
 vim.keymap.set("n", "<leader>o", function()
 	builtin.find_files(themes.get_ivy({
 		prompt_title = "< Open File >",
