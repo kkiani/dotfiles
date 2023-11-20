@@ -48,6 +48,7 @@ brew "direnv"
 brew "rust"
 brew "rust-analyzer"
 brew "lazygit"
+brew "ollama"
 
 # 'brew install --cask'
 cask "1password"
