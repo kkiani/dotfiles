@@ -111,13 +111,7 @@ vim.api.nvim_create_user_command("GitStashPush", function()
 	vim.api.nvim_command("Git stash push")
 end, {})
 vim.api.nvim_create_user_command("GitStashPop", function()
-	telescope.git_stash(themes.get_ivy({
-		previewer = false,
-		initial_mode = "normal",
-		layout_config = {
-			height = 10,
-		},
-	}))
+	vim.api.nvim_command("Git stash pop")
 end, {})
 vim.api.nvim_create_user_command("GitBranches", function()
 	telescope.git_branches(themes.get_ivy({
