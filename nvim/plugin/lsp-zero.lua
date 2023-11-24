@@ -11,7 +11,7 @@ require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 require("lspconfig").tsserver.setup({})
 require("lspconfig").rust_analyzer.setup({})
 require("lspconfig").pyright.setup({})
-require("lspconfig").terraformls.setup({})
+require("lspconfig").terraform_lsp.setup({})
 
 lsp.setup()
 
