@@ -1,0 +1,10 @@
+# ~/.config/starship.toml
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
