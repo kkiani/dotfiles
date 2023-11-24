@@ -13,3 +13,5 @@ abbr --add pr "project"
 abbr --add tmp "cd /tmp"
 
 abbr --add gc "devenv gc"
+
+abbr --add tf "terraform"
