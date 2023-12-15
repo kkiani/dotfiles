@@ -21,6 +21,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<leader>r", ":TasksRun<CR>", { desc = "Show available task for current project" })
 vim.keymap.set("n", "<leader>p", function()
 	builtin.commands(themes.get_ivy({
+		prompt_title = "< Commands >",
 		layout_config = {
 			height = 10,
 		},
