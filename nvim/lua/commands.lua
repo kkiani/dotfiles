@@ -140,6 +140,7 @@ vim.api.nvim_create_user_command(
 	"tabe | Git  ++curwin log --graph --abbrev-commit --decorate --date=relative --all",
 	{}
 )
+vim.api.nvim_create_user_command("GitBlame", ":Git blame", {})
 vim.api.nvim_create_user_command("GitDiff", ":Gvdiffsplit", {})
 vim.api.nvim_create_user_command("GitDiscardHunk", ":Gitsigns reset_hunk", {})
 
