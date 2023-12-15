@@ -1,23 +1,23 @@
 local Utils = require("utils")
 local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
+local actions = require("telescope.actions")
 
 -- Find and Replace
 vim.api.nvim_create_user_command("Find", function()
-	vim.g.keyword = vim.fn.input("Grep > ")
-	if vim.g.keyword == "" then
-		vim.cmd(":redraw")
-		vim.api.nvim_echo({ { "Error: No keyword provided", "ErrorMsg" } }, false, {})
-		return
-	end
-
-	local pattern = vim.fn.input("Pattern (default = **/*)> ")
-	if pattern == "" then
-		pattern = "**/*"
-	end
-
-	vim.cmd("silent vimgrep /" .. vim.g.keyword .. "/gje " .. pattern)
-	vim.cmd("copen")
+	telescope.live_grep({
+		attach_mappings = function(_, map)
+			map("i", "<CR>", function(prompt_bufnr)
+				vim.fn.setqflist({})
+				actions.add_to_qflist(prompt_bufnr)
+				vim.cmd("copen")
+			end)
+			map("i", "<S-CR>", function(prompt_bufnr)
+				actions.file_edit(prompt_bufnr)
+			end)
+			return true
+		end,
+	})
 end, {})
 
 vim.api.nvim_create_user_command("Replace", function()

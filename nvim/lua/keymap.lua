@@ -1,6 +1,10 @@
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
 
+-- quickfix
+vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
+vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
+
 -- setting the leader key
 vim.g.mapleader = " "
 
