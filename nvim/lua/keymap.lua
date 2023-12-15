@@ -1,12 +1,12 @@
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
 
+-- setting the leader key
+vim.g.mapleader = " "
+
 -- quickfix
 vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
-
--- setting the leader key
-vim.g.mapleader = " "
 
 -- paste without yank
 vim.keymap.set("x", "p", '"_dP', { noremap = true, desc = "Paste without yank" })
