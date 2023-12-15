@@ -2,6 +2,7 @@ local Utils = require("utils")
 local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
 local actions = require("telescope.actions")
+local state = require("telescope.actions.state")
 
 -- Find and Replace
 vim.api.nvim_create_user_command("Find", function()
@@ -119,6 +120,18 @@ vim.api.nvim_create_user_command("GitBranches", function()
 		layout_config = {
 			height = 10,
 		},
+		attach_mappings = function(_, map)
+			map("i", "<CR>", function(prompt_bufnr)
+				local selection = state.get_selected_entry(prompt_bufnr)
+
+				if selection == nil then
+					actions.git_create_branch(prompt_bufnr)
+				else
+					actions.git_checkout(prompt_bufnr)
+				end
+			end)
+			return true
+		end,
 	}))
 end, {})
 vim.api.nvim_create_user_command("GitCheckout", "GitBranches", {})
