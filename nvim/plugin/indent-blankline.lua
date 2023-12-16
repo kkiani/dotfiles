@@ -6,7 +6,6 @@ require("ibl").setup({
 		char = "▏",
 	},
 	scope = {
-		highlight = "Grey",
 		char = "▏",
 		include = {
 			node_type = {

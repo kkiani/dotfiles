@@ -8,7 +8,6 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	-- Other packages
-	use({ "sainnhe/gruvbox-material" })
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "nvim-tree/nvim-web-devicons", opt = true },
@@ -53,4 +52,5 @@ return require("packer").startup(function(use)
 	use({ "rcarriga/nvim-dap-ui" })
 	use({ "echasnovski/mini.nvim", branch = "stable" })
 	use({ "stevearc/oil.nvim" })
+	use({ "ellisonleao/gruvbox.nvim" })
 end)

@@ -42,11 +42,7 @@ vim.g.gitblame_message_template = "<author> | <date>"
 
 -- setting up theme
 vim.opt.termguicolors = true
-vim.o.background = "dark" -- or "light" for light mode
-vim.g.gruvbox_material_float_style = "bright"
-vim.g.gruvbox_material_palette = "mix"
-vim.cmd([[colorscheme gruvbox-material]])
-vim.cmd.highlight("clear SignColumn")
+-- check gruvbox.lua for more details
 
 if vim.fn.exists("g:vscode") ~= 0 then
 	vim.keymap.set("n", "gr", VSCodeNotify("editor.action.rename"))
