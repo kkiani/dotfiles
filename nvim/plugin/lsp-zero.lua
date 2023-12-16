@@ -41,6 +41,27 @@ cmp.setup({
 	},
 })
 
+cmp.setup.cmdline(":", {
+	mapping = {
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+		["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+	},
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
+})
+
+cmp.setup.filetype("gitcommit", {
+	sources = cmp.config.sources({
+		{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+	}, {
+		{ name = "buffer" },
+	}),
+})
+
 -- set formatter
 lsp.on_attach(function(client, bufnr)
 	lsp.default_keymaps({ buffer = bufnr })
