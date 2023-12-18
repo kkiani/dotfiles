@@ -28,6 +28,7 @@ require("formatter").setup({
 		json = { prettier },
 		yaml = { prettier },
 		terraform = { require("formatter.filetypes.terraform").terraformfmt },
+		rust = { require("formatter.filetypes.rust").rustfmt },
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
