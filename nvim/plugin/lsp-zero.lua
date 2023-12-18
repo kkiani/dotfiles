@@ -43,7 +43,7 @@ cmp.setup({
 
 cmp.setup.cmdline(":", {
 	mapping = {
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
 		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 	},
