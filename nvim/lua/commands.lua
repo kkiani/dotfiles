@@ -108,13 +108,43 @@ vim.api.nvim_create_user_command("GitDiscard", ":Git discard", {})
 vim.api.nvim_create_user_command("GitUncommit", ":Git uncommit", {})
 vim.api.nvim_create_user_command("GitUnstage", ":Git unstage", {})
 vim.api.nvim_create_user_command("GitStashPush", function()
+	local stash_name = vim.fn.input("Stash message (Optional) > ")
 	vim.api.nvim_command("Git add .")
-	vim.api.nvim_command("Git stash push")
+
+	if stash_name == "" then
+		vim.api.nvim_command("Git stash push")
+	else
+		vim.api.nvim_command('Git stash push -m "' .. stash_name .. '"')
+	end
 end, {})
 vim.api.nvim_create_user_command("GitStashPop", function()
-	vim.api.nvim_command("Git stash pop")
+	telescope.git_stash({
+		attach_mappings = function(_, map)
+			map("i", "<CR>", function(prompt_bufnr)
+				local selection = state.get_selected_entry(prompt_bufnr)
+
+				if selection == nil then
+					error("No stash selected")
+				else
+					actions.close(prompt_bufnr)
+					vim.api.nvim_command("Git stash pop " .. selection.value)
+				end
+			end)
+			map("n", "dd", function(prompt_bufnr)
+				local selection = state.get_selected_entry(prompt_bufnr)
+
+				if selection == nil then
+					error("No stash selected")
+				else
+					actions.close(prompt_bufnr)
+					vim.api.nvim_command("Git stash drop " .. selection.value)
+				end
+			end)
+			return true
+		end,
+	})
 end, {})
-vim.api.nvim_create_user_command("GitBranches", function()
+vim.api.nvim_create_user_command("GitCheckout", function()
 	telescope.git_branches(themes.get_ivy({
 		previewer = false,
 		layout_config = {
@@ -134,7 +164,8 @@ vim.api.nvim_create_user_command("GitBranches", function()
 		end,
 	}))
 end, {})
-vim.api.nvim_create_user_command("GitCheckout", "GitBranches", {})
+vim.api.nvim_create_user_command("GitVersioningHistory", ":Telescope git_bcommits", {})
+vim.api.nvim_create_user_command("GitBranches", "Telescope git_branches", {})
 vim.api.nvim_create_user_command(
 	"GitGraph",
 	"tabe | Git  ++curwin log --graph --abbrev-commit --decorate --date=relative --all",
