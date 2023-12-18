@@ -33,17 +33,16 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	mapping = {
-		-- `Enter` key to confirm completion
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-		-- Ctrl+space to trigger completion menu
+		["<esc>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
 		["<C-space>"] = cmp.mapping.complete(),
 	},
 })
 
 cmp.setup.cmdline(":", {
 	mapping = {
-		["<CR>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
+		["<esc>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
+		["<tab>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
 		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 	},
