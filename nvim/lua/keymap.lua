@@ -33,6 +33,17 @@ vim.keymap.set("n", "?", ":Telescope help_tags<CR>", { desc = "Show help panel" 
 vim.keymap.set("n", "<leader>?", ":Telescope keymaps<CR>", { desc = "Show keymaps panel" })
 
 -- opening explorer
+vim.keymap.set("n", "<leader><tab>", function()
+	builtin.buffers(themes.get_ivy({
+		prompt_title = "< Switch Buffer >",
+		previewer = false,
+		initial_mode = "normal",
+		layout_config = {
+			height = 10,
+		},
+		hidden = true,
+	}))
+end, { desc = "Open buffer explorer" })
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { silent = true, desc = "Open explorer" })
 vim.keymap.set("n", "<leader>o", function()
 	builtin.find_files(themes.get_ivy({
