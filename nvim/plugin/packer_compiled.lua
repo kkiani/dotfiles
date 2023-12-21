@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/oil.nvim",
     url = "https://github.com/stevearc/oil.nvim"
   },
+  ["ollama.nvim"] = {
+    loaded = true,
+    path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/ollama.nvim",
+    url = "https://github.com/nomnivore/ollama.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/kiarash/.local/share/nvim/site/pack/packer/start/packer.nvim",
