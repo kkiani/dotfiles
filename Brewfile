@@ -47,6 +47,7 @@ brew "rust-analyzer"
 brew "lazygit"
 brew "ollama"
 brew "speedtest-cli"
+brew "duckdb"
 
 # 'brew install --cask'
 cask "1password"
