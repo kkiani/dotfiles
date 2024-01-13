@@ -19,7 +19,7 @@ vim.api.nvim_create_user_command("Find", function()
 			return true
 		end,
 	})
-end, {})
+end, { desc = "Search for a keyword in workspace and populates the results into quickfix list"})
 
 vim.api.nvim_create_user_command("Replace", function()
 	if vim.g.keyword == nil then

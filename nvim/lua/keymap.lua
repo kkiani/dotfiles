@@ -4,9 +4,6 @@ local themes = require("telescope.themes")
 -- setting the leader key
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<cr>", "o<esc>", { noremap = true, desc = "New line below" })
-vim.keymap.set("n", "<S-cr>", "O<esc>", { noremap = true, desc = "New line before" })
-
 -- quickfix
 vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
