@@ -46,6 +46,7 @@ brew "rust"
 brew "rust-analyzer"
 brew "lazygit"
 brew "ollama"
+brew "speedtest-cli"
 
 # 'brew install --cask'
 cask "1password"
@@ -79,3 +80,4 @@ cask "alfred"
 cask "raspberry-pi-imager"
 cask "logitune"
 cask "microsoft-teams"
+cask "progressive-downloader"
