@@ -1,9 +1,6 @@
 # 'brew tap'
 tap "epk/epk"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
