@@ -1,7 +1,7 @@
 [user]
     name = Kiarash Kiani
     email = kiarash.kiani@icloud.com
-    signingkey = 0065586C63F558F1CB44D56ACF39D8A8E13569F0
+    signingkey = 0F94D832223024FD156E0A22C87312A1104D79C9
 
 [includeIf "gitdir:~/projects/datachef/"]
     path = ~/.gitconfig.datachef
