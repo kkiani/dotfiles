@@ -6,8 +6,8 @@
 
 #### space management ###########################
 # moving between spaces
-alt + shift - k : skhd -k "ctrl - right"
-alt + shift - j : skhd -k "ctrl - left"
+alt + shift - k : yabai -m space --focus next || yabai -m space --focus first
+alt + shift - j : yabai -m space --focus prev || yabai -m space --focus last
 
 # mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis
@@ -65,7 +65,7 @@ alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 alt - e : nvim ~/.dotfiles
 
 # open obsidian quick notes
-alt - n : shortcuts run "Quick Note"
+alt - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
 
 # open iterm2
 alt - t : open /Applications/iTerm.app
