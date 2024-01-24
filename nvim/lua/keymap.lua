@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>o", function()
 		hidden = true,
 	}))
 end, { desc = "Open file" })
+vim.keymap.set("n", "<leader><leader>", ":b#<CR>", { silent = true, desc = "Jump to previous buffer" })
 
 -- Find and Replace
 vim.keymap.set("n", "<leader>f", ":Find<CR>", { desc = "Find string in project" })
