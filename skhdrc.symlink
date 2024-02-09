@@ -65,7 +65,7 @@ alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 alt - e : nvim ~/.dotfiles
 
 # open obsidian quick notes
-alt - n : open "obsidian://open?vault=Primary%20Vault&file=Quick%20Note"
+alt - n : shortcuts run "Quick Note"
 
 # open iterm2
 alt - t : open /Applications/iTerm.app
