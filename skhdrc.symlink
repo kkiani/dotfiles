@@ -66,6 +66,7 @@ alt - e : nvim ~/.dotfiles
 
 # open obsidian quick notes
 alt - n : shortcuts run "Quick Note"
+alt + shift - n : shortcuts run "Create a Task"
 
 # open iterm2
 alt - t : open /Applications/iTerm.app
