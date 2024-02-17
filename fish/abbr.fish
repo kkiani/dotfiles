@@ -5,6 +5,7 @@ abbr --add gam "git amend --no-edit"
 abbr --add gpf "git push origin --force"
 abbr --add gp "git push origin"
 abbr --add gc --set-cursor=! "git commit -m \"!\""
+abbr --add lg "lazygit"
 
 abbr --add mkd "mkdir -pv"
 abbr --add dsh "devenv shell"
