@@ -42,7 +42,7 @@ cmp.setup({
 cmp.setup.cmdline(":", {
 	mapping = {
 		["<esc>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
-		["<tab>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
+		["<space>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i", "c" }),
 		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 		["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
 	},
