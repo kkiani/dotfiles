@@ -19,7 +19,7 @@ vim.api.nvim_create_user_command("Find", function()
 			return true
 		end,
 	})
-end, { desc = "Search for a keyword in workspace and populates the results into quickfix list"})
+end, { desc = "Search for a keyword in workspace and populates the results into quickfix list" })
 
 vim.api.nvim_create_user_command("Replace", function()
 	if vim.g.keyword == nil then
@@ -198,5 +198,3 @@ vim.api.nvim_create_user_command("CDKDeployAll", ":!cdk deploy --all", {})
 vim.api.nvim_create_user_command("CDKDestroyAll", ":!cdk destroy --all", {})
 
 -- Tests
-vim.api.nvim_create_user_command("TestPytestAll", ":!pytest", {})
-vim.api.nvim_create_user_command("TestPytestBuffer", ":!pytest %", {})
