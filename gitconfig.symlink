@@ -23,6 +23,7 @@
     discard = !git reset --hard HEAD && git clean -fd
     amend = commit --amend --no-edit
     pushall = !git remote | xargs -L1 git push --all
+    history = !fish -c 'gitlog'
 
 [merge]
     tool = nvim
@@ -35,6 +36,6 @@
 
 [init]
     defaultBranch = main
-    
+
 [commit]
     gpgsign = true
