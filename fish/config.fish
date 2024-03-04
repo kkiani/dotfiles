@@ -10,3 +10,4 @@ source ~/.config/fish/abbr.fish
 source /usr/local/opt/asdf/libexec/asdf.fish
 direnv hook fish | source
 zoxide init fish | source
+atuin init fish | source

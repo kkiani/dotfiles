@@ -52,6 +52,7 @@ brew "lazygit"
 brew "ollama"
 brew "speedtest-cli"
 brew "duckdb"
+brew "atuin"
 
 # 'brew install --cask'
 cask "1password"
