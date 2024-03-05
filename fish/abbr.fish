@@ -16,6 +16,6 @@ abbr --add tmp "cd /tmp"
 abbr --add gc "devenv gc"
 
 abbr --add tf "terraform"
-abbr --add tfinit "terraform init -backend=false"
+abbr --add tfinit "terraform init"
 abbr --add tfval "terraform validate"
 abbr --add tffmt "terraform fmt"
