@@ -13,8 +13,6 @@ abbr --add dsh "devenv shell"
 abbr --add pr "project"
 abbr --add tmp "cd /tmp"
 
-abbr --add gc "devenv gc"
-
 abbr --add tf "terraform"
 abbr --add tfinit "terraform init"
 abbr --add tfval "terraform validate"
