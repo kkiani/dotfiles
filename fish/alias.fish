@@ -4,7 +4,6 @@ alias reload='. ~/.config/fish/config.fish'
 alias bat="bat --pager='less -r'"
 alias pg="ping -c 5 google.com | less"
 alias vimconfig='$EDITOR ~/.vimrc'
-alias zshconfig='$EDITOR ~/.zshrc'
 alias t='touch'
 alias b='bat'
 alias cpwd='pwd | pbcopy'
