@@ -42,4 +42,29 @@ config.keys = {
 	},
 }
 
+local function recompute_padding(window)
+	local window_dims = window:get_dimensions()
+	local overrides = window:get_config_overrides() or {}
+
+	local x_reminder = math.fmod(window_dims.pixel_width, config.font_size * 3)
+	local x_half_padding = math.floor(x_reminder / 2)
+	local new_padding = {
+		left = x_half_padding,
+		right = x_half_padding,
+		top = 0,
+		bottom = 0,
+	}
+
+	overrides.window_padding = new_padding
+	window:set_config_overrides(overrides)
+end
+
+wezterm.on("window-resized", function(window, _)
+	recompute_padding(window)
+end)
+
+wezterm.on("window-config-reloaded", function(window)
+	recompute_padding(window)
+end)
+
 return config
