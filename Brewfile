@@ -53,6 +53,7 @@ brew "ollama"
 brew "speedtest-cli"
 brew "duckdb"
 brew "atuin"
+brew "xplr"
 
 # 'brew install --cask'
 cask "1password"
