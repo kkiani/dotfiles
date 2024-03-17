@@ -48,11 +48,13 @@ local function recompute_padding(window)
 
 	local x_reminder = math.fmod(window_dims.pixel_width, config.font_size * 3)
 	local x_half_padding = math.floor(x_reminder / 2)
+	local y_reminder = math.fmod(window_dims.pixel_height, config.font_size)
+	local y_half_padding = math.floor(y_reminder / 2)
 	local new_padding = {
 		left = x_half_padding,
 		right = x_half_padding,
-		top = 0,
-		bottom = 0,
+		top = y_half_padding,
+		bottom = y_half_padding,
 	}
 
 	overrides.window_padding = new_padding
