@@ -40,6 +40,19 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.ActivateCommandPalette,
 	},
+	{
+		key = "o",
+		mods = "CMD",
+		action = wezterm.action.ShowTabNavigator,
+	},
+	-- {
+	-- 	key = "t",
+	-- 	mods = "CMD",
+	-- 	action = wezterm.action_callback(function(win, pane)
+	-- 		win:perform_action({ SendKey = { mods = "CTRL", key = "t" } }, pane)
+	-- 		win:perform_action({ SendKey = { key = "n" } }, pane)
+	-- 	end),
+	-- },
 }
 
 local function recompute_padding(window)
@@ -67,6 +80,24 @@ end)
 
 wezterm.on("window-config-reloaded", function(window)
 	recompute_padding(window)
+end)
+
+wezterm.on("augment-command-palette", function(_, _)
+	return {
+		{
+			brief = "Rename tab",
+			icon = "md_rename_box",
+
+			action = wezterm.action.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, _, line)
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
+	}
 end)
 
 return config
