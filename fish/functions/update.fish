@@ -1,5 +1,5 @@
 function update --wraps=brew --description 'update system and packages'
-    argparse a/all b/brew s/system -- $argv
+    argparse a/all b/brew s/system p/pick -- $argv
 
     if set -ql _flag_all
         echo (set_color blue)"==>" (set_color normal)"[system] updating macOS..."
@@ -16,6 +16,11 @@ function update --wraps=brew --description 'update system and packages'
     else if set -ql _flag_system
         echo (set_color blue)"==>" (set_color normal)"[system] updating macOS..."
         sudo softwareupdate -iR -a
+        return 0
+    else if set -ql _flag_pick
+        brew outdated --greedy \
+            | fzf --multi --reverse --ansi --border=rounded --color='border:green' --border-label="Select packages to update"\
+            | xargs -I {} brew upgrade {}
         return 0
     end
 end
