@@ -18,7 +18,7 @@ function update --wraps=brew --description 'update system and packages'
         sudo softwareupdate -iR -a
         return 0
     else if set -ql _flag_pick
-        brew outdated --greedy \
+        brew outdated --quiet --greedy \
             | fzf --multi --reverse --ansi --border=rounded --color='border:green' --border-label="Select packages to update"\
             | xargs -I {} brew upgrade {}
         return 0
