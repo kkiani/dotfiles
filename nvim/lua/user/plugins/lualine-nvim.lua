@@ -1,17 +1,13 @@
+local git_blame = require("gitblame")
+
+local function close_current_buffer()
+	vim.cmd(":q")
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local git_blame = require("gitblame")
-
-		local function get_curret_buffer_path()
-			return vim.fn.expand("%:.")
-		end
-
-		local function close_current_buffer()
-			vim.cmd(":q")
-		end
-
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
