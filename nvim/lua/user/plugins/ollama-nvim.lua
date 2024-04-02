@@ -1,3 +1,0 @@
-return {
-"nomnivore/ollama.nvim"
-}
