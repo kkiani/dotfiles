@@ -4,6 +4,11 @@ local themes = require("telescope.themes")
 local actions = require("telescope.actions")
 local state = require("telescope.actions.state")
 
+-- General
+vim.api.nvim_create_user_command("DeleteFile", ":!rm %", {
+    desc = "Delete the current file",
+})
+
 -- Find and Replace
 vim.api.nvim_create_user_command("Find", function()
 	telescope.live_grep({
