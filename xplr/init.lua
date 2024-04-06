@@ -37,6 +37,13 @@ xplr.config.modes.builtin.default.key_bindings.on_key.tab = {
 	messages = { "ToggleSelection" },
 }
 
+if os.getenv("XPLR_MODE") == "NAV" then
+	xplr.config.modes.builtin.default.key_bindings.on_key.enter = {
+		help = "Toggle selection",
+		messages = { "PrintPwdAndQuit" },
+	}
+end
+
 table.sort(favorites(), function(a, b)
 	return a[1] < b[1]
 end)
