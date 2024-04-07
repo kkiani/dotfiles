@@ -58,6 +58,7 @@ for i = 1, #favorites() do
 end
 
 -- layout and style
+xplr.config.general.show_hidden = true
 xplr.config.general.panel_ui.default.border_style.fg = "Green"
 xplr.config.general.panel_ui.default.title.style.fg = "Green"
 xplr.config.general.panel_ui.default.border_type = "Thick"
