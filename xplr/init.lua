@@ -23,6 +23,7 @@ local favorites = function()
 		{ "5", "temp", "/tmp" },
 		{ "6", "icloud", "/Users/kiarash/Library/Mobile Documents/com~apple~CloudDocs" },
 		{ "7", "Home", "/Users/kiarash" },
+		{ "8", "Dotfiles", "/Users/kiarash/.dotfiles" },
 	}
 end
 
@@ -90,9 +91,9 @@ xplr.config.layouts.builtin.default = {
 					config = {
 						margin = 0,
 						constraints = {
+							{ Percentage = 30 },
 							{ Percentage = 20 },
-							{ Percentage = 20 },
-							{ Percentage = 60 },
+							{ Percentage = 50 },
 						},
 					},
 					splits = {
