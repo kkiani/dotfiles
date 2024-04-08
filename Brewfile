@@ -54,6 +54,7 @@ brew "speedtest-cli"
 brew "duckdb"
 brew "atuin"
 brew "xplr"
+brew "csvlens"
 
 # 'brew install --cask'
 cask "1password"
