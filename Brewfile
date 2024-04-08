@@ -55,6 +55,7 @@ brew "duckdb"
 brew "atuin"
 brew "xplr"
 brew "csvlens"
+brew "ouch"
 
 # 'brew install --cask'
 cask "1password"
