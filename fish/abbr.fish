@@ -17,3 +17,8 @@ abbr --add tf "terraform"
 abbr --add tfinit "terraform init"
 abbr --add tfval "terraform validate"
 abbr --add tffmt "terraform fmt"
+
+abbr --add compress "ouch compress"
+abbr --add decompress "ouch decompress"
+abbr --add archive "ouch compress"
+abbr --add unarchive "ouch decompress"
