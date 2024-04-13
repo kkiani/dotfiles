@@ -6,7 +6,7 @@ local state = require("telescope.actions.state")
 
 -- General
 vim.api.nvim_create_user_command("DeleteFile", ":!rm %", {
-    desc = "Delete the current file",
+	desc = "Delete the current file",
 })
 
 -- Find and Replace
