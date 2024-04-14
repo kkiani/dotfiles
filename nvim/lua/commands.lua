@@ -3,6 +3,7 @@ local telescope = require("telescope.builtin")
 local themes = require("telescope.themes")
 local actions = require("telescope.actions")
 local state = require("telescope.actions.state")
+local oil = require("oil")
 
 -- General
 vim.api.nvim_create_user_command("DeleteFile", ":!rm %", {
@@ -11,18 +12,18 @@ vim.api.nvim_create_user_command("DeleteFile", ":!rm %", {
 
 -- Find and Replace
 vim.api.nvim_create_user_command("Find", function()
+	local current_dir = oil.get_current_dir()
+
 	telescope.live_grep({
 		attach_mappings = function(_, map)
-			map("i", "<CR>", function(prompt_bufnr)
+			map("i", "<S-CR>", function(prompt_bufnr)
 				vim.fn.setqflist({})
 				actions.add_to_qflist(prompt_bufnr)
 				vim.cmd("copen")
 			end)
-			map("i", "<S-CR>", function(prompt_bufnr)
-				actions.file_edit(prompt_bufnr)
-			end)
 			return true
 		end,
+		search_dirs = { current_dir },
 	})
 end, { desc = "Search for a keyword in workspace and populates the results into quickfix list" })
 
