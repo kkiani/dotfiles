@@ -48,9 +48,9 @@ autocmd("BufWritePost", {
 	group = augroup("format_on_save"),
 	pattern = "*",
 	callback = function()
-        if vim.bo.filetype == "oil" then
-            return
-        end
+		if vim.bo.filetype == "oil" then
+			return
+		end
 
 		vim.cmd("FormatWrite")
 	end,
