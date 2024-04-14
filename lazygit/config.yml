@@ -1,0 +1,9 @@
+gui:
+  windowSize: "half"
+  showFileTree: false
+  enlargedSideViewLocation: "top"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
