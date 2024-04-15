@@ -10,7 +10,8 @@ While the configuration is personalized to my need, anyone can clone and use it.
 
 ## How to use it?
 
-> **⚠️ IMPORTANT NOTE:** make sure you update the `gitconfig.symlink` and `gitconfig.datachef.symlink` with your own information.
+> [!IMPORTANT]
+> make sure you update the `gitconfig.symlink` and `gitconfig.datachef.symlink` with your own information.
 
 1. Go to your home directory and clone this repo:
    ```bash
