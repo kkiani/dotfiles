@@ -83,6 +83,7 @@ vim.api.nvim_create_user_command("GitStatus", function()
 	telescope.git_status(themes.get_ivy({
 		previewer = false,
 		initial_mode = "normal",
+		selection_strategy = "row",
 		layout_config = {
 			height = 10,
 		},
