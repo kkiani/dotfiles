@@ -112,9 +112,6 @@ vim.keymap.set("n", "]<leader>", "<c-i>", { desc = "Go forward to next buffer" }
 vim.keymap.set("n", "[[", "<c-o>", { noremap = true, desc = "Go back to previous buffer" })
 vim.keymap.set("n", "]]", "<c-i>", { noremap = true, desc = "Go forward to next buffer" })
 
--- re-run last command
-vim.keymap.set({ "n", "v" }, ";", ":<up>", { noremap = true, silent = false, desc = "Re-select last command" })
-
 -- recordings
 vim.keymap.set("n", "<leader>q", "qq", { noremap = true, silent = false })
 vim.keymap.set("n", ",", "@q", { noremap = true, silent = false })
