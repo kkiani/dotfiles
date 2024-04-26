@@ -8,7 +8,12 @@ return {
 	config = function()
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "rust_analyzer" },
+			ensure_installed = {
+				"lua_ls",
+				"rust_analyzer",
+				"tsserver",
+				"pyright",
+			},
 		})
 
 		local lspconfig = require("lspconfig")
@@ -40,5 +45,11 @@ return {
 				Lua = {},
 			},
 		})
+
+		-- setting borders for diagnostics, hover and signature help
+		vim.diagnostic.config({ float = { border = "rounded" } })
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+		vim.lsp.handlers["textDocument/signatureHelp"] =
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 	end,
 }
