@@ -1,11 +1,8 @@
 local ls = require("luasnip")
+
 local snippet = ls.snippet
 local text = ls.text_node
 local insert = ls.insert_node
-
-ls.config.setup({
-	enable_autosnippets = true,
-})
 
 ls.add_snippets("gitcommit", {
 	snippet({ trig = "feat", dscr = "a new feature added", snippetType = "autosnippet" }, {

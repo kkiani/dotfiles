@@ -6,6 +6,7 @@ return {
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-path" },
 		{ "hrsh7th/cmp-cmdline" },
+		{ "saadparwaiz1/cmp_luasnip", dependencies = { "L3MON4D3/LuaSnip" } },
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -22,6 +23,7 @@ return {
 			},
 			sources = {
 				{ name = "nvim_lsp" },
+				{ name = "luasnip", option = { show_autosnippets = true } },
 			},
 			window = {
 				completion = cmp.config.window.bordered(),
@@ -52,8 +54,8 @@ return {
 
 		cmp.setup.filetype("gitcommit", {
 			sources = cmp.config.sources({
-				{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-				{ name = "semantic-commit" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+				{ name = "git" },
+				{ name = "luasnip", option = { show_autosnippets = true } },
 			}, {
 				{ name = "buffer" },
 			}),
