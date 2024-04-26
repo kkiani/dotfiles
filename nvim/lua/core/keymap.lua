@@ -1,5 +1,6 @@
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
+local ls = require("luasnip")
 
 -- setting the leader key
 vim.g.mapleader = " "
@@ -122,3 +123,12 @@ vim.keymap.set("n", ",", "@q", { noremap = true, silent = false })
 -- dap remaps
 vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "Start Debugger" })
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+
+-- snippets remaps
+vim.keymap.set({ "i", "s" }, "<c-n>", function()
+	ls.jump(1)
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<c-b>", function()
+	ls.jump(-1)
+end, { silent = true })
