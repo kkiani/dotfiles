@@ -18,6 +18,8 @@ return {
 
 		local lspconfig = require("lspconfig")
 
+		require("lspconfig.ui.windows").default_options.border = "single" -- setting border for floating windows
+
 		lspconfig.tsserver.setup({})
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.pyright.setup({})
