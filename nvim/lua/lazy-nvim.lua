@@ -16,5 +16,12 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
 require("lazy").setup({
-	{ import = "user.plugins" },
+	spec = { import = "user.plugins" },
+	ui = {
+		border = "double",
+		size = {
+			width = 0.8,
+			height = 0.8,
+		},
+	},
 })
