@@ -2,24 +2,26 @@
 #
 # the reason for this script to be bash and not fish is that bash or zsh is available by default on macos
 
-function heading() { 
-    echo -e "\e[1m\e[34m==>\e[39m $@\e[0m" 
+function heading() {
+    echo -e "\e[1m\e[34m==>\e[39m $@\e[0m"
 }
 
 function warning() {
-    echo -e "\e[1m\e[33mWarning:\e[39m $@\e[0m" 
+    echo -e "\e[1m\e[33mWarning:\e[39m $@\e[0m"
 }
 
 SELF_PATH="$( cd "$( dirname "$0" )" && pwd )" # Path to the directory containing this script
 
+heading "[brew] installing/updating homebrew..."
 # instaling brew
 brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # intsalling packages from brew
+heading "[brew] installing/updating packages..."
 brew bundle --file ~/.dotfiles/Brewfile
 
 # create symlinks
-heading "[symlinks] insstalling symbol links..."
+heading "[symlinks] installing symbol links..."
 for file in `find $SELF_PATH -maxdepth 1 -name \*.symlink`; do
     src_file=`basename "$file"`
     dest_file=`echo "$HOME/.$src_file" | sed "s/\.symlink$//g"`
@@ -46,6 +48,11 @@ for file in `find $SELF_PATH/services -maxdepth 1 -name \*.plist`; do
 done
 
 # installing espanso configs from icloud drive
-heading "[symlinks] installing icloud drive symlinks..."
-ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/espanso" "$HOME/Library/Application Support/espanso"
+heading "[configs] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
+
+
+heading "[configs] installing app configurations..."
+ln -sv "$HOME/.config/fish" "$HOME/.config/fish"
+ln -sv "$HOME/.config/nvim" "$HOME/.config/nvim"
+ln -sv "$HOME/.config/wezterm" "$HOME/.config/wezterm"
