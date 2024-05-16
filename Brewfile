@@ -2,7 +2,6 @@
 tap "epk/epk"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
 tap "homebrew/cask-versions"
 tap "jorgelbg/tap"
