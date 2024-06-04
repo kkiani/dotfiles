@@ -33,6 +33,17 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.ShowTabNavigator,
 	},
+	{
+		key = "s",
+		mods = "CMD",
+		action = wezterm.action_callback(function(win, pane)
+            if pane:get_dimensions().pixel_width > pane:get_dimensions().pixel_height then
+                pane:split { direction = 'Right' }
+            else
+                pane:split { direction = 'Top' }
+            end
+        end),
+	},
 	-- {
 	-- 	key = "t",
 	-- 	mods = "CMD",
