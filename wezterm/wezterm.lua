@@ -86,7 +86,6 @@ wezterm.on("augment-command-palette", function(_, _)
 		{
 			brief = "Rename tab",
 			icon = "md_rename_box",
-
 			action = wezterm.action.PromptInputLine({
 				description = "Enter new name for tab",
 				action = wezterm.action_callback(function(window, _, line)
@@ -95,6 +94,13 @@ wezterm.on("augment-command-palette", function(_, _)
 					end
 				end),
 			}),
+		},
+        {
+			brief = "Open BTop at bottom",
+			icon = "cod_dashboard",
+			action =wezterm.action_callback(function(win, pane)
+                pane:split { direction = 'Bottom', args = { 'btop' } }
+            end),
 		},
 	}
 end)
