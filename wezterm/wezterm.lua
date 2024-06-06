@@ -1,4 +1,6 @@
 local wezterm = require("wezterm")
+local key_bindings = require("keymaps")
+local commands = require("commands")
 local config = {}
 
 config.color_scheme = "Gruvbox Dark (Gogh)"
@@ -8,56 +10,12 @@ config.command_palette_font_size = 22.0
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.default_prog = { "/usr/local/bin/fish", "-l" }
+config.keys = key_bindings
 config.window_padding = {
 	left = 0,
 	right = 0,
 	top = 0,
 	bottom = 0,
-}
-
-config.keys = {
-	{
-		key = "k",
-		mods = "CMD",
-		action = wezterm.action.Multiple({
-			wezterm.action.ClearScrollback("ScrollbackAndViewport"),
-			wezterm.action.SendKey({ key = "L", mods = "CTRL" }),
-		}),
-	},
-	{
-		key = "p",
-		mods = "CMD",
-		action = wezterm.action.ActivateCommandPalette,
-	},
-	{
-		key = "o",
-		mods = "CMD",
-		action = wezterm.action.ShowTabNavigator,
-	},
-	{
-		key = "o",
-		mods = "CMD|SHIFT",
-		action = wezterm.action.PaneSelect,
-	},
-	{
-		key = "s",
-		mods = "CMD",
-		action = wezterm.action_callback(function(win, pane)
-			if pane:get_dimensions().pixel_width > pane:get_dimensions().pixel_height then
-				pane:split({ direction = "Right" })
-			else
-				pane:split({ direction = "Top" })
-			end
-		end),
-	},
-	-- {
-	-- 	key = "t",
-	-- 	mods = "CMD",
-	-- 	action = wezterm.action_callback(function(win, pane)
-	-- 		win:perform_action({ SendKey = { mods = "CTRL", key = "t" } }, pane)
-	-- 		win:perform_action({ SendKey = { key = "n" } }, pane)
-	-- 	end),
-	-- },
 }
 
 -- Making sure that fish is in the PATH
@@ -93,34 +51,7 @@ wezterm.on("window-config-reloaded", function(window)
 end)
 
 wezterm.on("augment-command-palette", function(_, _)
-	return {
-		{
-			brief = "Rename tab",
-			icon = "md_rename_box",
-			action = wezterm.action.PromptInputLine({
-				description = "Enter new name for tab",
-				action = wezterm.action_callback(function(window, _, line)
-					if line then
-						window:active_tab():set_title(line)
-					end
-				end),
-			}),
-		},
-		{
-			brief = "Open BTop at bottom",
-			icon = "cod_dashboard",
-			action = wezterm.action_callback(function(_, pane)
-				pane:split({ direction = "Bottom", args = { "btop" } })
-			end),
-		},
-		{
-			brief = "Cheat Sheet",
-			icon = "cod_book",
-			action = wezterm.action_callback(function(_, pane)
-				pane:window():spawn_tab({ args = { "fish", "-c", "csh" } })
-			end),
-		},
-	}
+	return commands
 end)
 
 return config
