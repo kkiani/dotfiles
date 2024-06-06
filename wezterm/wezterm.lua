@@ -7,6 +7,7 @@ config.font_size = 14.0
 config.command_palette_font_size = 22.0
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
+config.default_prog = { "/usr/local/bin/fish", "-l" }
 config.window_padding = {
 	left = 0,
 	right = 0,
@@ -34,15 +35,20 @@ config.keys = {
 		action = wezterm.action.ShowTabNavigator,
 	},
 	{
+		key = "o",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.PaneSelect,
+	},
+	{
 		key = "s",
 		mods = "CMD",
 		action = wezterm.action_callback(function(win, pane)
-            if pane:get_dimensions().pixel_width > pane:get_dimensions().pixel_height then
-                pane:split { direction = 'Right' }
-            else
-                pane:split { direction = 'Top' }
-            end
-        end),
+			if pane:get_dimensions().pixel_width > pane:get_dimensions().pixel_height then
+				pane:split({ direction = "Right" })
+			else
+				pane:split({ direction = "Top" })
+			end
+		end),
 	},
 	-- {
 	-- 	key = "t",
@@ -52,6 +58,11 @@ config.keys = {
 	-- 		win:perform_action({ SendKey = { key = "n" } }, pane)
 	-- 	end),
 	-- },
+}
+
+-- Making sure that fish is in the PATH
+config.set_environment_variables = {
+	PATH = "/usr/local/bin/:" .. os.getenv("PATH"),
 }
 
 local function recompute_padding(window)
@@ -95,12 +106,19 @@ wezterm.on("augment-command-palette", function(_, _)
 				end),
 			}),
 		},
-        {
+		{
 			brief = "Open BTop at bottom",
 			icon = "cod_dashboard",
-			action =wezterm.action_callback(function(win, pane)
-                pane:split { direction = 'Bottom', args = { 'btop' } }
-            end),
+			action = wezterm.action_callback(function(_, pane)
+				pane:split({ direction = "Bottom", args = { "btop" } })
+			end),
+		},
+		{
+			brief = "Cheat Sheet",
+			icon = "cod_book",
+			action = wezterm.action_callback(function(_, pane)
+				pane:window():spawn_tab({ args = { "fish", "-c", "csh" } })
+			end),
 		},
 	}
 end)
