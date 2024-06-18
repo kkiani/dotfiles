@@ -70,6 +70,14 @@ autocmd("TermOpen", {
 	end,
 })
 
+autocmd("VimResized", {
+    desc = "Update the window dimensions",
+    pattern = "*",
+    callback = function()
+        vim.cmd("tabdo wincmd =")
+    end,
+})
+
 -- netrw specific keybindings
 autocmd("filetype", {
 	desc = "netrw specific keybindings",
