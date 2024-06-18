@@ -5,6 +5,7 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
+                selection_strategy = "reset",
 				layout_config = {
 					horizontal = {
 						width = 0.9,
