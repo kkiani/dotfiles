@@ -19,8 +19,6 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# bar settings
-yabai -m config top_padding 0
 
 # global settings
 yabai -m config mouse_follows_focus          on
@@ -40,10 +38,11 @@ yabai -m config auto_balance                 off
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config bottom_padding               0
-yabai -m config left_padding                 0
-yabai -m config right_padding                0
-yabai -m config window_gap                   0
+yabai -m config left_padding                 5
+yabai -m config right_padding                5
+yabai -m config top_padding                  2
+yabai -m config bottom_padding               2
+yabai -m config window_gap                   5
 
 yabai -m config --space 5 layout             stack
 
@@ -62,5 +61,6 @@ yabai -m rule --add app="System Settings"  manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="Arc" app="^Arc$" title="^(General|Kiarash|Max|Shortcuts|Links|Advance)$" manage=off
 
+borders active_color=0xffcc241d inactive_color=0xff494d64 width=5.0 &
 
 echo "yabai configuration loaded.."
