@@ -44,7 +44,7 @@ yabai -m config top_padding                  2
 yabai -m config bottom_padding               2
 yabai -m config window_gap                   5
 
-yabai -m config --space 5 layout             stack
+yabai -m config --space 4 layout             stack
 
 # exclude apps
 yabai -m rule --add app='^System Information$' manage=off
