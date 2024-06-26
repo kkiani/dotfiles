@@ -1,11 +1,11 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.2",
+	tag = "0.1.8",
 	dependencies = { { "nvim-lua/plenary.nvim" } },
 	config = function()
 		require("telescope").setup({
 			defaults = {
-                selection_strategy = "reset",
+				selection_strategy = "reset",
 				layout_config = {
 					horizontal = {
 						width = 0.9,
