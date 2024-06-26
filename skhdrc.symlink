@@ -4,49 +4,47 @@
 ### skhd docs           :   https://github.com/koekeishiya/skhd
 ################################################################################
 
-#### space management ###########################
-# moving between spaces
-alt + shift - k : yabai -m space --focus next || yabai -m space --focus first
-alt + shift - j : yabai -m space --focus prev || yabai -m space --focus last
+#### window managment ###########################
+# show desktop
+alt - return : yabai -m space --toggle show-desktop
 
-# mirror tree y-axis
+# move focused window between spaces
+alt - n : ~/.dotfiles/scripts/yabai-window-next-space
+alt + shift - n : ~/.dotfiles/scripts/yabai-window-previous-space
+
+# move focused window between displays
+alt - d : yabai -m window --display next
+alt + shift - d : yabai -m window --display prev
+
+# move focused windows in the current space
+alt + ctrl - h : yabai -m window --warp west
+alt + ctrl - l : yabai -m window --warp east
+alt + ctrl - j : yabai -m window --warp south
+alt + ctrl - k : yabai -m window --warp north
+
+# mirror arragning windows in current space
 alt - y : yabai -m space --mirror y-axis
-
-# mirror tree x-axis
 alt - x : yabai -m space --mirror x-axis
 
-alt - return : yabai -m space --toggle mission-control
-alt + shift - return : yabai -m space --toggle show-desktop
 
-#### display managment ###########################
-# move focus between displays
-alt - d : yabai -m display --focus next || yabai -m display --focus prev
+# chaning foucus between windows
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
 
-#### window managment ###########################
-# move focused window to next space
-alt - k : ~/.dotfiles/scripts/yabai-window-next-space
-alt - j : ~/.dotfiles/scripts/yabai-window-previous-space
+# change focus between spaces
+alt + shift - l : yabai -m space --focus next || yabai -m space --focus first
+alt + shift - h : yabai -m space --focus prev || yabai -m space --focus last
 
-# move focused window to next display
-alt - l : yabai -m window --display next
-alt - h : yabai -m window --display prev
+# change focus between displays
+alt - m : yabai -m display --focus next || yabai -m display --focus prev
 
 # making window full-screen.
-alt + shift - f : yabai -m window --toggle native-fullscreen
 alt - f : yabai -m window --toggle zoom-fullscreen
-
-# cycle through windows
-alt - w : fish ~/.dotfiles/scripts/cycle_window.fish
-
-# toggle floating window
-alt + shift - d : yabai -m window --toggle float
 
 # foucs next monitor
 alt - m : yabai -m display --focus next || yabai -m display --focus prev
-
-# move window to left/right side of the space
-alt + ctrl - k : yabai -m window --warp east
-alt + ctrl - j : yabai -m window --warp west
 
 # change layout
 alt - b : fish ~/.dotfiles/scripts/change_layout.fish
@@ -65,8 +63,8 @@ alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 alt - e : nvim ~/.dotfiles
 
 # open obsidian quick notes
-alt - n : shortcuts run "Quick Note"
-alt + shift - n : shortcuts run "Create a Task"
+# alt - n : shortcuts run "Quick Note"
+# alt + shift - n : shortcuts run "Create a Task"
 
 # open iterm2
 alt - t : open /Applications/iTerm.app
