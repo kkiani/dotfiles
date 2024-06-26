@@ -61,6 +61,15 @@ yabai -m rule --add app="System Settings"  manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="Arc" app="^Arc$" title="^(General|Kiarash|Max|Shortcuts|Links|Advance)$" manage=off
 
+# defining default spaces for apps
+# space 1
+yabai -m signal --add event="application_launched" app="^WezTerm$" action="yabai -m window --space 1 && yabai -m space --focus 1"
+yabai -m signal --add event="application_launched" app="^Arc$" action="yabai -m window --space 1 && yabai -m space --focus 1"
+
+# space 4
+yabai -m signal --add event="application_launched" app="^Calendar$" action="yabai -m window --space 4 && yabai -m space --focus 4"
+yabai -m signal --add event="application_launched" app="^Slack$" action="yabai -m window --space 4 && yabai -m space --focus 4"
+
 borders active_color=0xffcc241d inactive_color=0xff494d64 width=5.0 &
 
 echo "yabai configuration loaded.."
