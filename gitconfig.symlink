@@ -35,6 +35,7 @@
     amend = commit --amend --no-edit
     pushall = !git remote | xargs -L1 git push --all
     history = !fish -c 'gitlog'
+    browse = !git remote get-url origin | xargs open
 
 [merge]
     tool = nvim
