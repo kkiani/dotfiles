@@ -33,5 +33,5 @@ abbr --add unarchive "ouch decompress"
 abbr --add cr "cargo run --"
 
 # pdm
-abbr --add pdr "pdm run"
-abbr --add pde "eval (pdm venv activate)"
+abbr --add pdmr "pdm run"
+abbr --add pdme "eval (pdm venv activate)"
