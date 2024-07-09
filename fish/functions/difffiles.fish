@@ -1,4 +1,4 @@
-function diffbrowse --description "Browse diff of files against a branch"
+function difffiles --description "Browse diff of files against a branch"
     set -l branch $argv[1]
     set -l selected "echo {}"
     set -l previewer "$selected | git diff master -- {} | delta -w $COLUMNS"
