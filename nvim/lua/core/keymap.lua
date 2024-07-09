@@ -104,6 +104,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Cancel out highlights and
 
 -- quick exit
 vim.keymap.set("n", "qq", ":q<CR>", { desc = "Quick exit" })
+vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quick exit all" })
 vim.keymap.set("n", "<leader><Esc>", ":only<CR>", { desc = "Keep current window only" })
 
 -- go back and forward with buffers
