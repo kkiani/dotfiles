@@ -34,8 +34,8 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 
 # change focus between spaces
-alt + shift - l : skhd -k "alt - right"
-alt + shift - h : skhd -k "alt - left"
+alt + shift - l : skhd -k "ctrl - right"
+alt + shift - h : skhd -k "ctrl  - left"
 
 # change focus between displays
 alt - m : yabai -m display --focus next || yabai -m display --focus prev
