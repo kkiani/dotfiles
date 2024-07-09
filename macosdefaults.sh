@@ -53,6 +53,7 @@ sudo pmset -b sleep 5
 
 ################## Finder ##################
 # Save screenshots to the desktop/screenshots
+mkdir -p ~/Desktop/screenshots
 defaults write com.apple.screencapture location -string "~/Desktop/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
@@ -72,6 +73,13 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Always open everything in Finder's list view. This is important.
 defaults write com.apple.Finder FXPreferredViewStyle clmv
 
+defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true"
+
+
+
+################## Dock ##################
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
@@ -85,6 +93,7 @@ defaults write com.apple.dock autohide -bool true
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock "static-only" -bool "true"
 
 
 ################## Safari ##################
