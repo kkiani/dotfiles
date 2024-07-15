@@ -13,6 +13,7 @@ return {
 				"rust_analyzer",
 				"tsserver",
 				"pyright",
+				"gopls",
 			},
 		})
 
@@ -21,6 +22,7 @@ return {
 		require("lspconfig.ui.windows").default_options.border = "single" -- setting border for floating windows
 
 		lspconfig.tsserver.setup({})
+		lspconfig.gopls.setup({})
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.pyright.setup({})
 		lspconfig.terraform_lsp.setup({})
