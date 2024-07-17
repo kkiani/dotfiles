@@ -5,6 +5,9 @@
 ################################################################################
 
 #### window managment ###########################
+# detach/attach window
+alt - a : yabai -m window --toggle float && fish ~/.dotfiles/scripts/center_current_window.fish
+
 # show desktop
 alt - return : yabai -m space --toggle show-desktop
 
