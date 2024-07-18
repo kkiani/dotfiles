@@ -35,4 +35,24 @@ return {
 			end
 		end),
 	},
+	{
+		key = "l",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "k",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "j",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "h",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
 }
