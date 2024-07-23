@@ -68,7 +68,7 @@ vim.keymap.set("n", "ga", ":Gitsigns stage_hunk<CR>")
 -- clipboard keymaps
 vim.keymap.set("v", "gy", '"+y')
 vim.keymap.set("v", "gp", '"+p')
-vim.keymap.set("n", "gy", '"+y')
+vim.keymap.set("n", "gY", '"+y$')
 vim.keymap.set("n", "gp", '"+p')
 
 -- GoTo code navigation
