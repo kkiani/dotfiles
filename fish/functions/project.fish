@@ -1,6 +1,6 @@
 function project --description "Open a project from the projects directory"
     set -l selected_line "echo {}"
-    set -l prj_files_preview "$selected_line | xargs exa -s type --icons"
+    set -l prj_files_preview "$selected_line | xargs eza -s type --icons"
     set -l go_in_dir "$selected_line | xargs -I {} find {} -maxdepth 1 -type d -mindepth 1"
 
     z $(find ~/projects -maxdepth 2 -type d -mindepth 2 | \
