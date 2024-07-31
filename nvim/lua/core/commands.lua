@@ -6,7 +6,10 @@ local state = require("telescope.actions.state")
 local oil = require("oil")
 
 -- General
-vim.api.nvim_create_user_command("DeleteFile", ":!rm %", {
+vim.api.nvim_create_user_command("DeleteFile", function()
+	vim.cmd(":!rm %")
+	vim.cmd(":bd")
+end, {
 	desc = "Delete the current file",
 })
 
