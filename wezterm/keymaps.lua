@@ -31,7 +31,7 @@ return {
 			if pane:get_dimensions().pixel_width > pane:get_dimensions().pixel_height then
 				pane:split({ direction = "Right" })
 			else
-				pane:split({ direction = "Top" })
+				pane:split({ direction = "Bottom" })
 			end
 		end),
 	},
