@@ -1,3 +1,5 @@
+local has_value = require("utils").has_value
+
 return {
 	"stevearc/oil.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -11,7 +13,18 @@ return {
 				show_hidden = true,
 				natural_order = true,
 				is_always_hidden = function(name, _)
-					return name == ".." or name == ".git"
+					return has_value({
+						".git",
+						".DS_Store",
+						"..",
+						".venv",
+						".direnv",
+						".devenv",
+						".mypy_cache",
+						".pytest_cache",
+						".ruff_cache",
+						"__pycache__",
+					}, name)
 				end,
 			},
 			columns = {

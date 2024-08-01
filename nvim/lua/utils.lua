@@ -37,10 +37,21 @@ local function exec(args)
 	return vim.api.nvim_command(table.concat(args, " "))
 end
 
+local function has_value(tab, val)
+	for index, value in ipairs(tab) do
+		if value == val then
+			return true
+		end
+	end
+
+	return false
+end
+
 return {
 	picker = picker,
 	split_string = split_string,
 	exec = exec,
+	has_value = has_value,
 }
 
 -- example of using picker

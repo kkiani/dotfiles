@@ -21,9 +21,9 @@ return {
 					-- other layout configuration here
 				},
 				file_ignore_patterns = {
-					"node_modules",
-					".venv",
-					".vscode",
+					"node_modules/",
+					".venv/",
+					".vscode/",
 					".git/",
 				},
 			},
