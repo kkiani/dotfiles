@@ -35,3 +35,6 @@ abbr --add cr "cargo run --"
 # pdm
 abbr --add pdmr "pdm run"
 abbr --add pdme "eval (pdm venv activate)"
+
+# python
+abbr --add penv "python -m venv .venv"
