@@ -22,7 +22,7 @@ return {
 			-- contrast = "hard", -- can be "hard", "soft" or empty string
 			palette_overrides = {},
 			overrides = {
-				["TelescopeSelection"] = { bg = "#665c54" },
+				["TelescopeSelection"] = { bg = "#458588" },
 			},
 			dim_inactive = false,
 			transparent_mode = true,
