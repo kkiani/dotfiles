@@ -9,13 +9,13 @@ return {
 				selection_strategy = "reset",
 				layout_config = {
 					horizontal = {
-						width = 0.9,
-						height = 0.9,
+						width = { padding = 0 },
+						height = { padding = 0 },
 						preview_width = 0.6,
 					},
 					vertical = {
-						width = 0.9,
-						height = 0.9,
+						width = { padding = 0 },
+						height = { padding = 0 },
 						preview_height = 0.7,
 					},
 					-- other layout configuration here
