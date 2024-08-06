@@ -7,15 +7,16 @@ local gitsigns = require("gitsigns")
 vim.g.mapleader = " "
 
 -- pane navigation
-vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "Move to left pane" })
-vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "Move to bottom pane" })
-vim.keymap.set("n", "<c-k>", "<c-w>k", { desc = "Move to top pane" })
-vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "Move to right pane" })
+vim.keymap.set("n", "<leader>h", "<c-w>h", { desc = "Move to left pane" })
+vim.keymap.set("n", "<leader>j", "<c-w>j", { desc = "Move to bottom pane" })
+vim.keymap.set("n", "<leader>k", "<c-w>k", { desc = "Move to top pane" })
+vim.keymap.set("n", "<leader>l", "<c-w>l", { desc = "Move to right pane" })
 
-vim.keymap.set("n", "<C-H>", "<c-w>H", { desc = "Move to left pane and expand" })
-vim.keymap.set("n", "<C-J>", "<c-w>J", { desc = "Move to bottom pane and expand" })
-vim.keymap.set("n", "<C-K>", "<c-w>K", { desc = "Move to top pane and expand" })
-vim.keymap.set("n", "<C-L>", "<c-w>L", { desc = "Move to right pane and expand" })
+vim.keymap.set("n", "<leader>H", "<c-w>H", { desc = "Move to left pane and expand" })
+vim.keymap.set("n", "<leader>J", "<c-w>J", { desc = "Move to bottom pane and expand" })
+vim.keymap.set("n", "<leader>K", "<c-w>K", { desc = "Move to top pane and expand" })
+vim.keymap.set("n", "<leader>L", "<c-w>L", { desc = "Move to right pane and expand" })
+
 -- quickfix
 vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
@@ -102,7 +103,7 @@ vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", {})
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol" })
 vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", { desc = "Format code" })
 vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Show code actions" })
-vim.keymap.set("n", "<leader>j", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Show document symbols" })
+vim.keymap.set("n", "gj", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Show document symbols" })
 
 vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Show diagnostics" })
 vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Go to previous diagnostic" })
