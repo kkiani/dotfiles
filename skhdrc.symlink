@@ -79,10 +79,10 @@ alt - v : code -n
 alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
 
 #### Remapping System Motion ####################
-ctrl - h: skhd -k "left"
-ctrl - j: skhd -k "down"
-ctrl - k: skhd -k "up"
-ctrl - l: skhd -k "right"
+cmd + alt - h: skhd -k "left"
+cmd + alt - j: skhd -k "down"
+cmd + alt - k: skhd -k "up"
+cmd + alt - l: skhd -k "right"
 
 
 #### Application Specific Bindings ###########################

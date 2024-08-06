@@ -5,6 +5,16 @@ local ls = require("luasnip")
 -- setting the leader key
 vim.g.mapleader = " "
 
+-- pane navigation
+vim.keymap.set("n", "<c-h>", "<c-w>h", { desc = "Move to left pane" })
+vim.keymap.set("n", "<c-j>", "<c-w>j", { desc = "Move to bottom pane" })
+vim.keymap.set("n", "<c-k>", "<c-w>k", { desc = "Move to top pane" })
+vim.keymap.set("n", "<c-l>", "<c-w>l", { desc = "Move to right pane" })
+
+vim.keymap.set("n", "<C-H>", "<c-w>H", { desc = "Move to left pane and expand" })
+vim.keymap.set("n", "<C-J>", "<c-w>J", { desc = "Move to bottom pane and expand" })
+vim.keymap.set("n", "<C-K>", "<c-w>K", { desc = "Move to top pane and expand" })
+vim.keymap.set("n", "<C-L>", "<c-w>L", { desc = "Move to right pane and expand" })
 -- quickfix
 vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
