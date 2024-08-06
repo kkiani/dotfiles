@@ -1,6 +1,7 @@
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
 local ls = require("luasnip")
+local gitsigns = require("gitsigns")
 
 -- setting the leader key
 vim.g.mapleader = " "
@@ -74,6 +75,13 @@ vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
 vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
 vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
 vim.keymap.set("n", "ga", ":Gitsigns stage_hunk<CR>")
+vim.keymap.set("v", "ga", function()
+	local first_line = vim.fn.line("v")
+	local last_line = vim.fn.getpos(".")[2]
+	gitsigns.stage_hunk({ first_line, last_line })
+	-- go to normal mode after staging
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
+end)
 
 -- clipboard keymaps
 vim.keymap.set("v", "gy", '"+y')
