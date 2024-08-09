@@ -6,6 +6,10 @@ local gitsigns = require("gitsigns")
 -- setting the leader key
 vim.g.mapleader = " "
 
+-- quickfix
+vim.keymap.set("n", "]q", ":cnext<CR>", { desc = "Go to next quickfix" })
+vim.keymap.set("n", "[q", ":cprev<CR>", { desc = "Go to previous quickfix" })
+
 -- pane navigation
 vim.keymap.set("n", "<leader>h", "<c-w>h", { desc = "Move to left pane" })
 vim.keymap.set("n", "<leader>j", "<c-w>j", { desc = "Move to bottom pane" })
