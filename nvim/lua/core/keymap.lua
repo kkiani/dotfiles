@@ -6,6 +6,12 @@ local gitsigns = require("gitsigns")
 -- setting the leader key
 vim.g.mapleader = " "
 
+-- surroundings
+vim.keymap.set("n", 'gs"', 'ciw""<esc>P', { noremap = true, silent = true, desc = "Surround word with double quotes" })
+vim.keymap.set("n", "gs'", "ciw''<esc>P", { noremap = true, silent = true, desc = "Surround word with single quotes" })
+vim.keymap.set("v", 'gs"', 'c""<esc>P', { noremap = true, silent = true, desc = "Surround selection with double quotes" })
+vim.keymap.set("v", "gs'", "c''<esc>P", { noremap = true, silent = true, desc = "Surround selection with single quotes" })
+
 -- quickfix
 vim.keymap.set("n", "]q", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "[q", ":cprev<CR>", { desc = "Go to previous quickfix" })
