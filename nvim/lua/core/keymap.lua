@@ -9,12 +9,18 @@ vim.g.mapleader = " "
 -- surroundings
 vim.keymap.set("n", 'gs"', 'ciw""<esc>P', { noremap = true, silent = true, desc = "Surround word with double quotes" })
 vim.keymap.set("n", "gs'", "ciw''<esc>P", { noremap = true, silent = true, desc = "Surround word with single quotes" })
-vim.keymap.set("v", 'gs"', 'c""<esc>P', { noremap = true, silent = true, desc = "Surround selection with double quotes" })
-vim.keymap.set("v", "gs'", "c''<esc>P", { noremap = true, silent = true, desc = "Surround selection with single quotes" })
-
--- quickfix
-vim.keymap.set("n", "]q", ":cnext<CR>", { desc = "Go to next quickfix" })
-vim.keymap.set("n", "[q", ":cprev<CR>", { desc = "Go to previous quickfix" })
+vim.keymap.set(
+	"v",
+	'gs"',
+	'c""<esc>P',
+	{ noremap = true, silent = true, desc = "Surround selection with double quotes" }
+)
+vim.keymap.set(
+	"v",
+	"gs'",
+	"c''<esc>P",
+	{ noremap = true, silent = true, desc = "Surround selection with single quotes" }
+)
 
 -- pane navigation
 vim.keymap.set("n", "<leader>h", "<c-w>h", { desc = "Move to left pane" })
@@ -30,6 +36,8 @@ vim.keymap.set("n", "<leader>L", "<c-w>L", { desc = "Move to right pane and expa
 -- quickfix
 vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
+vim.keymap.set("n", "]q", ":cnext<CR>", { desc = "Go to next quickfix" })
+vim.keymap.set("n", "[q", ":cprev<CR>", { desc = "Go to previous quickfix" })
 
 -- paste without yank
 vim.keymap.set("x", "p", '"_dP', { noremap = true, desc = "Paste without yank" })
