@@ -72,6 +72,5 @@ yabai -m signal --add event="application_launched" app="^Calendar$" action="yaba
 yabai -m signal --add event="application_launched" app="^Slack$" action="yabai -m window --space 4 && yabai -m space --focus 4"
 yabai -m signal --add event="application_launched" app="^Obsidian$" action="yabai -m window --space 4 && yabai -m space --focus 4"
 
-borders active_color=0xffcc241d inactive_color=0xff494d64 width=5.0 &
 
 echo "yabai configuration loaded.."
