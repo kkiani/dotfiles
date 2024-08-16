@@ -52,6 +52,9 @@ alt - m : yabai -m display --focus next || yabai -m display --focus prev
 # change layout
 alt - b : fish ~/.dotfiles/scripts/change_layout.fish
 
+# reset size of windows
+alt - 0 : yabai -m query --spaces --window | jq -r '.[0].windows.[]' | xargs -L 1 -I{} yabai -m window {} --ratio abs:0.5:0.5
+
 #### system keybindings ##########################
 # screen capture and copy to clipboard.
 cmd + shift - 3 : screencapture -ic
