@@ -91,6 +91,7 @@ vim.keymap.set("n", "<leader>f", ":Find<CR>", { desc = "Find string in project" 
 vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
 vim.keymap.set("n", "<leader>gc", ":tab Git commit<CR>")
 vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
+vim.keymap.set("n", "<leader>G", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
 vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
 vim.keymap.set("n", "ga", ":Gitsigns stage_hunk<CR>")
