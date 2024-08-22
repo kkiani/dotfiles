@@ -110,6 +110,7 @@ cmd - o [
     "Telegram": skhd -k "cmd - k"
     "Miro": skhd -k "cmd - f"
     "Microsoft Teams (work or school)": skhd -k "cmd - e"
+    "Arc": skhd -k "cmd - l"
 ]
 
 ctrl - a [
