@@ -33,6 +33,10 @@ vim.keymap.set("n", "<leader>J", "<c-w>J", { desc = "Move to bottom pane and exp
 vim.keymap.set("n", "<leader>K", "<c-w>K", { desc = "Move to top pane and expand" })
 vim.keymap.set("n", "<leader>L", "<c-w>L", { desc = "Move to right pane and expand" })
 
+-- markers
+vim.keymap.set("n", "M", "m", { desc = "Set mark" })
+vim.keymap.set("n", "m", "`", { desc = "Jump to mark" })
+
 -- quickfix
 vim.keymap.set("n", "<c-n>", ":cnext<CR>", { desc = "Go to next quickfix" })
 vim.keymap.set("n", "<c-p>", ":cprev<CR>", { desc = "Go to previous quickfix" })
@@ -143,6 +147,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Cancel out highlights and
 
 -- quick exit
 vim.keymap.set("n", "qq", ":q<CR>", { desc = "Quick exit" })
+vim.keymap.set("n", "qt", ":tabclose<CR>", { desc = "Quick exit" })
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quick exit all" })
 vim.keymap.set("n", "<leader><Esc>", ":only<CR>", { desc = "Keep current window only" })
 
