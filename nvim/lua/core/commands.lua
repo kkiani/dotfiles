@@ -176,15 +176,13 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 end, {})
 vim.api.nvim_create_user_command("GitVersioningHistory", ":Telescope git_bcommits", {})
 vim.api.nvim_create_user_command("GitBranches", "Telescope git_branches", {})
-vim.api.nvim_create_user_command(
-	"GitGraph",
-	"tabe | Git  ++curwin log --graph --abbrev-commit --decorate --date=relative --all",
-	{}
-)
+vim.api.nvim_create_user_command("GitGraph", function()
+	require("gitgraph").draw({}, { all = true, max_count = 5000 })
+end, { desc = "Open Git Graph" })
 vim.api.nvim_create_user_command("GitBlame", ":Git blame", {})
 vim.api.nvim_create_user_command("GitDiff", ":Gvdiffsplit", {})
 vim.api.nvim_create_user_command("GitDiscardHunk", ":Gitsigns reset_hunk", {})
-vim.api.nvim_create_user_command("GitLog", ":Flog -no-graph -all", {})
+vim.api.nvim_create_user_command("GitLog", ":GitGraph", { desc = "Alias for GitGraph" })
 
 -- Window and split management
 vim.api.nvim_create_user_command("DynamicSplit", function()
