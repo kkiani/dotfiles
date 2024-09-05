@@ -75,9 +75,6 @@ alt - e : nvim ~/.dotfiles
 # open iterm2
 alt - t : open /Applications/iTerm.app
 
-# open new vscode
-alt - v : code -n
-
 # highlight selected text to obsidian current page
 alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
 
