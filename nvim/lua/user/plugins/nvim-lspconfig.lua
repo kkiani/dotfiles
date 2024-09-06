@@ -22,6 +22,7 @@ return {
 		require("lspconfig.ui.windows").default_options.border = "single" -- setting border for floating windows
 
 		lspconfig.tsserver.setup({})
+		lspconfig.clangd.setup({})
 		lspconfig.gopls.setup({})
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.pyright.setup({})
