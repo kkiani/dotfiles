@@ -26,6 +26,7 @@ return {
 				yaml = { prettier },
 				terraform = { require("formatter.filetypes.terraform").terraformfmt },
 				rust = { require("formatter.filetypes.rust").rustfmt },
+				c = { require("formatter.filetypes.c").clangformat },
 
 				-- Use the special "*" filetype for defining formatter configurations on
 				-- any filetype
