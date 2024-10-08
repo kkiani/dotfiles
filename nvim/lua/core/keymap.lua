@@ -3,6 +3,10 @@ local themes = require("telescope.themes")
 local ls = require("luasnip")
 local gitsigns = require("gitsigns")
 
+-- dap remaps
+vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>dk", "<cmd>lua require('dapui').eval()<CR>", { desc = "Toggle Breakpoint" })
+
 -- setting the leader key
 vim.g.mapleader = " "
 
@@ -21,17 +25,6 @@ vim.keymap.set(
 	"c''<esc>P",
 	{ noremap = true, silent = true, desc = "Surround selection with single quotes" }
 )
-
--- pane navigation
-vim.keymap.set("n", "<leader>h", "<c-w>h", { desc = "Move to left pane" })
-vim.keymap.set("n", "<leader>j", "<c-w>j", { desc = "Move to bottom pane" })
-vim.keymap.set("n", "<leader>k", "<c-w>k", { desc = "Move to top pane" })
-vim.keymap.set("n", "<leader>l", "<c-w>l", { desc = "Move to right pane" })
-
-vim.keymap.set("n", "<leader>H", "<c-w>H", { desc = "Move to left pane and expand" })
-vim.keymap.set("n", "<leader>J", "<c-w>J", { desc = "Move to bottom pane and expand" })
-vim.keymap.set("n", "<leader>K", "<c-w>K", { desc = "Move to top pane and expand" })
-vim.keymap.set("n", "<leader>L", "<c-w>L", { desc = "Move to right pane and expand" })
 
 -- markers
 vim.keymap.set("n", "M", "m", { desc = "Set mark" })
@@ -133,7 +126,17 @@ vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "G
 vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Go to next diagnostic" })
 
 -- window management
-vim.keymap.set("n", "<tab>", "<c-W>w", { desc = "Switch to next window" })
+-- pane navigation
+vim.keymap.set("n", "<leader>h", "<c-w>h", { desc = "Move to left pane" })
+vim.keymap.set("n", "<leader>j", "<c-w>j", { desc = "Move to bottom pane" })
+vim.keymap.set("n", "<leader>k", "<c-w>k", { desc = "Move to top pane" })
+vim.keymap.set("n", "<leader>l", "<c-w>l", { desc = "Move to right pane" })
+
+vim.keymap.set("n", "<leader>H", "<c-w>H", { desc = "Move to left pane and expand" })
+vim.keymap.set("n", "<leader>J", "<c-w>J", { desc = "Move to bottom pane and expand" })
+vim.keymap.set("n", "<leader>K", "<c-w>K", { desc = "Move to top pane and expand" })
+vim.keymap.set("n", "<leader>L", "<c-w>L", { desc = "Move to right pane and expand" })
+
 vim.keymap.set("n", "<S-Tab>", "<cmd>tabNext<CR>", { silent = true, desc = "Switch to next tab" })
 vim.keymap.set(
 	"n",
@@ -149,7 +152,6 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Cancel out highlights and
 vim.keymap.set("n", "qq", ":q<CR>", { desc = "Quick exit" })
 vim.keymap.set("n", "qt", ":tabclose<CR>", { desc = "Quick exit" })
 vim.keymap.set("n", "Q", ":qa<CR>", { desc = "Quick exit all" })
-vim.keymap.set("n", "<leader><Esc>", ":only<CR>", { desc = "Keep current window only" })
 
 -- go back and forward with buffers
 vim.keymap.set("n", "[<leader>", "<c-o>", { desc = "Go back to previous buffer" })
