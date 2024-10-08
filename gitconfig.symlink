@@ -36,6 +36,7 @@
     pushall = !git remote | xargs -L1 git push --all
     history = !fish -c 'gitlog'
     browse = !git remote get-url origin | xargs open
+    prune = !git branch --merged main | grep -v '^[ *]*main$' | xargs -d'\n' git branch -d
 
 [merge]
     tool = nvim
