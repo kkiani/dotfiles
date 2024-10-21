@@ -42,7 +42,7 @@ yabai -m config layout                       bsp
 yabai -m config left_padding                 5
 yabai -m config right_padding                5
 yabai -m config top_padding                  2
-yabai -m config bottom_padding               2
+yabai -m config bottom_padding               5
 yabai -m config window_gap                   5
 
 yabai -m config --space 4 layout             stack
@@ -74,6 +74,6 @@ yabai -m signal --add event="application_launched" app="^Calendar$" action="yaba
 yabai -m signal --add event="application_launched" app="^Slack$" action="yabai -m window --space 4 && yabai -m space --focus 4"
 yabai -m signal --add event="application_launched" app="^Obsidian$" action="yabai -m window --space 4 && yabai -m space --focus 4"
 
-borders active_color=0xffd65d0e inactive_color=0xff494d64 width=5.0 &
+borders active_color=0xffd65d0e width=8.0 &
 
 echo "yabai configuration loaded.."
