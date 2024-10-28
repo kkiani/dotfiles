@@ -59,6 +59,7 @@ brew "xplr"
 brew "csvlens"
 brew "ouch"
 brew "choose-rust"
+brew "yazi"
 
 # 'brew install --cask'
 cask "1password"
