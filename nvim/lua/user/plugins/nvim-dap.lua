@@ -3,8 +3,18 @@ return {
 	config = function()
 		local dap = require("dap")
 
+		local function python_path()
+			local virtual_env = vim.env.VIRTUAL_ENV
+			if virtual_env then
+				return virtual_env .. "/bin/python"
+			else
+				return vim.fn.exepath("python3")
+			end
+		end
+
 		dap.configurations.python = {
 			{
+                justMyCode = false,
 				type = "python",
 				request = "launch",
 				name = "Pytest file",
@@ -15,19 +25,18 @@ return {
 				cwd = "${workspaceFolder}",
 			},
 			{
+                justMyCode = false,
 				type = "python",
 				request = "launch",
 				name = "Launch file",
 				program = "${file}",
-				pythonPath = function()
-					return vim.fn.getcwd() .. "/.venv/bin/python"
-				end,
+				pythonPath = python_path(),
 			},
 		}
 
 		dap.adapters.python = {
 			type = "executable",
-			command = ".venv/bin/python",
+			command = python_path(),
 			args = { "-m", "debugpy.adapter" },
 		}
 	end,
