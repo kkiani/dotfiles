@@ -23,7 +23,7 @@ return {
 				typescript = { prettier },
 				javascript = { prettier },
 				json = { prettier },
-				yaml = { prettier },
+				yaml = { require("formatter.filetypes.yaml").prettier },
 				terraform = { require("formatter.filetypes.terraform").terraformfmt },
 				rust = { require("formatter.filetypes.rust").rustfmt },
 				c = { require("formatter.filetypes.c").clangformat },
