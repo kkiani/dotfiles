@@ -10,6 +10,7 @@ tap "FelixKratz/formulae"
 
 # 'brew install'
 brew "git"
+brew "delta"
 brew "asdf"
 brew "awscli"
 brew "aws-cdk"
