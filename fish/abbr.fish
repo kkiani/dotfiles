@@ -39,3 +39,5 @@ abbr --add pdme "eval (pdm venv activate)"
 # python
 abbr --add penv "python -m venv .venv"
 abbr --add pytest "pytest -rP -v"
+
+abbr --add env "env | fzf"
