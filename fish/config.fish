@@ -1,6 +1,6 @@
 if status is-interactive
-    # ~/.config/fish/config.fish
-    starship init fish | source
+    # starship
+    source (/opt/homebrew/bin/starship init fish --print-full-init | psub)
 end
 
 fish_vi_key_bindings
