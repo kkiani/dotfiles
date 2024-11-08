@@ -5,6 +5,9 @@ end
 
 fish_vi_key_bindings
 
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 source ~/.config/fish/alias.fish
 source ~/.config/fish/abbr.fish
 source ~/.config/fish/key_bindings.fish
