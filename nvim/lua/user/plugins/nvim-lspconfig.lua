@@ -13,7 +13,6 @@ return {
 				"rust_analyzer",
 				"tsserver",
 				"pyright",
-				"gopls",
 			},
 		})
 
@@ -23,7 +22,6 @@ return {
 
 		lspconfig.tsserver.setup({})
 		lspconfig.clangd.setup({})
-		lspconfig.gopls.setup({})
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.pyright.setup({})
 		lspconfig.terraform_lsp.setup({})
