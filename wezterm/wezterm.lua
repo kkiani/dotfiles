@@ -10,7 +10,7 @@ config.command_palette_font_size = 22.0
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
-config.default_prog = { "/run/current-system/sw/bin/fish", "-l" }
+-- config.default_prog = { "/run/current-system/sw/bin/fish", "-l" }
 config.keys = key_bindings
 config.window_padding = {
 	left = 0,
