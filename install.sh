@@ -50,9 +50,9 @@ done
 # installing espanso configs from icloud drive
 heading "[configs] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
-
-
-heading "[configs] installing app configurations..."
-ln -sv "$HOME/.config/fish" "$HOME/.config/fish"
-ln -sv "$HOME/.config/nvim" "$HOME/.config/nvim"
-ln -sv "$HOME/.config/wezterm" "$HOME/.config/wezterm"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/fish" "$HOME/.config/fish"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/nvim" "$HOME/.config/nvim"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/wezterm" "$HOME/.config/wezterm"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/Alfred.alfredpreferences" "$HOME/.config/Alfred.alfredpreferences"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/yazi" "$HOME/.config/yazi"
+ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/autin" "$HOME/.config/autin"
