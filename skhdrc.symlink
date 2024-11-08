@@ -72,8 +72,9 @@ alt - e : nvim ~/.dotfiles
 # alt - n : shortcuts run "Quick Note"
 # alt + shift - n : shortcuts run "Create a Task"
 
-# open iterm2
-alt - t : open /Applications/iTerm.app
+# open system settings
+# NOTE: ',' = 0x2B
+cmd + shift - 0x2B : open "/System/Applications/System Settings.app"
 
 # highlight selected text to obsidian current page
 alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
