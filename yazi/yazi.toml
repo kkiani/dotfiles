@@ -1,0 +1,19 @@
+[manager]
+sort_by = "created"
+sort_reverse = true
+linemode = "ctime"
+
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true }
+]
+default = [
+    { run = 'open "$@"', block = true }
+]
+
+[open]
+prepend_rules = [
+    { name = "*/", use = "default" },
+    { name = "*.csv", use = "default"},
+    { name = "*.pages", use = "default"}
+]
