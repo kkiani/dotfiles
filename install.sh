@@ -47,12 +47,14 @@ for file in `find $SELF_PATH/services -maxdepth 1 -name \*.plist`; do
     fi
 done
 
-# installing espanso configs from icloud drive
+# installing configs from dotfiles drive
+ln -sv "$HOME/.dotfiles/fish" "$HOME/.config/fish"
+ln -sv "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
+ln -sv "$HOME/.dotfiles/wezterm" "$HOME/.config/wezterm"
+ln -sv "$HOME/.dotfiles/yazi" "$HOME/.config/yazi"
+
+# installing configs from icloud drive
 heading "[configs] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
-ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/fish" "$HOME/.config/fish"
-ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/nvim" "$HOME/.config/nvim"
-ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/wezterm" "$HOME/.config/wezterm"
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/Alfred.alfredpreferences" "$HOME/.config/Alfred.alfredpreferences"
-ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/yazi" "$HOME/.config/yazi"
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/autin" "$HOME/.config/autin"
