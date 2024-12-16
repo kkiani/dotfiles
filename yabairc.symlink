@@ -55,6 +55,7 @@ yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='Settings$' manage=off
 
 yabai -m rule --add app='^Calculator$' manage=off
+yabai -m rule --add app='^1Password$' manage=off
 yabai -m rule --add app='Clock' manage=off
 yabai -m rule --add app="^Raycast$" label="Raycast" manage=off
 yabai -m rule --add app="Stats"  manage=off
@@ -62,16 +63,18 @@ yabai -m rule --add app="System Settings"  manage=off
 yabai -m rule --add app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add app="^Arc$" title="^(General|Kiarash|Max|Shortcuts|Links|Advance)$" manage=off
 
-yabai -m rule --apply
-
-# defining default spaces for apps
+# Pin apps to spaces
 # space 1
 yabai -m rule --add app="^WezTerm$" space=^1
 yabai -m rule --add app="^Firefox" space=^1
 
+# space 4
 yabai -m rule --add app="^Calendar" space=^4
 yabai -m rule --add app="^Slack" space=^4
+yabai -m rule --add app="^Microsoft Teams" space=^4
 yabai -m rule --add app="^Obsidian" space=^4
+
+yabai -m rule --apply
 
 borders active_color=0xffd65d0e width=8.0
 
