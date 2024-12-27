@@ -1,0 +1,17 @@
+# Fonts
+font-size = 14
+
+# Theme
+theme = GruvboxDark
+
+# Cursor
+cursor-click-to-move = true
+cursor-style-blink = false
+mouse-hide-while-typing = true
+
+# Shell
+shell-integration = fish
+shell-integration-features = cursor,sudo,title
+
+# Keybindings
+keybind = cmd+s=toggle_quick_terminal
