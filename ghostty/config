@@ -5,13 +5,14 @@ font-size = 14
 theme = GruvboxDark
 
 # Cursor
+cursor-style = block
 cursor-click-to-move = true
 cursor-style-blink = false
 mouse-hide-while-typing = true
 
 # Shell
 shell-integration = fish
-shell-integration-features = cursor,sudo,title
+shell-integration-features = no-cursor,sudo,title
 
 # Keybindings
 keybind = global:cmd+shift+t=toggle_quick_terminal
