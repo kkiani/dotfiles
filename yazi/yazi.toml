@@ -1,5 +1,5 @@
 [manager]
-sort_by = "created"
+sort_by = "btime"
 sort_reverse = true
 linemode = "ctime"
 
