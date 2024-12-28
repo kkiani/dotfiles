@@ -14,4 +14,5 @@ shell-integration = fish
 shell-integration-features = cursor,sudo,title
 
 # Keybindings
-keybind = cmd+s=toggle_quick_terminal
+keybind = global:cmd+shift+t=toggle_quick_terminal
+keybind = cmd+r=reload_config
