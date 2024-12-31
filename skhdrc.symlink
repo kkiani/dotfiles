@@ -131,3 +131,8 @@ cmd - 8 [
     "Arc": skhd -k "cmd - s"
     "Reminders": skhd -k "cmd + alt - s"
 ]
+
+cmd + shift - t [
+    "Ghostty": yabai -m window --insert stack; skhd -k "cmd - t"
+    "Finder": yabai -m window --insert stack; skhd -k "cmd - t"
+]
