@@ -79,6 +79,9 @@ cmd + shift - 0x2B : open "/System/Applications/System Settings.app"
 # highlight selected text to obsidian current page
 alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
 
+# open 1password
+cmd - 1 : open "/Applications/1Password.app"
+
 #### Remapping System Motion ####################
 ctrl - h: skhd -k "left"
 ctrl - j: skhd -k "down"
