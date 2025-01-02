@@ -1,6 +1,9 @@
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-set -U BREW_PREFIX "$(brew --prefix)"
+if test $(uname -m) = "arm64"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+end
+
+set -l BREW_PREFIX "$(brew --prefix)"
 
 if status is-interactive
     # starship
