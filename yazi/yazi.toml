@@ -1,7 +1,9 @@
 [manager]
 sort_by = "btime"
 sort_reverse = true
-linemode = "ctime"
+linemode = "btime"
+sort_dir_first = false
+show_symlink = true
 
 [opener]
 edit = [
