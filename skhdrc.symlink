@@ -83,7 +83,7 @@ alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
 cmd - 1 : open "/Applications/1Password.app"
 
 # drop last downloaded file
-cmd - 2 : open -a Dropover "$HOME/Downloads/$(eza -rs created --no-quotes $HOME/Downloads | tail -n 1)"
+cmd - 2 : open -a Dropover "$HOME/Downloads/$(eza -s created --no-quotes $HOME/Downloads | tail -n 1)"
 
 #### Remapping System Motion ####################
 ctrl - h: skhd -k "left"

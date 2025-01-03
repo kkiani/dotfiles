@@ -3,7 +3,7 @@ prepend_keymap = [
     { on = "<Space>", run = 'shell "qlmanage -p \"$@\"" --confirm'},
     { on = ":", run = 'shell --block --interactive'},
     { on = "e", run = 'shell "nvim \"$@\"" --block --confirm'},
-    { on = [ "V" ], run = '''
+    { on = [ "g", "d" ], run = '''
         shell 'open -a Dropover "$1"' --confirm
-    ''' }
+    ''', desc = 'Drag and Drop' }
 ]
