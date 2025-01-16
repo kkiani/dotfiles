@@ -114,7 +114,7 @@ cmd - o [
     "Finder": skhd -k "cmd + shift - g"
     "Telegram": skhd -k "cmd - k"
     "Miro": skhd -k "cmd - f"
-    "Microsoft Teams (work or school)": skhd -k "cmd - e"
+    "Microsoft Teams": skhd -k "cmd - e"
     "Arc": skhd -k "cmd - l"
     "Zen Browser": skhd -k "cmd - l"
 ]
