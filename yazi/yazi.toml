@@ -17,5 +17,6 @@ default = [
 prepend_rules = [
     { name = "*/", use = "default" },
     { name = "*.csv", use = "default"},
-    { name = "*.pages", use = "default"}
+    { name = "*.pages", use = "default"},
+    { name = "*.key", use = "default"}
 ]
