@@ -21,3 +21,4 @@ keybind = cmd+r=reload_config
 
 # Others
 confirm-close-surface = false
+quick-terminal-autohide = true
