@@ -5,5 +5,9 @@ prepend_keymap = [
     { on = "e", run = 'shell "nvim \"$@\"" --block --confirm'},
     { on = [ "g", "d" ], run = '''
         shell 'open -a Dropover "$1"' --confirm
-    ''', desc = 'Drag and Drop' }
+    ''', desc = 'Drag and Drop' },
+    { on = [ "g", "a" ], run = '''
+        shell 'airdrop "$1"' --confirm
+    ''', desc = 'Send via Airdrop' },
+    { on = [ "g", "c" ], run = 'cd ~/.dotfiles', desc = 'Go to dotfiles' }
 ]
