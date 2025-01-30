@@ -18,7 +18,7 @@ shell-integration-features = no-cursor,sudo,title
 # Keybindings
 keybind = global:cmd+shift+q=toggle_quick_terminal
 keybind = cmd+r=reload_config
-
+keybind = cmd+f=write_scrollback_file:open
 # Others
 confirm-close-surface = false
 quick-terminal-autohide = true
