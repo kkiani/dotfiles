@@ -63,8 +63,6 @@ yabai -m rule --add app="System Settings"  manage=off
 yabai -m rule --add app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add app="^Arc$" title="^(General|Kiarash|Max|Shortcuts|Links|Advance)$" manage=off
 
-yabai -m signal --add event=window_destroyed action="yabai -m window --focus prev || yabai -m window --focus last"
-
 # Pin apps to spaces
 # space 1
 yabai -m rule --add app="^WezTerm$" space=^1
