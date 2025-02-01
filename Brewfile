@@ -53,6 +53,7 @@ brew "atuin"
 brew "csvlens"
 brew "ouch"
 brew "yazi"
+brew "xh"
 
 # 'brew install --cask'
 cask "1password"
