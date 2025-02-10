@@ -13,6 +13,12 @@ end, {
 	desc = "Delete the current file",
 })
 
+vim.api.nvim_create_user_command("WriteWithoutAutocommand", function()
+	vim.cmd(":noautocmd w %")
+end, {
+	desc = "Save the current file without triggering autocommands",
+})
+
 -- Find and Replace
 vim.api.nvim_create_user_command("Find", function()
 	local current_dir = oil.get_current_dir()

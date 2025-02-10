@@ -3,6 +3,14 @@ local themes = require("telescope.themes")
 local ls = require("luasnip")
 local gitsigns = require("gitsigns")
 
+-- abbreviations
+vim.keymap.set(
+	"ca",
+	"ww",
+	"WriteWithoutAutocommand",
+	{ desc = "Save the current file without triggering autocommands" }
+)
+
 -- dap remaps
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
 vim.keymap.set("n", "<leader>dk", "<cmd>lua require('dapui').eval()<CR>", { desc = "Toggle Breakpoint" })
