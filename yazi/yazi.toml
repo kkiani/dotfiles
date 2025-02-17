@@ -7,7 +7,20 @@ show_symlink = true
 
 [opener]
 edit = [
-    { run = 'nvim "$@"', block = true }
+    { run = 'nvim "$@"', block = true, desc = "Edit with Neovim" },
+    { run = 'code "$@"', block = true, desc = "Edit with vscode" }
+]
+open = [
+    { run = 'open "$@"', block = true, desc = "Open with default application" }
+]
+reveal = [
+    { run = 'open -R "$@"', block = true, desc = "Reveal in Finder" }
+]
+run_bash = [
+    { run = 'bash "$@"', block = true, desc = "Run in Bash Shell" }
+]
+run_fish = [
+    { run = 'fish "$@"', block = true, desc = "Run in Fish Shell" }
 ]
 default = [
     { run = 'open "$@"', block = true }
@@ -15,8 +28,12 @@ default = [
 
 [open]
 prepend_rules = [
-    { name = "*/", use = "default" },
-    { name = "*.csv", use = "default"},
-    { name = "*.pages", use = "default"},
-    { name = "*.key", use = "default"}
+    { mime = "inode/directory", use = ["open", "reveal"] },
+    { mime = "application/*", use = ["open", "reveal"]},
+
+    { name = "*.csv", use = "open"},
+    { name = "*.pages", use = "open"},
+    { name = "*.key", use = "open"},
+
+    { name = "*.fish", use = ["run_fish", "edit", "reveal"]},
 ]
