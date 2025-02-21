@@ -1,5 +1,3 @@
-bind -M insert \cU 'cd ..; commandline -f repaint'
-
 bind -M insert \cO 'y; commandline -f repaint'
 bind \cO 'y; commandline -f repaint'
 

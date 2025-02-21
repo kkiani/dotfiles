@@ -1,6 +1,15 @@
 local wezterm = require("wezterm")
 
 return {
+    -- map CMD + backspece to do crtl+u
+    {
+		key = "Backspace",
+		mods = "CMD",
+		action = wezterm.action.Multiple({
+			-- wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+			wezterm.action.SendKey({ key = "u", mods = "CTRL" }),
+		}),
+    },
 	{
 		key = "k",
 		mods = "CMD",
