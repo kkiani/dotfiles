@@ -23,17 +23,19 @@ run_fish = [
     { run = 'fish "$@"', block = true, desc = "Run in Fish Shell" }
 ]
 default = [
-    { run = 'open "$@"', block = true }
+    { run = 'open "$@"', block = true, desc = "Open with default application" },
+    { run = 'ouch compress "$@" "$1.zip"', block = true, desc = "Compress File/s"},
+    { run = 'open -R "$@"', block = true, desc = "Reveal in Finder" }
 ]
 
 [open]
 prepend_rules = [
-    { mime = "inode/directory", use = ["open", "reveal"] },
-    { mime = "application/*", use = ["open", "reveal"]},
+    { mime = "inode/directory", use = "default" },
+    { mime = "application/*", use = "default"},
 
-    { name = "*.csv", use = "open"},
-    { name = "*.pages", use = "open"},
-    { name = "*.key", use = "open"},
+    { name = "*.csv", use = "default"},
+    { name = "*.pages", use = "default"},
+    { name = "*.key", use = "default"},
 
-    { name = "*.fish", use = ["run_fish", "edit", "reveal"]},
+    { name = "*.fish", use = ["run_fish", "edit", "default"]},
 ]
