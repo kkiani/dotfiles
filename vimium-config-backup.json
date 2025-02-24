@@ -1,0 +1,23 @@
+{
+	"name": "Vimium C",
+	"@time": "1/2/2025, 7:52:11 AM",
+	"time": 1735800731972,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "mac",
+		"firefox": 133
+	},
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"unmap d",
+		"unmap o",
+		"unmap p",
+		"",
+		"map dd removeTab",
+		"map <space>o Vomnibar.activate",
+		"map <space>p Vomnibar.activateTabs",
+		""
+	],
+	"vimSync": true
+}
