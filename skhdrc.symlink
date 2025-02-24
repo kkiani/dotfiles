@@ -105,7 +105,7 @@ cmd - p [
     "Safari": skhd -k "cmd + shift - 0x2A"
     "Notes": skhd -k "cmd + alt - f"
     "Arc": skhd -k "cmd - t"
-    "Zen Browser": skhd -k "cmd - t"
+    "Zen": skhd -k "cmd - t"
 ]
 
 cmd - o [
@@ -116,7 +116,7 @@ cmd - o [
     "Miro": skhd -k "cmd - f"
     "Microsoft Teams": skhd -k "cmd - e"
     "Arc": skhd -k "cmd - l"
-    "Zen Browser": skhd -k "cmd - p";sleep .2; skhd -t "% "
+    "Zen":  skhd -k "cmd - t";skhd -k "cmd - backspace"; skhd -t "% "
 ]
 
 ctrl - a [
