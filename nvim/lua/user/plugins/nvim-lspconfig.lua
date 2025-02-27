@@ -20,6 +20,44 @@ return {
 
 		require("lspconfig.ui.windows").default_options.border = "single" -- setting border for floating windows
 
+		lspconfig.sourcekit.setup({
+			cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
+			root_dir = function(filename, _)
+				local util = require("lspconfig.util")
+
+				return util.root_pattern("buildServer.json")(filename)
+					or util.root_pattern("*.xcodeproj", "*.xcworkspace")(filename)
+					or util.find_git_ancestor(filename)
+					or util.root_pattern("Package.swift")(filename)
+					or util.root_pattern("*.swift")(filename)
+			end,
+			capabilities = {
+				require("cmp_nvim_lsp").default_capabilities(),
+				textDocument = {
+					completion = {
+						completionItem = {
+							snippetSupport = true,
+						},
+					},
+				},
+				workspace = {
+					didChangeWatchedFiles = {
+						dynamicRegistration = true,
+					},
+					didChangeConfiguration = {
+						dynamicRegistration = true,
+					},
+					symbol = {
+						dynamicRegistration = true,
+					},
+				},
+			},
+			settings = {
+				sourcekit = {
+					diagnostics = true,
+				},
+			},
+		})
 		lspconfig.tsserver.setup({})
 		lspconfig.clangd.setup({})
 		lspconfig.rust_analyzer.setup({})
