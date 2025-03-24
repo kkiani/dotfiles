@@ -46,9 +46,6 @@ alt - m : yabai -m display --focus next || yabai -m display --focus prev
 # making window full-screen.
 alt - f : yabai -m window --toggle zoom-fullscreen
 
-# foucs next monitor
-alt - m : yabai -m display --focus next || yabai -m display --focus prev
-
 # change layout
 alt - b : fish ~/.dotfiles/scripts/change_layout.fish
 
