@@ -60,7 +60,7 @@ cmd + shift - 3 : screencapture -ic
 cmd + shift - v : skhd -k "cmd + shift + alt - v"
 
 # togle system mic mute.
-alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
+# alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
 
 # editing dotfiles
 alt - e : nvim ~/.dotfiles
