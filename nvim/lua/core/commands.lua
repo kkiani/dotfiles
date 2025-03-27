@@ -160,7 +160,7 @@ vim.api.nvim_create_user_command("GitStashPop", function()
 		end,
 	})
 end, {})
-vim.api.nvim_create_user_command("GitCheckout", function()
+vim.api.nvim_create_user_command("GitSwitch", function()
 	telescope.git_branches(themes.get_ivy({
 		previewer = false,
 		layout_config = {
@@ -180,6 +180,7 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 		end,
 	}))
 end, {})
+vim.api.nvim_create_user_command("GitCheckout", ":GitSwitch", {})
 vim.api.nvim_create_user_command("GitVersioningHistory", ":Telescope git_bcommits", {})
 vim.api.nvim_create_user_command("GitBranches", "Telescope git_branches", {})
 vim.api.nvim_create_user_command("GitGraph", function()
