@@ -6,7 +6,8 @@ end
 
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "ellisonleao/gruvbox.nvim", "nvim-tree/nvim-web-devicons" },
+	priority = 500,
 	config = function()
 		require("lualine").setup({
 			options = {

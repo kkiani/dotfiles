@@ -11,7 +11,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"rust_analyzer",
-				"tsserver",
+				"ts_ls",
 				"pyright",
 			},
 		})
@@ -58,7 +58,7 @@ return {
 				},
 			},
 		})
-		lspconfig.tsserver.setup({})
+		lspconfig.ts_ls.setup({})
 		lspconfig.clangd.setup({})
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.pyright.setup({})
