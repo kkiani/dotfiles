@@ -173,7 +173,7 @@ vim.api.nvim_create_user_command("GitCheckout", function()
 				if selection == nil then
 					actions.git_create_branch(prompt_bufnr)
 				else
-					actions.git_checkout(prompt_bufnr)
+					actions.git_switch_branch(prompt_bufnr)
 				end
 			end)
 			return true
