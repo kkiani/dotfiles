@@ -4,7 +4,6 @@
   "autoclose.nvim": { "branch": "main", "commit": "b2077aa2c83df7ebc19b2a20a3a0654b24ae9c8f" },
   "avante.nvim": { "branch": "main", "commit": "26409d94b5a0a51fcd512571403d26cca12033da" },
   "btw.nvim": { "branch": "master", "commit": "47f6419e90d3383987fd06e8f3e06a4bc032ac83" },
-  "catppuccin": { "branch": "main", "commit": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923" },
   "cmp-git": { "branch": "main", "commit": "d9efd00e0b9527ee05031ce7e7e55d6b118f543e" },
