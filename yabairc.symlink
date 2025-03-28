@@ -51,6 +51,7 @@ yabai -m config --space 4 layout             stack
 yabai -m rule --add app='^System Information$' manage=off
 yabai -m rule --add app='^System Preferences$' manage=off
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='Granola$' manage=off
 
 yabai -m rule --add title='Settings$' manage=off
 
