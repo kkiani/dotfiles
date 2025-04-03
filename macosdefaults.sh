@@ -7,6 +7,9 @@
 
 defaults write -g AppleShowScrollBars WhenScrolling
 
+# move windows by holing ctrl + cmd
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 

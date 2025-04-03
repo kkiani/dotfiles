@@ -59,9 +59,6 @@ cmd + shift - 3 : screencapture -ic
 # paste and match styling
 cmd + shift - v : skhd -k "cmd + shift + alt - v"
 
-# togle system mic mute.
-# alt - m : ~/.dotfiles/scripts/system-mic-mute.scpt
-
 # editing dotfiles
 alt - e : nvim ~/.dotfiles
 
@@ -72,9 +69,6 @@ alt - e : nvim ~/.dotfiles
 # open system settings
 # NOTE: ',' = 0x2B
 cmd + shift - 0x2B : open "/System/Applications/System Settings.app"
-
-# highlight selected text to obsidian current page
-alt - a : ~/.dotfiles/scripts/obsidian-annonations.sh
 
 # open 1password
 cmd - 1 : open "/Applications/1Password.app"

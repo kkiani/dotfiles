@@ -6,6 +6,9 @@
 [includeIf "gitdir:~/projects/datachef/"]
     path = ~/.gitconfig.datachef
 
+[includeIf "gitdir:~/projects/vodafoneziggo/"]
+    path = ~/.gitconfig.datachef
+
 [includeIf "gitdir:~/projects/brenntag/"]
     path = ~/.gitconfig.datachef
 
