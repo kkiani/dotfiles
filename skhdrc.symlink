@@ -29,6 +29,8 @@ alt + ctrl - k : yabai -m window --warp north
 alt - y : yabai -m space --mirror y-axis
 alt - x : yabai -m space --mirror x-axis
 
+# make focused window stack ready for the next window
+alt - s : yabai -m window --insert stack
 
 # chaning foucus between windows
 alt - h : yabai -m window --focus west
