@@ -94,13 +94,13 @@ vim.keymap.set("n", "<leader>f", ":Find<CR>", { desc = "Find string in project" 
 
 -- git commands
 vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
+vim.keymap.set("n", "<leader>gd", ":GitDiscardHunk<CR>")
 vim.keymap.set("n", "<leader>gc", ":tab Git commit<CR>")
 vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
 vim.keymap.set("n", "<leader>G", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
 vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
-vim.keymap.set("n", "ga", ":Gitsigns stage_hunk<CR>")
-vim.keymap.set("v", "ga", function()
+vim.keymap.set("v", "<leader>ga", function()
 	local first_line = vim.fn.line("v")
 	local last_line = vim.fn.getpos(".")[2]
 	gitsigns.stage_hunk({ first_line, last_line })
