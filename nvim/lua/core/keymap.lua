@@ -107,6 +107,13 @@ vim.keymap.set("v", "<leader>ga", function()
 	-- go to normal mode after staging
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
 end)
+vim.keymap.set("v", "<leader>gd", function()
+	local first_line = vim.fn.line("v")
+	local last_line = vim.fn.getpos(".")[2]
+	gitsigns.reset_hunk({ first_line, last_line })
+	-- go to normal mode after staging
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
+end)
 
 -- clipboard keymaps
 vim.keymap.set("v", "gy", '"+y')
