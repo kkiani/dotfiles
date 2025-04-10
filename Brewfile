@@ -54,6 +54,7 @@ brew "csvlens"
 brew "ouch"
 brew "yazi"
 brew "xh"
+brew "terminal-notifier"
 
 # 'brew install --cask'
 cask "1password"
