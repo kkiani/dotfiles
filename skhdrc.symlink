@@ -73,7 +73,7 @@ alt - e : nvim ~/.dotfiles
 cmd + shift - 0x2B : open "/System/Applications/System Settings.app"
 
 # open 1password
-cmd - 1 : open "/Applications/1Password.app"
+cmd - 1 : terminal-notifier -title "Shortcut Reminder" -message "Use the ctrl + cmd - p instead." && open "/Applications/1Password.app"
 
 # drop last downloaded file
 cmd - 2 : open -a Dropover "$HOME/Downloads/$(eza -s created --no-quotes $HOME/Downloads | tail -n 1)"
