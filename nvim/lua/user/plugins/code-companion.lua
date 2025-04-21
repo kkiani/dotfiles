@@ -15,13 +15,13 @@ return {
 		},
 		strategies = {
 			chat = {
-				adapter = "llama3",
+				adapter = "copilot",
 			},
 			inline = {
-				adapter = "llama3",
+				adapter = "copilot",
 			},
 			cmd = {
-				adapter = "llama3",
+				adapter = "copilot",
 			},
 		},
 	},
