@@ -30,12 +30,14 @@ default = [
 
 [open]
 prepend_rules = [
-    { mime = "inode/directory", use = "default" },
-    { mime = "application/*", use = "default"},
-
-    { name = "*.csv", use = "default"},
-    { name = "*.pages", use = "default"},
-    { name = "*.key", use = "default"},
-
+    { mime = "*", use = "default" },
     { name = "*.fish", use = ["run_fish", "edit", "default"]},
+]
+
+[plugin]
+prepend_preloaders = [ ]
+prepend_previewers = [
+    { name = "*.key", run = "noop" },
+    { name = "*.pages", run = "noop" },
+    { name = "*.numbers", run = "noop" },
 ]
