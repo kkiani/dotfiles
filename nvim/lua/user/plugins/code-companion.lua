@@ -12,6 +12,26 @@ return {
 					},
 				})
 			end,
+			phi = function()
+				return require("codecompanion.adapters").extend("ollama", {
+					name = "phi",
+					schema = {
+						model = { default = "phi4:14b" },
+						num_ctx = { default = 16384 },
+						num_predict = { default = -1 },
+					},
+				})
+			end,
+			qwen = function()
+				return require("codecompanion.adapters").extend("ollama", {
+					name = "qwen",
+					schema = {
+						model = { default = "qwen2.5:14b" },
+						num_ctx = { default = 16384 },
+						num_predict = { default = -1 },
+					},
+				})
+			end,
 		},
 		strategies = {
 			chat = {
