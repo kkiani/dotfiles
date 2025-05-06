@@ -12,7 +12,8 @@ alt - a : yabai -m window --toggle float && fish ~/.dotfiles/scripts/center_curr
 alt - return : yabai -m space --toggle show-desktop
 
 # move focused window between spaces
-alt - n : ~/.dotfiles/scripts/yabai-window-next-space
+# alt - n : ~/.dotfiles/scripts/yabai-window-next-space
+alt - n: yabai -m window --space next
 alt + shift - n : ~/.dotfiles/scripts/yabai-window-previous-space
 
 # move focused window between displays
