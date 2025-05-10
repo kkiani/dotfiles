@@ -23,7 +23,7 @@ run_fish = [
     { run = 'fish "$@"', block = true, desc = "Run in Fish Shell" }
 ]
 default = [
-    { run = 'open "$@"', block = true, desc = "Open with default application" },
+    { run = 'yabai -m window --insert stack && open "$@"', block = true, desc = "Open with default application" },
     { run = 'ouch compress "$@" "$1.zip"', block = true, desc = "Compress File/s"},
     { run = 'open -R "$@"', block = true, desc = "Reveal in Finder" }
 ]
