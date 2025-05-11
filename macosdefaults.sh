@@ -5,6 +5,9 @@
 # The original idea (and a couple settings) were grabbed from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
+# disabling system gatekeeper
+sudo spctl --master-disable
+
 defaults write -g AppleShowScrollBars WhenScrolling
 
 # move windows by holing ctrl + cmd
