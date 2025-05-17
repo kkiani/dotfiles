@@ -7,8 +7,7 @@ show_symlink = true
 
 [opener]
 edit = [
-    { run = 'nvim "$@"', block = true, desc = "Edit with Neovim" },
-    { run = 'code "$@"', block = true, desc = "Edit with vscode" }
+    { run = 'nvim "$@"', block = true, desc = "Edit in Neovim" },
 ]
 open = [
     { run = 'open "$@"', block = true, desc = "Open with default application" }
@@ -23,14 +22,22 @@ run_fish = [
     { run = 'fish "$@"', block = true, desc = "Run in Fish Shell" }
 ]
 default = [
-    { run = 'yabai -m window --insert stack && open "$@"', block = true, desc = "Open with default application" },
+    { run = 'open "$@"', block = true, desc = "Open with default application" },
     { run = 'ouch compress "$@" "$1.zip"', block = true, desc = "Compress File/s"},
     { run = 'open -R "$@"', block = true, desc = "Reveal in Finder" }
 ]
 
 [open]
-prepend_rules = [
+rules = [
     { mime = "*", use = "default" },
+
+    { mime = "text/*", use = ["edit", "default"]},
+
+    { name = "*.json", use = ["edit", "default"]},
+    { name = "*.yaml", use = ["edit", "default"]},
+    { name = "*.yml", use = ["edit", "default"]},
+    { name = "*.toml", use = ["edit", "default"]},
+
     { name = "*.fish", use = ["run_fish", "edit", "default"]},
 ]
 
