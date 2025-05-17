@@ -1,13 +1,23 @@
 [manager]
 prepend_keymap = [
-    { on = "<Space>", run = 'shell "qlmanage -p \"$@\"" --confirm'},
-    { on = ":", run = 'shell --block --interactive'},
-    { on = "e", run = 'shell "nvim \"$@\"" --block --confirm'},
-    { on = [ "g", "d" ], run = '''
+    # palette keybindings
+    { on = ["<Space>", "<Space>"], run = 'shell "qlmanage -p \"$@\"" --confirm', desc = "Quick look"},
+    { on = ["<Space>", "d"], run = '''
         shell 'open -a Dropover "$1"' --confirm
     ''', desc = 'Drag and Drop' },
-    { on = [ "g", "a" ], run = '''
+    { on = ["<Space>", "a"], run = '''
         shell 'airdrop "$1"' --confirm
     ''', desc = 'Send via Airdrop' },
-    { on = [ "g", "c" ], run = 'cd ~/.dotfiles', desc = 'Go to dotfiles' }
+
+    # quick jump
+    { on = ["g", "c"], run = 'cd ~/.dotfiles', desc = 'Go to dotfiles' },
+    { on = ["g", "d"], run = 'cd ~/downloads', desc = 'Go to downloads' },
+    { on = ["g", "h"], run = 'cd ~', desc = 'Go to home directory' },
+    { on = ["g", "D"], run = 'cd ~/desktop', desc = 'Go to desktop' },
+
+    # shell commands
+    { on = ":", run = 'shell --block --interactive'},
+
+    # quick actions
+    { on = "e", run = 'shell "nvim \"$@\"" --block --confirm'}
 ]
