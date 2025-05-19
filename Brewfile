@@ -1,7 +1,5 @@
 # 'brew tap'
 tap "epk/epk"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "koekeishiya/formulae"
 tap "jorgelbg/tap"
 tap "hashicorp/tap"
