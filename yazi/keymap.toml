@@ -3,7 +3,7 @@ prepend_keymap = [
     # palette keybindings
     { on = ["<Space>", "<Space>"], run = 'shell "qlmanage -p \"$@\"" --confirm', desc = "Quick look"},
     { on = ["<Space>", "d"], run = '''
-        shell 'open -a Dropover "$1"' --confirm
+        shell 'open -a Dropover "$@"' --confirm
     ''', desc = 'Drag and Drop' },
     { on = ["<Space>", "a"], run = '''
         shell 'airdrop "$1"' --confirm
