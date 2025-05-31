@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
     # palette keybindings
     { on = ["<Space>", "<Space>"], run = 'shell "qlmanage -p \"$@\"" --confirm', desc = "Quick look"},
