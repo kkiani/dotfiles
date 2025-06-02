@@ -161,8 +161,8 @@ vim.keymap.set(
 )
 
 -- tab navigation
-vim.keymap.set("n", "t]", ":tabnext<CR>", { desc = "Go to next tab" })
-vim.keymap.set("n", "t[", ":tabprevious<CR>", { desc = "Go to previous tab" })
+vim.keymap.set("n", "]t", ":tabnext<CR>", { desc = "Go to next tab" })
+vim.keymap.set("n", "[t", ":tabprevious<CR>", { desc = "Go to previous tab" })
 
 -- cancel out highlights on tapping Esc key
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "Cancel out highlights and go back to normal mode" })
