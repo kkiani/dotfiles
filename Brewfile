@@ -4,6 +4,7 @@ tap "koekeishiya/formulae"
 tap "jorgelbg/tap"
 tap "hashicorp/tap"
 tap "FelixKratz/formulae"
+tap "fastrepl/hyprnote"
 
 # 'brew install'
 brew "git"
@@ -85,3 +86,4 @@ cask "logi-options+"
 cask "ghostty"
 cask "arc"
 cask "obs"
+cask "hyprnote "
