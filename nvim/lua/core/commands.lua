@@ -190,6 +190,21 @@ vim.api.nvim_create_user_command("GitBlame", ":Git blame", {})
 vim.api.nvim_create_user_command("GitDiff", ":Gvdiffsplit", {})
 vim.api.nvim_create_user_command("GitDiscardHunk", ":Gitsigns reset_hunk", {})
 vim.api.nvim_create_user_command("GitLog", ":GitGraph", { desc = "Alias for GitGraph" })
+vim.api.nvim_create_user_command("GitRebase", function()
+	telescope.git_branches({
+		attach_mappings = function(_, map)
+			map("i", "<CR>", function(prompt_bufnr)
+				local action_state = require("telescope.actions.state")
+				local selection = action_state.get_selected_entry()
+				actions.close(prompt_bufnr)
+				vim.cmd("Git rebase " .. selection.value)
+			end)
+			return true
+		end,
+	})
+end, { desc = "Start a Git rebase" })
+vim.api.nvim_create_user_command("GitRebaseContinue", ":Git rebase --continue", { desc = "Continue a Git rebase" })
+vim.api.nvim_create_user_command("GitRebaseAbort", ":Git rebase --abort", { desc = "Abort a Git rebase" })
 
 -- Window and split management
 vim.api.nvim_create_user_command("DynamicSplit", function()
