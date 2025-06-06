@@ -108,6 +108,8 @@ vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
 vim.keymap.set("n", "<leader>G", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
 vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
+vim.keymap.set("n", "<space>gp", ":Gitsigns preview_hunk<CR>")
+
 vim.keymap.set("v", "<leader>ga", function()
 	local first_line = vim.fn.line("v")
 	local last_line = vim.fn.getpos(".")[2]
