@@ -3,6 +3,14 @@ local themes = require("telescope.themes")
 local ls = require("luasnip")
 local gitsigns = require("gitsigns")
 
+-- codecompanion remaps
+vim.keymap.set(
+	"n",
+	"<leader>cc",
+	":CodeCompanionChat Toggle<cr>",
+	{ noremap = true, silent = true, desc = "Toggle CodeCompanion Panel" }
+)
+
 -- abbreviations
 vim.keymap.set(
 	"ca",
