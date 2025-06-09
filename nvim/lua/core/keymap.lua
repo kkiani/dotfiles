@@ -6,7 +6,7 @@ local gitsigns = require("gitsigns")
 -- codecompanion remaps
 vim.keymap.set(
 	"n",
-	"<leader>cc",
+	"<c-c>",
 	":CodeCompanionChat Toggle<cr>",
 	{ noremap = true, silent = true, desc = "Toggle CodeCompanion Panel" }
 )

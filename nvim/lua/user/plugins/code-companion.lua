@@ -36,12 +36,27 @@ return {
 		strategies = {
 			chat = {
 				adapter = "copilot",
+				model = "claude-sonnet-4-20250514",
+				keymaps = {
+					send = {
+						modes = { n = "<S-CR>", i = "<S-CR>" },
+					},
+				},
 			},
 			inline = {
 				adapter = "copilot",
 			},
 			cmd = {
 				adapter = "copilot",
+			},
+		},
+		display = {
+			chat = {
+				window = {
+					position = "right",
+					list = true,
+					width = 0.3,
+				},
 			},
 		},
 	},
