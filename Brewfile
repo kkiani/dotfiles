@@ -51,6 +51,7 @@ brew "yazi"
 brew "xh"
 brew "terminal-notifier"
 brew "7zip" # required by yazi
+brew "lazydocker"
 
 # 'brew install --cask'
 cask "1password"
