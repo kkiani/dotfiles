@@ -61,5 +61,11 @@
 
 [commit]
     gpgsign = true
+
 [fetch]
 	prune = true
+    pruneTags = true
+
+[status]
+	showUntrackedFiles = all
+	showStash = true
