@@ -24,6 +24,9 @@ return {
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip", option = { show_autosnippets = true } },
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "git" },
+				{ name = "path" },
 			},
 			window = {
 				completion = cmp.config.window.bordered(),
