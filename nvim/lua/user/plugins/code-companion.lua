@@ -1,6 +1,17 @@
 return {
 	"olimorris/codecompanion.nvim",
 	opts = {
+		extensions = {
+			mcphub = {
+				callback = "mcphub.extensions.codecompanion",
+				opts = {
+					show_result_in_chat = true, -- Show mcp tool results in chat
+					make_vars = true, -- Convert resources to #variables
+					make_slash_commands = true, -- Add prompts as /slash commands
+					requires_approval = true,
+				},
+			},
+		},
 		adapters = {
 			llama3 = function()
 				return require("codecompanion.adapters").extend("ollama", {
@@ -55,10 +66,13 @@ return {
 		display = {
 			chat = {
 				show_header_separator = true,
+				show_reference = true,
+				show_token_count = true,
+				start_in_insert_mode = true,
 				window = {
-					position = "right",
-					list = true,
-					width = 0.3,
+					layout = "buffer",
+					position = nil,
+					relative = "editor",
 				},
 			},
 		},
