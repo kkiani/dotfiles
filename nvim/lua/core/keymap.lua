@@ -57,6 +57,7 @@ vim.keymap.set("x", "p", '"_dP', { noremap = true, desc = "Paste without yank" }
 
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set({ "n", "i" }, "<c-t>", "<cmd>Terminal<CR>", { desc = "Toggle terminal" })
 
 -- show command palette
 vim.keymap.set("n", "<leader>p", function()
