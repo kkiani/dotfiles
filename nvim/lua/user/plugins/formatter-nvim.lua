@@ -19,7 +19,16 @@ return {
 				-- Formatter configurations for filetype "lua" go here
 				-- and will be executed in order
 				lua = { require("formatter.filetypes.lua").stylua },
-				python = { require("formatter.filetypes.python").black },
+				python = {
+					require("formatter.filetypes.python").ruff,
+					function()
+						return {
+							exe = "ruff",
+							args = { "check", "--select", "I", "--fix", "-" },
+							stdin = true,
+						}
+					end,
+				},
 				typescript = { prettier },
 				javascript = { prettier },
 				json = { prettier },
