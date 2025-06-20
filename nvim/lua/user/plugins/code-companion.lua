@@ -35,7 +35,7 @@ return {
 		},
 		strategies = {
 			chat = {
-				adapter = "copilot",
+				name = "copilot",
 				model = "claude-sonnet-4-20250514",
 				keymaps = {
 					send = {
@@ -45,13 +45,16 @@ return {
 			},
 			inline = {
 				adapter = "copilot",
+				model = "claude-3-sonnet-20240229",
 			},
 			cmd = {
 				adapter = "copilot",
+				model = "claude-3-sonnet-20240229",
 			},
 		},
 		display = {
 			chat = {
+				show_header_separator = true,
 				window = {
 					position = "right",
 					list = true,
