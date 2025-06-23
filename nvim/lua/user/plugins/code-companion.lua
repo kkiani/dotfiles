@@ -70,8 +70,8 @@ return {
 				show_token_count = true,
 				start_in_insert_mode = true,
 				window = {
-					layout = "buffer",
-					position = nil,
+					layout = "vertical",
+					position = "right",
 					relative = "editor",
 				},
 			},
