@@ -113,7 +113,7 @@ vim.api.nvim_create_user_command("GitCommit", function()
 		vim.api.nvim_command("Git add .")
 	end
 
-	vim.api.nvim_command("Git commit")
+	vim.api.nvim_command("tab Git commit")
 end, {})
 vim.api.nvim_create_user_command("GitAmend", ":Git amend", {})
 vim.api.nvim_create_user_command("GitAmendAll", function()
