@@ -39,7 +39,7 @@ abbr --add pdme "eval (pdm venv activate)"
 # python
 abbr --add penv "python -m venv .venv"
 abbr --add act "source .venv/bin/activate.fish"
-abbr --add deact "source .venv/bin/activate.fish"
+abbr --add deact "deactivate"
 abbr --add envuv "UV_ENV_FILE=.env uv run"
 
 abbr --add env "env | fzf"
