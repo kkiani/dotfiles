@@ -58,11 +58,6 @@ return {
 				},
 			},
 		})
-		lspconfig.ts_ls.setup({})
-		lspconfig.clangd.setup({})
-		lspconfig.rust_analyzer.setup({})
-		lspconfig.pyright.setup({})
-		lspconfig.terraform_lsp.setup({})
 		lspconfig.lua_ls.setup({
 			on_init = function(client)
 				local path = client.workspace_folders[1].name
