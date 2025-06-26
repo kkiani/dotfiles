@@ -5,17 +5,55 @@
 ################################################################################
 
 #### window managment ###########################
+# detach/attach window
+alt - a : yabai -m window --toggle float && fish ~/.dotfiles/scripts/center_current_window.fish
 
-alt - h: skhd -k "cmd + alt + ctrl - h"
-alt - l: skhd -k "cmd + alt + ctrl - l"
+# show desktop
+alt - return : yabai -m space --toggle show-desktop
 
-alt - f: skhd -k "cmd + alt + ctrl - f"
-alt + shift - f: skhd -k "cmd + alt + ctrl + shift - f"
+# move focused window between spaces
+# alt - n : ~/.dotfiles/scripts/yabai-window-next-space
+alt - n: yabai -m window --space next
+alt + shift - n : ~/.dotfiles/scripts/yabai-window-previous-space
 
-alt + shift - h: skhd -k "cmd + alt + ctrl + shift - h"
-alt + shift - l: skhd -k "cmd + alt + ctrl + shift - l"
-alt + shift - k: skhd -k "cmd + alt + ctrl + shift - k"
-alt + shift - j: skhd -k "cmd + alt + ctrl + shift - j"
+# move focused window between displays
+alt - d : yabai -m window --display next
+alt + shift - d : yabai -m window --display prev
+
+# move focused windows in the current space
+alt + ctrl - h : yabai -m window --warp west
+alt + ctrl - l : yabai -m window --warp east
+alt + ctrl - j : yabai -m window --warp south
+alt + ctrl - k : yabai -m window --warp north
+
+# mirror arragning windows in current space
+alt - y : yabai -m space --mirror y-axis
+alt - x : yabai -m space --mirror x-axis
+
+# make focused window stack ready for the next window
+alt - s : yabai -m window --insert stack
+
+# chaning foucus between windows
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+
+# change focus between spaces
+alt + shift - l : skhd -k "ctrl - right"
+alt + shift - h : skhd -k "ctrl - left"
+
+# change focus between displays
+alt - m : yabai -m display --focus next || yabai -m display --focus prev
+
+# making window full-screen.
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# change layout
+alt - b : fish ~/.dotfiles/scripts/change_layout.fish
+
+# reset size of windows
+alt - 0 : yabai -m query --spaces --window | jq -r '.[0].windows.[]' | xargs -L 1 -I{} yabai -m window {} --ratio abs:0.5:0.5
 
 #### system keybindings ##########################
 # screen capture and copy to clipboard.
