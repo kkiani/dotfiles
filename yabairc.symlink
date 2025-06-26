@@ -39,11 +39,11 @@ yabai -m config auto_balance                 off
 
 # general space settings
 yabai -m config layout                       stack
-yabai -m config left_padding                 5
-yabai -m config right_padding                5
-yabai -m config top_padding                  2
-yabai -m config bottom_padding               5
-yabai -m config window_gap                   5
+yabai -m config left_padding                 10
+yabai -m config right_padding                10
+yabai -m config top_padding                  10
+yabai -m config bottom_padding               10
+yabai -m config window_gap                   10
 
 # yabai -m config --space 4 layout             stack
 
@@ -77,6 +77,6 @@ yabai -m rule --add app="^Obsidian" space=^4
 
 yabai -m rule --apply
 
-borders active_color=0xffd65d0e width=8.0
+borders active_color=0xffd65d0e width=10.0
 
 echo "yabai configuration loaded.."
