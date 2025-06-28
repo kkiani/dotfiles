@@ -11,7 +11,6 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
--- config.default_prog = { "/run/current-system/sw/bin/fish", "-l" }
 config.keys = key_bindings
 config.window_padding = {
 	left = 0,
@@ -20,9 +19,9 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- Making sure that fish is in the PATH
+-- Making sure that brew packages are in the PATH
 config.set_environment_variables = {
-	PATH = "/usr/local/bin/:" .. os.getenv("PATH"),
+	PATH = "/opt/homebrew/bin:/usr/local/bin:" .. os.getenv("PATH"),
 }
 
 local function recompute_padding(window)

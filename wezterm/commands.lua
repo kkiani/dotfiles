@@ -14,17 +14,33 @@ return {
 		}),
 	},
 	{
-		brief = "Open BTop at bottom",
+		brief = "Btop",
 		icon = "cod_dashboard",
-		action = wezterm.action_callback(function(_, pane)
-			pane:split({ direction = "Bottom", args = { "btop" } })
+		action = wezterm.action_callback(function(window, pane)
+			local tab, _, _ = window:mux_window():spawn_tab({
+				args = { "btop" },
+			})
+			tab:set_title("BTop")
 		end),
 	},
 	{
-		brief = "Cheat Sheet",
-		icon = "cod_book",
-		action = wezterm.action_callback(function(_, pane)
-			pane:window():spawn_tab({ args = { "fish", "-c", "csh" } })
+		brief = "Docker",
+		icon = "md_docker",
+		action = wezterm.action_callback(function(window, pane)
+			local tab, _, _ = window:mux_window():spawn_tab({
+				args = { "lazydocker" },
+			})
+			tab:set_title("Docker")
+		end),
+	},
+	{
+		brief = "ClaudeCode",
+		icon = "md_robot",
+		action = wezterm.action_callback(function(window, pane)
+			local tab, _, _ = window:mux_window():spawn_tab({
+				args = { "claude" },
+			})
+			tab:set_title("ClaudeCode")
 		end),
 	},
 }
