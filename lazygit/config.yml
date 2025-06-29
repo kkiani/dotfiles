@@ -1,8 +1,7 @@
 gui:
-  windowSize: "half"
+  screenMode: "half"
   showFileTree: false
   enlargedSideViewLocation: "top"
-
 git:
   paging:
     colorArg: always
