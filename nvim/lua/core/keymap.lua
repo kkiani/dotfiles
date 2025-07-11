@@ -3,13 +3,7 @@ local themes = require("telescope.themes")
 local ls = require("luasnip")
 local gitsigns = require("gitsigns")
 
--- codecompanion remaps
-vim.keymap.set(
-	"n",
-	"<c-c>",
-	":CodeCompanionChat Toggle<cr>",
-	{ noremap = true, silent = true, desc = "Toggle CodeCompanion Panel" }
-)
+vim.keymap.set({ "n", "i" }, "<c-c>", "<cmd>CopyFilePath<CR>", { desc = "Copy Current file full path" })
 
 -- abbreviations
 vim.keymap.set(

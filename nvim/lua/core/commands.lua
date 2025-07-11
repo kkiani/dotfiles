@@ -6,6 +6,14 @@ local state = require("telescope.actions.state")
 local oil = require("oil")
 
 -- General
+vim.api.nvim_create_user_command("CopyFilePath", function()
+	local file_path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", file_path)
+	vim.api.nvim_echo({ { "Copied file path to clipboard: " .. file_path, "Normal" } }, false, {})
+end, {
+	desc = "Copy the current file's full path to clipboard",
+})
+
 vim.api.nvim_create_user_command("DeleteFile", function()
 	vim.cmd(":!rm %")
 	vim.cmd(":bd")
