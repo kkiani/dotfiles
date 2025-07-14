@@ -20,7 +20,7 @@ function update --wraps=brew --description 'update system and packages'
     else if set -ql _flag_pick
         brew update --quiet
         brew outdated --quiet --greedy \
-            | tv --preview 'brew info {0}' --custom-header "Select packages to update" \
+            | tv --input-header "Select packages to update" \
             | xargs -I {} brew upgrade {}
         return 0
     end
