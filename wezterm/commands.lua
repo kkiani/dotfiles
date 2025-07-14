@@ -37,10 +37,10 @@ return {
 		brief = "ClaudeCode",
 		icon = "md_robot",
 		action = wezterm.action_callback(function(window, pane)
-			local tab, _, _ = window:mux_window():spawn_tab({
+			pane:split({
+				direction = "Right",
 				args = { "claude" },
 			})
-			tab:set_title("ClaudeCode")
 		end),
 	},
 }

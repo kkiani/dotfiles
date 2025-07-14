@@ -46,22 +46,22 @@ return {
 	},
 	{
 		key = "l",
-		mods = "LEADER",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		key = "k",
-		mods = "LEADER",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "j",
-		mods = "LEADER",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
 		key = "h",
-		mods = "LEADER",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
