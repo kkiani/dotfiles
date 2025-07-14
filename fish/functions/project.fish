@@ -1,7 +1,7 @@
 function project --description "Open a project from the projects directory"
     set selected_project (find ~/projects -maxdepth 2 -type d -mindepth 2 | \
-        tv --preview="bat --color=always -p {}/README.md || echo No README file is available." \
-            --custom-header "Select a project to open" \
+        tv --preview-command="bat --color=always -p {}/README.md || echo No README file is available." \
+            --input-header "Select a project to open" \
     )
 
     if test -z "$selected_project"
