@@ -3,15 +3,6 @@
     email = kiarash.kiani@icloud.com
     signingkey = C35F9A24
 
-[includeIf "gitdir:~/projects/datachef/"]
-    path = ~/.gitconfig.datachef
-
-[includeIf "gitdir:~/projects/vodafoneziggo/"]
-    path = ~/.gitconfig.datachef
-
-[includeIf "gitdir:~/projects/brenntag/"]
-    path = ~/.gitconfig.datachef
-
 [core]
     editor = "nvim"
     excludesFile = ~/.dotfiles/gitignore
