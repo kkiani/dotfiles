@@ -58,4 +58,6 @@ ln -sv "$HOME/.dotfiles/ghostty" "$HOME/.config/ghostty"
 heading "[configs] installing icloud drive symlinks..."
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/.aws" "$HOME/.aws"
 ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/Alfred.alfredpreferences" "$HOME/.config/Alfred.alfredpreferences"
-ln -sv "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/autin" "$HOME/.config/autin"
+
+# atuin config does not support symlinks, so we copy it instead
+cp -r "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Backups/atuin" "$HOME/.config/"
