@@ -53,6 +53,7 @@ ln -sv "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 ln -sv "$HOME/.dotfiles/wezterm" "$HOME/.config/wezterm"
 ln -sv "$HOME/.dotfiles/yazi" "$HOME/.config/yazi"
 ln -sv "$HOME/.dotfiles/ghostty" "$HOME/.config/ghostty"
+ln -s "$HOME/.dotfiles/lazygit" "$HOME/.config/lazygit"
 
 # installing configs from icloud drive
 heading "[configs] installing icloud drive symlinks..."
