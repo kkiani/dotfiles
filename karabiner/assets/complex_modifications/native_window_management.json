@@ -1,0 +1,65 @@
+{
+  "title": "Native Window Management keybindings",
+  "rules": [
+    {
+      "description": "Window - Move to Right Half",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": ["left_option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "l",
+              "modifiers": ["left_command", "left_control", "left_option"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Window - Move to Left Half",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": ["left_option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "h",
+              "modifiers": ["left_command", "left_control", "left_option"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Window - Fullscreen",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": ["left_option"]
+            }
+          },
+          "to": [
+            {
+                "key_code": "f",
+                "modifiers": ["left_command", "left_control", "left_option"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
