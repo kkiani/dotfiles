@@ -3,7 +3,7 @@ font-size = 14
 font-feature = -calt
 
 # Theme
-theme = GruvboxDark
+theme = Gruvbox Dark
 
 # Cursor
 cursor-style = block
