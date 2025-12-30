@@ -1,14 +1,5 @@
-# homebrew
-if test $(uname -m) = "arm64"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-end
-
-set -l BREW_PREFIX "$(brew --prefix)"
-
-if status is-interactive
-    # starship
-    source ($BREW_PREFIX/bin/starship init fish --print-full-init | psub)
-end
+source ~/.config/fish/setup_homebrew.fish
+source ~/.config/fish/setup_starship.fish
 
 fish_vi_key_bindings
 
