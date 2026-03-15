@@ -56,6 +56,7 @@ yabai -m rule --add title='Granola$' manage=off
 yabai -m rule --add title='Settings$' manage=off
 
 yabai -m rule --add app='^Calculator$' manage=off
+yabai -m rule --add app='^Dropover$' manage=off
 yabai -m rule --add app='^1Password$' manage=off
 yabai -m rule --add app='Clock' manage=off
 yabai -m rule --add app="^Raycast$" label="Raycast" manage=off
