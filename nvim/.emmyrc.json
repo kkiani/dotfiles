@@ -1,0 +1,8 @@
+{
+  "$schema": "https://raw.githubusercontent.com/EmmyLuaCodeStyle/emmylua-analyzer-rust/master/crates/emmylua_ls/resources/schema.json",
+  "workspace": {
+    "library": [
+      "$VIMRUNTIME/lua"
+    ]
+  }
+}

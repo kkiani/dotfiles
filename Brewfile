@@ -53,6 +53,7 @@ brew "terminal-notifier"
 brew "7zip" # required by yazi
 brew "lazydocker"
 brew "television"
+brew "emmylua_ls"
 
 # 'brew install --cask'
 cask "alt-tab"
