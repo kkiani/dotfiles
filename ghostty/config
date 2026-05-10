@@ -19,8 +19,7 @@ shell-integration-features = no-cursor,sudo,title
 keybind = global:cmd+shift+space=toggle_quick_terminal
 keybind = cmd+r=reload_config
 keybind = cmd+p=toggle_command_palette
-keybind = cmd+s=new_split:right
-keybind = cmd+shift+s=new_split:down
+keybind = cmd+s=new_split:auto
 keybind = cmd+shift+l=goto_split:right
 keybind = cmd+shift+h=goto_split:left
 keybind = cmd+shift+k=goto_split:up
