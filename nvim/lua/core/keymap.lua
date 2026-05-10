@@ -83,6 +83,7 @@ vim.keymap.set("n", "<leader>e", ":Oil<CR>", { silent = true, desc = "Open explo
 vim.keymap.set("n", "<leader>o", function()
 	builtin.find_files(themes.get_ivy({
 		prompt_title = "< Open File >",
+        find_command = {"rg", "--files", "--hidden", "--glob", "!**/.git/*"},
 		previewer = false,
 		layout_config = {
 			height = 10,
