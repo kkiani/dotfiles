@@ -22,6 +22,8 @@ vim.opt.wrapmargin = 0
 
 vim.opt.updatetime = 100
 
+vim.opt.winborder = "rounded"
+
 -- netrw configs
 vim.g.netrw_list_hide = [[.*\.pyc$,\.\~$,__pycache__/$,\.git/,\~$,.DS_Store,\.vscode/,.mypy_cache/,.pytest_cache/]]
 vim.g.netrw_banner = 0
