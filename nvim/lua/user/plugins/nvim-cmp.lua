@@ -28,10 +28,6 @@ return {
 				{ name = "git" },
 				{ name = "path" },
 			},
-			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
-			},
 			mapping = {
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<esc>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
