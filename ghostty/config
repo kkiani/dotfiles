@@ -30,3 +30,5 @@ keybind = cmd+shift+m=toggle_split_zoom
 confirm-close-surface = false
 quick-terminal-autohide = true
 clipboard-paste-protection = false
+
+command-palette-entry = title:"Rename Tab", description:"Rename the title of the currently focused tab", action:prompt_tab_title
