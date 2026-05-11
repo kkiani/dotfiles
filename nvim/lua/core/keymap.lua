@@ -57,7 +57,7 @@ vim.keymap.set({ "n", "i" }, "<c-t>", "<cmd>Terminal<CR>", { desc = "Toggle term
 vim.keymap.set("n", "<leader>p", ":OpenCommandPalette<CR>", { desc = "Show commands palette" })
 
 -- help panel
-vim.keymap.set("n", "?", ":lua Snacks.picker.help()<CR>", { desc = "Show help panel" })
+vim.keymap.set("n", "?", ":OpenHelpPalette<CR>", { desc = "Show help panel" })
 vim.keymap.set("n", "<leader>?", ":Telescope keymaps<CR>", { desc = "Show keymaps panel" })
 
 -- opening explorer

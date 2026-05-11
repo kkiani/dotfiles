@@ -1,7 +1,4 @@
 local Utils = require("utils")
-local telescope = require("telescope.builtin")
-local actions = require("telescope.actions")
-local state = require("telescope.actions.state")
 local Snacks = require("snacks")
 local oil = require("oil")
 
@@ -9,6 +6,12 @@ local oil = require("oil")
 vim.api.nvim_create_user_command("OpenCommandPalette", function()
     Snacks.picker.commands({
         layout=Utils.snacks_default_layout({show_preview=false}),
+    })
+end, {})
+
+vim.api.nvim_create_user_command("OpenHelpPalette", function()
+    Snacks.picker.help({
+        layout=Utils.snacks_default_layout(),
     })
 end, {})
 
@@ -140,74 +143,43 @@ vim.api.nvim_create_user_command("GitStashPush", function()
 end, {})
 vim.api.nvim_create_user_command("GitStashPop", function()
     Snacks.picker.git_stash({ layout=Utils.snacks_default_layout(), })
-	-- telescope.git_stash({
-	-- 	attach_mappings = function(_, map)
-	-- 		map("i", "<CR>", function(prompt_bufnr)
-	-- 			local selection = state.get_selected_entry(prompt_bufnr)
-	--
-	-- 			if selection == nil then
-	-- 				error("No stash selected")
-	-- 			else
-	-- 				actions.close(prompt_bufnr)
-	-- 				vim.api.nvim_command("Git stash pop " .. selection.value)
-	-- 			end
-	-- 		end)
-	-- 		map("n", "dd", function(prompt_bufnr)
-	-- 			local selection = state.get_selected_entry(prompt_bufnr)
-	--
-	-- 			if selection == nil then
-	-- 				error("No stash selected")
-	-- 			else
-	-- 				actions.close(prompt_bufnr)
-	-- 				vim.api.nvim_command("Git stash drop " .. selection.value)
-	-- 			end
-	-- 		end)
-	-- 		return true
-	-- 	end,
-	-- })
 end, {})
 vim.api.nvim_create_user_command("GitLogBuffer", ":DiffviewFileHistory %<CR>", {})
 vim.api.nvim_create_user_command("GitBranches", function()
     Snacks.picker.git_branches({
         layout=Utils.snacks_default_layout({show_preview=false}),
+        win = {
+            input = {
+                keys = {
+                    ["<C-c>"] = { "diffview", mode = { "i", "n" } },
+                    ["<C-r>"] = { "rebase", mode = { "i", "n" } },
+                },
+            },
+        },
+        actions = {
+            diffview = function(picker)
+                local item = picker:current()
+                if item then
+                    picker:close()
+                    vim.cmd("DiffviewOpen " .. item.branch)
+                end
+            end,
+            rebase = function(picker)
+                local item = picker:current()
+                if item then
+                    picker:close()
+                    vim.cmd("Git rebase " .. item.branch)
+                end
+            end,
+        },
     })
 end, {})
 vim.api.nvim_create_user_command("GitCheckout", ":GitBranches", {})
-vim.api.nvim_create_user_command("GitGraph", function()
-	require("gitgraph").draw({}, { all = true, max_count = 5000 })
-end, { desc = "Open Git Graph" })
 vim.api.nvim_create_user_command("GitBlame", ":Git blame", {})
 vim.api.nvim_create_user_command("GitLog", function()
 	vim.cmd("DiffviewFileHistory")
 end, { desc = "Show Git log" })
-vim.api.nvim_create_user_command("GitDiff", ":DiffviewOpen", { desc = "Open Git Diff View" })
-vim.api.nvim_create_user_command("GitDiffBranch", function()
-	telescope.git_branches({
-		attach_mappings = function(_, map)
-			map("i", "<CR>", function(prompt_bufnr)
-				local action_state = require("telescope.actions.state")
-				local selection = action_state.get_selected_entry()
-				actions.close(prompt_bufnr)
-				vim.cmd("DiffviewOpen " .. selection.value)
-			end)
-			return true
-		end,
-	})
-end, {})
 vim.api.nvim_create_user_command("GitDiscardHunk", ":Gitsigns reset_hunk", {})
-vim.api.nvim_create_user_command("GitRebase", function()
-	telescope.git_branches({
-		attach_mappings = function(_, map)
-			map("i", "<CR>", function(prompt_bufnr)
-				local action_state = require("telescope.actions.state")
-				local selection = action_state.get_selected_entry()
-				actions.close(prompt_bufnr)
-				vim.cmd("Git rebase " .. selection.value)
-			end)
-			return true
-		end,
-	})
-end, { desc = "Start a Git rebase" })
 vim.api.nvim_create_user_command("GitRebaseContinue", ":Git rebase --continue", { desc = "Continue a Git rebase" })
 vim.api.nvim_create_user_command("GitRebaseAbort", ":Git rebase --abort", { desc = "Abort a Git rebase" })
 
@@ -227,10 +199,3 @@ end, {})
 -- LSP
 vim.api.nvim_create_user_command("RenameSymbol", ":lua vim.lsp.buf.rename()", {})
 vim.api.nvim_create_user_command("DocumentSymbol", ":Telescope lsp_document_symbols", {})
-
--- CDK
-vim.api.nvim_create_user_command("CDKSynth", ":!cdk synth", {})
-vim.api.nvim_create_user_command("CDKDeployAll", ":!cdk deploy --all", {})
-vim.api.nvim_create_user_command("CDKDestroyAll", ":!cdk destroy --all", {})
-
--- Tests
