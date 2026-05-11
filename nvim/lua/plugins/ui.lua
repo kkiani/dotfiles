@@ -1,0 +1,129 @@
+-- git-blame is loaded here (not deferred) because lualine references it
+-- at setup time via get_current_blame_text / is_blame_text_available
+vim.pack.add({
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = "https://github.com/f-person/git-blame.nvim" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
+    { src = "https://github.com/m4xshen/autoclose.nvim" },
+    { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+    { src = "https://github.com/folke/trouble.nvim" },
+    { src = "https://github.com/folke/todo-comments.nvim" },
+})
+
+
+require("ibl").setup({
+    indent = {
+        char = "▏",
+    },
+    scope = {
+        char = "▏",
+        include = {
+            node_type = {
+                ["*"] = {
+                    "*",
+                },
+            },
+        },
+    },
+})
+
+require("trouble").setup()
+require("todo-comments").setup({})
+
+require("nvim-web-devicons").setup({
+	color_icons = true,
+	default = true,
+})
+
+local git_blame = require("gitblame")
+
+local function close_current_buffer()
+	vim.cmd(":q")
+end
+
+require("lualine").setup({
+	options = {
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = {},
+		},
+		ignore_focus = {},
+		always_divide_middle = true,
+		globalstatus = true,
+		refresh = {
+			statusline = 1000,
+			tabline = 1000,
+			winbar = 1000,
+		},
+	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = {},
+		lualine_x = { { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available } },
+		lualine_y = { "encoding", "fileformat", "filetype" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {
+		lualine_a = {
+			{
+				"tabs",
+				mode = 1,
+				fmt = function(name, context)
+					local buflist = vim.fn.tabpagebuflist(context.tabnr)
+					local winnr = vim.fn.tabpagewinnr(context.tabnr)
+					local bufnr = buflist[winnr]
+
+					local title = name
+
+					if vim.bo[bufnr].modified then
+						title = title .. " "
+					elseif vim.bo[bufnr].filetype == "terminal" then
+						title = title .. " "
+					elseif vim.bo[bufnr].filetype == "help" then
+						title = title .. " "
+					elseif vim.bo[bufnr].readonly or vim.bo[bufnr].modifiable == false then
+						title = title .. " "
+					end
+
+					return title
+				end,
+			},
+		},
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {
+			{
+				"filename",
+				file_status = false,
+				path = 1,
+			},
+		},
+		lualine_z = {
+			{
+				"close",
+				separator = {},
+				fmt = function()
+					return "󰅖"
+				end,
+				on_click = close_current_buffer,
+			},
+		},
+	},
+	winbar = {},
+	inactive_winbar = {},
+	extensions = {},
+})
