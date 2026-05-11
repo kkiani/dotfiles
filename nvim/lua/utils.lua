@@ -1,10 +1,10 @@
-local pickers = require("telescope.pickers")
-local finders = require("telescope.finders")
-local conf = require("telescope.config").values
-local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
-
 local function picker(opts, callback)
+	local pickers = require("telescope.pickers")
+	local finders = require("telescope.finders")
+	local conf = require("telescope.config").values
+	local actions = require("telescope.actions")
+	local action_state = require("telescope.actions.state")
+
 	opts = opts or {}
 	pickers
 		.new(opts, {
@@ -47,7 +47,34 @@ local function has_value(tab, val)
 	return false
 end
 
+local function snacks_default_layout(opts)
+    local wins = {}
+    if opts and opts.show_preview == false then
+        table.insert(wins, { win = "input", height = 1, border = "bottom" })
+        table.insert(wins, { win = "list", border = "bottom", height = 0.3 })
+    else
+        table.insert(wins, { win = "preview", title = "{preview}", border = "none" })
+        table.insert(wins, { win = "input", height = 1, border = "top_bottom" })
+        table.insert(wins, { win = "list", border = "top_bottom", height = 0.3 })
+    end
+
+    local layout = {
+        box = "vertical",
+        backdrop = false,
+        row = -1,
+        width = 0,
+        height = 0,
+        border = "top",
+        title = " {title} {live} {flags}",
+        title_pos = "center",
+    }
+    vim.list_extend(layout, wins)
+
+    return { layout = layout }
+end
+
 return {
+    snacks_default_layout = snacks_default_layout,
 	picker = picker,
 	split_string = split_string,
 	exec = exec,
@@ -61,3 +88,4 @@ return {
 -- }, function(selection)
 --     vim.api.nvim_put({ selection[1] }, "", false, true)
 -- end)
+--

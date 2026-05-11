@@ -1,11 +1,17 @@
 local Utils = require("utils")
 local telescope = require("telescope.builtin")
-local themes = require("telescope.themes")
 local actions = require("telescope.actions")
 local state = require("telescope.actions.state")
+local Snacks = require("snacks")
 local oil = require("oil")
 
 -- General
+vim.api.nvim_create_user_command("OpenCommandPalette", function()
+    Snacks.picker.commands({
+        layout=Utils.snacks_default_layout({show_preview=false}),
+    })
+end, {})
+
 vim.api.nvim_create_user_command("CopyFilePath", function()
 	local file_path = vim.fn.expand("%:p")
 	vim.fn.setreg("+", file_path)
@@ -29,19 +35,10 @@ end, {
 
 -- Find and Replace
 vim.api.nvim_create_user_command("Find", function()
-	local current_dir = oil.get_current_dir()
-
-	telescope.live_grep({
-		attach_mappings = function(_, map)
-			map("i", "<S-CR>", function(prompt_bufnr)
-				vim.fn.setqflist({})
-				actions.add_to_qflist(prompt_bufnr)
-				vim.cmd("copen")
-			end)
-			return true
-		end,
-		search_dirs = { current_dir },
-	})
+    Snacks.picker.grep({
+        layout=Utils.snacks_default_layout(),
+        dirs={oil.get_current_dir()},
+    })
 end, { desc = "Search for a keyword in workspace and populates the results into quickfix list" })
 
 vim.api.nvim_create_user_command("Replace", function()
@@ -86,6 +83,11 @@ end, {})
 
 -- Code Explore
 vim.api.nvim_create_user_command("Diagnostics", "Trouble", {})
+vim.api.nvim_create_user_command("JumpToFile", function()
+    Snacks.picker.files({
+        layout=Utils.snacks_default_layout(),
+    })
+end, {})
 
 -- Keymaps
 vim.api.nvim_create_user_command("Keymaps", "Telescope keymaps", {})
@@ -97,14 +99,9 @@ vim.api.nvim_create_user_command("DapCloseUI", ":lua require('dapui').close()", 
 
 -- Git Commands
 vim.api.nvim_create_user_command("GitStatus", function()
-	telescope.git_status(themes.get_ivy({
-		previewer = false,
-		initial_mode = "normal",
-		selection_strategy = "row",
-		layout_config = {
-			height = 10,
-		},
-	}))
+    Snacks.picker.git_status({
+        layout=Utils.snacks_default_layout(),
+    })
 end, {})
 vim.api.nvim_create_user_command("GitAddAll", ":Git add .", {})
 vim.api.nvim_create_user_command("GitAddBuffer", function()
@@ -142,55 +139,40 @@ vim.api.nvim_create_user_command("GitStashPush", function()
 	end
 end, {})
 vim.api.nvim_create_user_command("GitStashPop", function()
-	telescope.git_stash({
-		attach_mappings = function(_, map)
-			map("i", "<CR>", function(prompt_bufnr)
-				local selection = state.get_selected_entry(prompt_bufnr)
-
-				if selection == nil then
-					error("No stash selected")
-				else
-					actions.close(prompt_bufnr)
-					vim.api.nvim_command("Git stash pop " .. selection.value)
-				end
-			end)
-			map("n", "dd", function(prompt_bufnr)
-				local selection = state.get_selected_entry(prompt_bufnr)
-
-				if selection == nil then
-					error("No stash selected")
-				else
-					actions.close(prompt_bufnr)
-					vim.api.nvim_command("Git stash drop " .. selection.value)
-				end
-			end)
-			return true
-		end,
-	})
+    Snacks.picker.git_stash({ layout=Utils.snacks_default_layout(), })
+	-- telescope.git_stash({
+	-- 	attach_mappings = function(_, map)
+	-- 		map("i", "<CR>", function(prompt_bufnr)
+	-- 			local selection = state.get_selected_entry(prompt_bufnr)
+	--
+	-- 			if selection == nil then
+	-- 				error("No stash selected")
+	-- 			else
+	-- 				actions.close(prompt_bufnr)
+	-- 				vim.api.nvim_command("Git stash pop " .. selection.value)
+	-- 			end
+	-- 		end)
+	-- 		map("n", "dd", function(prompt_bufnr)
+	-- 			local selection = state.get_selected_entry(prompt_bufnr)
+	--
+	-- 			if selection == nil then
+	-- 				error("No stash selected")
+	-- 			else
+	-- 				actions.close(prompt_bufnr)
+	-- 				vim.api.nvim_command("Git stash drop " .. selection.value)
+	-- 			end
+	-- 		end)
+	-- 		return true
+	-- 	end,
+	-- })
 end, {})
-vim.api.nvim_create_user_command("GitSwitch", function()
-	telescope.git_branches(themes.get_ivy({
-		previewer = false,
-		layout_config = {
-			height = 10,
-		},
-		attach_mappings = function(_, map)
-			map("i", "<CR>", function(prompt_bufnr)
-				local selection = state.get_selected_entry(prompt_bufnr)
-
-				if selection == nil then
-					actions.git_create_branch(prompt_bufnr)
-				else
-					actions.git_switch_branch(prompt_bufnr)
-				end
-			end)
-			return true
-		end,
-	}))
+vim.api.nvim_create_user_command("GitLogBuffer", ":DiffviewFileHistory %<CR>", {})
+vim.api.nvim_create_user_command("GitBranches", function()
+    Snacks.picker.git_branches({
+        layout=Utils.snacks_default_layout({show_preview=false}),
+    })
 end, {})
-vim.api.nvim_create_user_command("GitCheckout", ":GitSwitch", {})
-vim.api.nvim_create_user_command("GitVersioningHistory", ":Telescope git_bcommits", {})
-vim.api.nvim_create_user_command("GitBranches", "Telescope git_branches", {})
+vim.api.nvim_create_user_command("GitCheckout", ":GitBranches", {})
 vim.api.nvim_create_user_command("GitGraph", function()
 	require("gitgraph").draw({}, { all = true, max_count = 5000 })
 end, { desc = "Open Git Graph" })
@@ -198,10 +180,6 @@ vim.api.nvim_create_user_command("GitBlame", ":Git blame", {})
 vim.api.nvim_create_user_command("GitLog", function()
 	vim.cmd("DiffviewFileHistory")
 end, { desc = "Show Git log" })
-vim.api.nvim_create_user_command("GitBufferLog", function()
-	local current_file = vim.api.nvim_buf_get_name(0)
-	vim.cmd("DiffviewFileHistory " .. current_file)
-end, { desc = "Git show log for the current buffer" })
 vim.api.nvim_create_user_command("GitDiff", ":DiffviewOpen", { desc = "Open Git Diff View" })
 vim.api.nvim_create_user_command("GitDiffBranch", function()
 	telescope.git_branches({

@@ -1,7 +1,7 @@
 local builtin = require("telescope.builtin")
 local themes = require("telescope.themes")
-local ls = require("luasnip")
-local gitsigns = require("gitsigns")
+-- local ls = require("luasnip")
+-- local gitsigns = require("gitsigns")
 
 vim.keymap.set({ "n", "i" }, "<c-c>", "<cmd>CopyFilePath<CR>", { desc = "Copy Current file full path" })
 
@@ -54,17 +54,10 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set({ "n", "i" }, "<c-t>", "<cmd>Terminal<CR>", { desc = "Toggle terminal" })
 
 -- show command palette
-vim.keymap.set("n", "<leader>p", function()
-	builtin.commands(themes.get_ivy({
-		prompt_title = "< Commands >",
-		layout_config = {
-			height = 10,
-		},
-	}))
-end, { desc = "Show commands palette" })
+vim.keymap.set("n", "<leader>p", ":OpenCommandPalette<CR>", { desc = "Show commands palette" })
 
 -- help panel
-vim.keymap.set("n", "?", ":Telescope help_tags<CR>", { desc = "Show help panel" })
+vim.keymap.set("n", "?", ":lua Snacks.picker.help()<CR>", { desc = "Show help panel" })
 vim.keymap.set("n", "<leader>?", ":Telescope keymaps<CR>", { desc = "Show keymaps panel" })
 
 -- opening explorer
@@ -80,46 +73,36 @@ vim.keymap.set("n", "<leader><tab>", function()
 	}))
 end, { desc = "Open buffer explorer" })
 vim.keymap.set("n", "<leader>e", ":Oil<CR>", { silent = true, desc = "Open explorer" })
-vim.keymap.set("n", "<leader>o", function()
-	builtin.find_files(themes.get_ivy({
-		prompt_title = "< Open File >",
-        find_command = {"rg", "--files", "--hidden", "--glob", "!**/.git/*"},
-		previewer = false,
-		layout_config = {
-			height = 10,
-		},
-		hidden = true,
-	}))
-end, { desc = "Open file" })
+vim.keymap.set("n", "<leader>o", ":JumpToFile<CR>", { desc = "Open file" })
 vim.keymap.set("n", "<leader><leader>", ":b#<CR>", { silent = true, desc = "Jump to previous buffer" })
 
 -- Find and Replace
 vim.keymap.set("n", "<leader>f", ":Find<CR>", { desc = "Find string in project" })
 
 -- git commands
-vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
+-- vim.keymap.set("n", "<leader>ga", ":Gitsigns stage_hunk<CR>")
 vim.keymap.set("n", "<leader>gd", ":GitDiscardHunk<CR>")
 vim.keymap.set("n", "<leader>gc", ":tab Git commit<CR>")
 vim.keymap.set("n", "<leader>gg", ":GitStatus<CR>")
 vim.keymap.set("n", "<leader>G", ":DiffviewOpen<CR>")
-vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
-vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
-vim.keymap.set("n", "<space>gp", ":Gitsigns preview_hunk<CR>")
+-- vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>")
+-- vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>")
+-- vim.keymap.set("n", "<space>gp", ":Gitsigns preview_hunk<CR>")
 
-vim.keymap.set("v", "<leader>ga", function()
-	local first_line = vim.fn.line("v")
-	local last_line = vim.fn.getpos(".")[2]
-	gitsigns.stage_hunk({ first_line, last_line })
-	-- go to normal mode after staging
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
-end)
-vim.keymap.set("v", "<leader>gd", function()
-	local first_line = vim.fn.line("v")
-	local last_line = vim.fn.getpos(".")[2]
-	gitsigns.reset_hunk({ first_line, last_line })
-	-- go to normal mode after staging
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
-end)
+-- vim.keymap.set("v", "<leader>ga", function()
+-- 	local first_line = vim.fn.line("v")
+-- 	local last_line = vim.fn.getpos(".")[2]
+-- 	gitsigns.stage_hunk({ first_line, last_line })
+-- 	-- go to normal mode after staging
+-- 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
+-- end)
+-- vim.keymap.set("v", "<leader>gd", function()
+-- 	local first_line = vim.fn.line("v")
+-- 	local last_line = vim.fn.getpos(".")[2]
+-- 	gitsigns.reset_hunk({ first_line, last_line })
+-- 	-- go to normal mode after staging
+-- 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc>", true, true, true), "n", true)
+-- end)
 
 -- clipboard keymaps
 vim.keymap.set("v", "gy", '"+y')
@@ -196,10 +179,10 @@ vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "Start Debugg
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
 
 -- snippets remaps
-vim.keymap.set({ "i", "s" }, "<c-n>", function()
-	ls.jump(1)
-end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<c-b>", function()
-	ls.jump(-1)
-end, { silent = true })
+-- vim.keymap.set({ "i", "s" }, "<c-n>", function()
+-- 	ls.jump(1)
+-- end, { silent = true })
+--
+-- vim.keymap.set({ "i", "s" }, "<c-b>", function()
+-- 	ls.jump(-1)
+-- end, { silent = true })

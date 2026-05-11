@@ -42,19 +42,19 @@ autocmd("BufNewFile", {
 	command = "0r ~/.config/nvim/skeletons/readme.md",
 })
 
--- auto format on save
-autocmd("BufWritePost", {
-	desc = "Auto format on save",
-	group = augroup("format_on_save"),
-	pattern = "*",
-	callback = function()
-		if vim.bo.filetype == "oil" then
-			return
-		end
-
-		vim.cmd("FormatWrite")
-	end,
-})
+-- -- auto format on save
+-- autocmd("BufWritePost", {
+-- 	desc = "Auto format on save",
+-- 	group = augroup("format_on_save"),
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		if vim.bo.filetype == "oil" then
+-- 			return
+-- 		end
+--
+-- 		vim.cmd("FormatWrite")
+-- 	end,
+-- })
 
 -- automate mode with terminal
 autocmd("TermOpen", {
