@@ -5,6 +5,12 @@ local oil = require("oil")
 -- General
 vim.api.nvim_create_user_command("OpenCommandPalette", function()
     Snacks.picker.commands({
+		confirm = function(picker, item)
+			picker:close()
+			if item and item.text then
+				vim.cmd(item.text)
+			end
+		end,
         layout=Utils.snacks_default_layout({show_preview=false}),
     })
 end, {})
