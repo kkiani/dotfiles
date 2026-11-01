@@ -1,9 +1,9 @@
 [mgr]
 prepend_keymap = [
     # palette keybindings
-    { on = ["<Space>", "<Space>"], run = 'shell "qlmanage -p \"$@\"" --confirm', desc = "Quick look"},
+    { on = ["<Space>", "<Space>"], run = 'shell "qlmanage -p %s" --confirm', desc = "Quick look"},
     { on = ["<Space>", "d"], run = '''
-        shell 'open -a Dropover "$@"' --confirm
+        shell 'open -a Dropover %s' --confirm
     ''', desc = 'Drag and Drop' },
 
     # quick jump
@@ -16,5 +16,8 @@ prepend_keymap = [
     { on = ":", run = 'shell --block --interactive'},
 
     # quick actions
-    { on = "e", run = 'shell "nvim \"$@\"" --block --confirm'}
+    { on = "e", run = 'shell "nvim %s" --block --confirm'},
+    { on = "Y", run = '''
+        shell 'osascript -e "on run args" -e "set the clipboard to POSIX file (item 1 of args)" -e "end run" %h' --confirm
+    ''', desc = 'Copy file to clipboard' },
 ]
