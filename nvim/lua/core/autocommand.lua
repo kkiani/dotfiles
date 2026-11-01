@@ -42,6 +42,15 @@ autocmd("BufNewFile", {
 	command = "0r ~/.config/nvim/skeletons/readme.md",
 })
 
+autocmd("BufWritePre", {
+	desc = "Format Go files with gopls (gofmt) on save",
+	group = augroup("go_format_on_save"),
+	pattern = "*.go",
+	callback = function(event)
+		vim.lsp.buf.format({ bufnr = event.buf, name = "gopls", timeout_ms = 2000 })
+	end,
+})
+
 -- -- auto format on save
 -- autocmd("BufWritePost", {
 -- 	desc = "Auto format on save",

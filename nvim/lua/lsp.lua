@@ -4,6 +4,12 @@ vim.lsp.config("emmylua_ls", {
 	root_markers = { ".emmyrc.json", ".luarc.json", ".git" },
 })
 
+vim.lsp.config("gopls", {
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	root_markers = { "go.work", "go.mod", ".git" },
+})
+
 vim.lsp.config("ty", {
     cmd = {"ty", "server"},
     filetype = {"python"},

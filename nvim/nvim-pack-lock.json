@@ -125,6 +125,10 @@
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"
     },
+    "tree-sitter-manager.nvim": {
+      "rev": "59e1ba49e33e1b73bef655fd34b5e65e1465053f",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    },
     "trouble.nvim": {
       "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
       "src": "https://github.com/folke/trouble.nvim"
