@@ -7,38 +7,40 @@ show_symlink = true
 
 [opener]
 edit = [
-    { run = 'nvim "$@"', block = true, desc = "Edit in Neovim" },
+    { run = 'nvim %s', block = true, desc = "Edit in Neovim" },
 ]
 open = [
-    { run = 'open "$@"', block = true, desc = "Open with default application" }
+    { run = 'open %s', desc = "Open with default application" }
 ]
 reveal = [
-    { run = 'open -R "$@"', block = true, desc = "Reveal in Finder" }
+    { run = 'open -R %s1', desc = "Reveal in Finder" }
 ]
 run_bash = [
-    { run = 'bash "$@"', block = true, desc = "Run in Bash Shell" }
+    { run = 'bash %s1', block = true, desc = "Run in Bash Shell" }
 ]
 run_fish = [
-    { run = 'fish "$@"', block = true, desc = "Run in Fish Shell" }
+    { run = 'fish %s1', block = true, desc = "Run in Fish Shell" }
 ]
 default = [
-    { run = 'open "$@"', block = true, desc = "Open with default application" },
-    { run = 'ouch compress "$@" "$1.zip"', block = true, desc = "Compress File/s"},
-    { run = 'open -R "$@"', block = true, desc = "Reveal in Finder" }
+    { run = 'open %s', desc = "Open with default application" },
+    { run = 'ouch compress %s %s1.zip', block = true, desc = "Compress File/s"},
+    { run = 'open -R %s1', desc = "Reveal in Finder" }
 ]
 
 [open]
 rules = [
-    { mime = "*", use = "default" },
-
-    { mime = "text/*", use = ["edit", "default"]},
+    { url = "*.fish", use = ["run_fish", "edit", "default"]},
 
     { url = "*.json", use = ["edit", "default"]},
     { url = "*.yaml", use = ["edit", "default"]},
     { url = "*.yml", use = ["edit", "default"]},
     { url = "*.toml", use = ["edit", "default"]},
 
-    { url = "*.fish", use = ["run_fish", "edit", "default"]},
+    { mime = "text/*", use = ["edit", "default"]},
+
+    # Fallback (must be last, first match wins)
+    { url = "*", use = "default" },
+    { url = "*/", use = "default" },
 ]
 
 [plugin]
